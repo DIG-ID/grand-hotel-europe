@@ -1,0 +1,14 @@
+.home-hero-overlay
+  position: absolute
+  inset-inline: 0
+  bottom: 0
+  height: 100dvh
+  pointer-events: none
+  z-index: 0
+  background: #222
+  opacity: 0.59
+  background-blend-mode: normal, multiply
+
+@supports not (height: 1dvh)
+  .home-hero-overlay
+    height: 100vh
