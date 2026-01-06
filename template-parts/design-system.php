@@ -38,10 +38,10 @@
 		<div class="col-span-2 md:col-span-2 xl:col-span-3 mt-12 px-2 md:px-4 xl:px-8 border-Dark border-r-2">
 			<h1 class="title-secondary font-barlow pb-8">Buttons</h1>
 			<a class="btn btn-primary mb-8 max-w-56">Mehr erfahren</a>
-			<div class="bg-Dark p-8 mb-8">
-				<a class="btn btn-primary-dark ">Mehr erfahren</a>
+			<div class="bg-darker p-8 mb-8">
+				<a class="btn btn-secondary mb-8">Mehr erfahren</a>
+        <a class="btn btn-transparent">Mehr erfahren</a>
 			</div>
-			<a class="btn btn-primary-brown mb-8">Mehr erfahren</a>
 		</div>
 	</div>
 </section>
