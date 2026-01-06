@@ -66,7 +66,8 @@ if ( ! function_exists( 'ghe_get_font_face_styles' ) ) :
 	 */
 	function ghe_get_font_face_styles() {
 		return "
-			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Prata&display=swap');
+			@import url('https://use.typekit.net/lmo5nfm.css');
+			@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
 		";
 	}
 endif;
@@ -79,6 +80,7 @@ if ( ! function_exists( 'ghe_preload_webfonts' ) ) :
 		?>
 		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preconnect" href="use.typekit.net" crossorigin>
 		<?php
 	}
 endif;

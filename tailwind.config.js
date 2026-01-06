@@ -12,7 +12,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      //montserrat: ['Montserrat', 'sans-serif'],
+      gilda: ['Gilda Display', 'serif'],
+      barlow: ['barlow', 'sans-serif'],
+      source: ['source-serif-4', 'serif'],
     },
 
     extend: {
@@ -21,7 +23,10 @@ module.exports = {
         //wider: '.06em',
       },
       colors: {
-        
+        'darker': '#25211E',
+        'dark': '#333333',
+        'sand': '#A7986E',
+        'cream': '#F8F5F0',
       },
       transitionTimingFunction: {
         //'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
