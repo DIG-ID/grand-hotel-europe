@@ -44,13 +44,7 @@
     "wordpress"
   ],
   "intelephense.environment.includePaths": [
+    "vendor/php-stubs/wordpress-stubs",
     "vendor/php-stubs/acf-pro-stubs"
-  ],
-
-  "phpcs.enable": true,
-  "phpcs.standard": "./phpcs.xml.dist",
-  "phpcs.executablePath": "vendor/bin/phpcs",
-
-  "phpcbf.enable": true,
-  "phpcbf.executablePath": "vendor/bin/phpcbf"
+  ]
 }

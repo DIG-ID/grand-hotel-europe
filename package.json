@@ -10,10 +10,10 @@
     "prod": "npm run production",
     "production": "mix --production",
 
-    "php:lint": "php vendor/bin/phpcs -p",
-    "php:fix": "php vendor/bin/phpcbf -p",
+    "php:lint": "phpcs -p --standard=WordPress",
+    "php:fix": "phpcbf -p --standard=WordPress",
 
-    "postinstall": "composer install"
+    "postinstall": ""
   },
   "author": "",
   "license": "ISC",
