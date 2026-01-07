@@ -132,6 +132,13 @@ function ghe_theme_lower_yoast_metabox_priority( $priority ) {
 add_filter( 'wpseo_metabox_prio', 'ghe_theme_lower_yoast_metabox_priority' );
 
 
+//Simple booking integration
+add_action('wp', function () {
+  if (is_front_page()) {
+    require_once get_template_directory() . '/inc/theme-simple-booking.php';
+  }
+});
+
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';
 
