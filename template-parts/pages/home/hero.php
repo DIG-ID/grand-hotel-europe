@@ -10,7 +10,7 @@
 ?>
 
 
-<section id="section-hero" class="section-hero relative xl:h-dvh w-full z-10">
+<section id="section-hero" class="section-hero relative h-dvh w-full z-10">
   <figure>
     <?php
     $bg_id = get_field( 'hero_image' );
