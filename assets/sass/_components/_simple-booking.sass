@@ -1,10 +1,12 @@
 #sb-container
   .sb
-    @apply py-[19px] px-4
+    @apply py-[0.938rem] px-4
+    &__form
+      @apply flex items-center
     &__footer, &__form-field-weekday, &__form-field-rooms
       @apply hidden
     input
-      @apply mt-0 font-semibold py-4 h-auto
+      @apply mt-0 font-semibold py-4 h-auto max-h-[60px]
       border-radius: 0
     &__guests-rooms
       .sb
@@ -22,6 +24,8 @@
     &__dates
       @apply flex items-center
       .sb
+        &__form-field
+          @apply border-r border-cream py-[0.813rem]
         &__form-field-label
           @apply uppercase
         &__form-field-icon
