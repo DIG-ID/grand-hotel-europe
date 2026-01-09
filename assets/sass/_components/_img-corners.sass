@@ -1,11 +1,28 @@
-.framed-photo
-  &-intro
-    @apply relative
-    img
-      @apply block w-full h-auto
-    &::before, &::after
-      @apply content-[''] absolute w-72 h-48 -bottom-5 border-b border-gold
-    &::before
-      @apply -left-5 border-l
-    &::after
-      @apply -right-5 border-r
+.framed
+  &__fullwidth
+    &-both
+      @apply relative
+      img
+        @apply block w-full h-auto
+      &::before, &::after
+        @apply content-[''] absolute w-72 h-48 -bottom-5 border-b border-gold
+      &::before
+        @apply -left-5 border-l
+      &::after
+        @apply -right-5 border-r
+    &-left
+      @apply relative
+      img
+        @apply block w-full h-auto
+      &::before
+        @apply content-[''] absolute w-72 h-48 -bottom-5 border-b border-gold
+      &::before
+        @apply -left-5 border-l
+    &-right
+      @apply relative
+      img
+        @apply block w-full h-auto
+      &::after
+        @apply content-[''] absolute w-72 h-48 -bottom-5 border-b border-gold
+      &::after
+        @apply -right-5 border-r   
