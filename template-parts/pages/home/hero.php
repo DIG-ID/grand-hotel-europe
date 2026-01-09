@@ -1,9 +1,9 @@
 <?php
 /**
- * Hero Module Section that appears on multiple page templates.
+ * Hero Section in the Home Page Template.
  *
  * @package grand-hotel-europe
- * @subpackage Module
+ * @subpackage Section
  * @since 1.0.0
  */
 
@@ -24,7 +24,7 @@
     <div class="theme-grid absolute bottom-8 md:bottom-16 xl:bottom-0 w-full">
       <div class="col-span-2 md:col-span-6 xl:col-span-12 scroll-down flex flex-col justify-center mb-11">
         <h1 class="title-main text-white text-center mb-9"><?php the_field( 'hero_title' ); ?></h1>
-        <div id="sb-container"></div> 
+        <div id="sb-container" class="hidden xl:block"></div> 
       </div>
       <div class="col-span-2 md:col-span-6 xl:col-span-12 scroll-down flex flex-col items-center">
         <figure>

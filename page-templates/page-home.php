@@ -3,7 +3,7 @@
  *
  * Template Name: Home Template
  *
- * @package website-name
+ * @package grand-hotel-europe
  * @subpackage Template
  * @since 1.0.0
  */
@@ -16,6 +16,8 @@ if ( have_posts() ) :
 			get_template_part( 'template-parts/pages/home/hero' );
 			get_template_part( 'template-parts/modules/section-intro' );
 			get_template_part( 'template-parts/pages/home/zimmer-suiten' );
+			get_template_part( 'template-parts/pages/home/seminare-bankette' );
+			get_template_part( 'template-parts/pages/home/travel-banner' );
 		do_action( 'after_main_content' );
 	endwhile;
 endif;

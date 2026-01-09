@@ -1,3 +1,14 @@
+<?php
+/**
+ * Intro Module Section that appears on multiple page templates.
+ *
+ * @package grand-hotel-europe
+ * @subpackage Module
+ * @since 1.0.0
+ */
+
+?>
+
 <section id="section-intro" class="section-intro xl:pt-0 xl:pb-36">
   <?php if ( is_front_page() ) : ?>
   <div class="w-[1px] md:w-[1px] h-[56px] xl:h-[56px] bg-gold mx-auto" aria-hidden="true"></div>

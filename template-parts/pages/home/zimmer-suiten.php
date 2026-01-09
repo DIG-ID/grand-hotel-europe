@@ -1,3 +1,14 @@
+<?php
+/**
+ * Zimmer & Suiten Section in the Home Page Template.
+ *
+ * @package grand-hotel-europe
+ * @subpackage Section
+ * @since 1.0.0
+ */
+
+?>
+
 <section id="section-zimmer-suiten" class="section-zimmer-suiten pt-11 md:pt-16 pb-24 md:pb-32 xl:pb-40 bg-[linear-gradient(to_bottom,#F8F5F0_0%,#F8F5F0_60%,#FFFFFF_60%,#FFFFFF_100%)]">
   <div class="theme-container">
     <div class="theme-grid">
@@ -22,9 +33,9 @@
       <div class="col-span-2 md:col-span-6 xl:col-span-12 mt-10">
         <figure class="framed__fullwidth-left w-full">
           <?php
-          $intro_id = get_field( 'zimmer_suiten_image' );
-          if ( $intro_id ) :
-            echo wp_get_attachment_image( $intro_id, 'full', false, array( 'class' => 'w-full h-full object-cover' ) );
+          $zs_id = get_field( 'zimmer_suiten_image' );
+          if ( $zs_id ) :
+            echo wp_get_attachment_image( $zs_id, 'full', false, array( 'class' => 'w-full h-full object-cover' ) );
           endif;
           ?>
         </figure>

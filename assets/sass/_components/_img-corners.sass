@@ -25,4 +25,21 @@
       &::after
         @apply content-[''] absolute w-72 h-48 -bottom-5 border-b border-gold
       &::after
-        @apply -right-5 border-r   
+        @apply -right-5 border-r
+  &__regular
+    &-left
+      @apply relative
+      img
+        @apply block w-full h-auto
+      &::before
+        @apply content-[''] absolute w-48 h-48 -bottom-7 border-b border-gold
+      &::before
+        @apply -left-7 border-l
+    &-right
+      @apply relative
+      img
+        @apply block w-full h-auto
+      &::after
+        @apply content-[''] absolute w-48 h-48 -bottom-7 border-b border-gold
+      &::after
+        @apply -right-7 border-r
