@@ -2,8 +2,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 
-
-//SMOOTH SCROLL SETUP
 gsap.registerPlugin(ScrollTrigger);
 
 const gheEaseExpoOut = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
@@ -12,7 +10,6 @@ let gheLenis;
 let tickerCallback;
 
 export function gheInitLenisCinematic() {
-  // Prevent double-init
   if (gheLenis) return gheLenis;
 
   const reduceMotion =
@@ -27,32 +24,44 @@ export function gheInitLenisCinematic() {
     touchMultiplier: 1,
   });
 
-  // Keep ScrollTrigger updated on Lenis scroll
   gheLenis.on("scroll", ScrollTrigger.update);
 
-  // Drive Lenis with GSAP ticker (single RAF source)
   tickerCallback = (time) => gheLenis.raf(time * 1000);
   gsap.ticker.add(tickerCallback);
   gsap.ticker.lagSmoothing(0);
 
-  // Keep things in sync on refresh
+  // keep Lenis size in sync
   ScrollTrigger.addEventListener("refresh", () => gheLenis.resize());
-  ScrollTrigger.refresh();
 
   return gheLenis;
 }
 
-export function gheDestroyLenis() {
-  if (!gheLenis) return;
+export function initTravelBannerParallax() {
+  const el = document.querySelector("#section-travel-banner");
+  if (!el) return;
 
-  gheLenis.destroy();
-  gheLenis = null;
+  // Ensure a known starting point
+  gsap.set(el, { backgroundPosition: "center 0%" });
 
-  if (tickerCallback) {
-    gsap.ticker.remove(tickerCallback);
-    tickerCallback = null;
-  }
+  gsap.to(el, {
+    backgroundPositionY: "40%", // more reliable than full backgroundPosition string
+    ease: "none",
+    scrollTrigger: {
+      trigger: el,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+      invalidateOnRefresh: true,
+    },
+  });
 }
 
-// init once (if you want auto-init in this module)
+// ---- init order matters ----
 gheInitLenisCinematic();
+initTravelBannerParallax();
+
+// refresh AFTER everything is created
+ScrollTrigger.refresh();
+
+// optional: once images/fonts are loaded, refresh again for perfect measurements
+window.addEventListener("load", () => ScrollTrigger.refresh());

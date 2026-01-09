@@ -11,7 +11,7 @@ $bg_id  = get_field('travel_banner_image');
 $bg_url = $bg_id ? wp_get_attachment_image_url($bg_id, 'full') : '';
 ?>
 
-<section id="section-travel-banner" class="section-travel-banner relative bg-cover bg-center bg-no-repeat" style="<?php echo $bg_url ? 'background-image: url(' . esc_url($bg_url) . ');' : ''; ?>">
+<section id="section-travel-banner" class="section-travel-banner relative bg-cover bg-no-repeat bg-[position:center_0%]" style="<?php echo $bg_url ? 'background-image: url(' . esc_url($bg_url) . ');' : ''; ?>">
   <div class="absolute inset-0 bg-[rgba(34,34,34,0.75)] pointer-events-none z-0" aria-hidden="true"></div>
   <div class="theme-container py-24 md:py-28 xl:py-28 relative z-10">
     <div class="theme-grid">
