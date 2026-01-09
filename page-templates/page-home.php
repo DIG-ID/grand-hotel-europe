@@ -19,6 +19,7 @@ if ( have_posts() ) :
 			get_template_part( 'template-parts/pages/home/seminare-bankette' );
 			get_template_part( 'template-parts/pages/home/travel-banner' );
 			get_template_part( 'template-parts/pages/home/restaurant-bar' );
+			get_template_part( 'template-parts/modules/section-outro' );
 		do_action( 'after_main_content' );
 	endwhile;
 endif;
