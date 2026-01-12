@@ -28,7 +28,7 @@
           endif;
           ?>
         </figure>
-        <div class="btn-wrapper flex flex-col md:flex-row gap-x-7 xl:mt-14">
+        <div class="btn-wrapper flex flex-col xl:flex-row gap-x-7 md:mt-7 xl:mt-14">
           <?php 
           $sb_button_1 = get_field('seminare_bankette_button_1');
           if( $sb_button_1 ): 
@@ -36,7 +36,7 @@
               $link_title = $sb_button_1['title'];
               $link_target = $sb_button_1['target'] ? $sb_button_1['target'] : '_self';
               ?>
-              <a class="btn btn-transparent max-w-56 mb-7 md:mb-0" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+              <a class="btn btn-transparent max-w-56 mb-7 xl:mb-0" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
           <?php endif; ?>
           <?php 
           $sb_button_2 = get_field('seminare_bankette_button_2');
