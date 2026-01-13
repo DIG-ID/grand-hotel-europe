@@ -11,7 +11,7 @@ body.admin-bar #header-main
   @apply block w-full max-w-[86px] md:max-w-[120px] xl:max-w-[122px]
   svg
     path
-      @apply fill-gold
+      @apply fill-gold transition-all duration-700 ease-in-out
 
 
 ///import css-variables from 
@@ -19,7 +19,7 @@ body.admin-bar #header-main
   &--top
     @apply absolute left-0 top-4 md:top-5 xl:top-5 w-full opacity-100 flex visible justify-center items-center
   &--bottom
-    @apply xl:mt-24 transition-all duration-500 ease-in-out
+    @apply mt-0 xl:mt-24 transition-all duration-700 ease-in-out
 
 
 // Header Main Styles
@@ -66,7 +66,7 @@ body.is-scrolled:not(.at-top)
 // Header Main Menu Styles
 #header-main
   .main-menu
-    @apply  gap-x-12 hidden invisible xl:flex xl:visible transition-all duration-500 ease-in-out opacity-100 translate-y-0
+    @apply  gap-x-12 hidden invisible xl:flex xl:visible transition-all duration-500 ease-in-out opacity-100
     .menu-item
       @apply text-center
       a
