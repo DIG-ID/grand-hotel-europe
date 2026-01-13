@@ -1,0 +1,106 @@
+// Fix Header Main Position with Admin Bar
+body.admin-bar #header-main
+  top: 32px
+@media (max-width: 782px)
+  body.admin-bar #header-main
+    top: 46px
+
+
+// Site Branding Styles
+.site-branding
+  @apply block w-full max-w-[86px] md:max-w-[120px] xl:max-w-[122px]
+  svg
+    path
+      @apply fill-gold
+
+
+///import css-variables from 
+.main-navigation
+  &--top
+    @apply absolute left-0 top-4 md:top-5 xl:top-5 w-full opacity-100 flex visible justify-center items-center
+  &--bottom
+    @apply xl:mt-24 transition-all duration-500 ease-in-out
+
+
+// Header Main Styles
+#header-main
+  @apply w-full z-50 fixed border-b border-b-white/10 bg-[rgba(34,34,34,0.05)] backdrop-blur-lg transition-all duration-500 ease-in-out
+
+// Header Main Styles on Scroll
+body.is-scrolled:not(.at-top)
+  #header-main
+    @apply bg-gold
+    .site-branding
+      svg
+        path
+          @apply fill-cream
+    .main-navigation
+      &--bottom
+        @apply mt-0
+    .mega-menu-button-open
+      svg
+        path
+          @apply stroke-cream
+      span
+        @apply text-cream
+    .main-menu
+      @apply opacity-0
+    .language-switcher
+      svg
+        path
+          @apply fill-cream
+      .wpml-ls
+        ul
+          li.wpml-ls-current-language
+            a.wpml-ls-item-toggle
+              span.wpml-ls-native
+                @apply  text-white hover:text-dark
+    .book-now-header-button
+      @apply bg-cream text-gold hover:bg-dark hover:text-cream border-cream
+
+// Mega Menu Open Button
+#header-main
+  .mega-menu-button-open
+    @apply flex items-center space-x-3
+
+// Header Main Menu Styles
+#header-main
+  .main-menu
+    @apply  gap-x-12 hidden invisible xl:flex xl:visible transition-all duration-500 ease-in-out opacity-100 translate-y-0
+    .menu-item
+      @apply text-center
+      a
+        @apply font-barlow font-semibold text-base text-white tracking-widest uppercase transition-colors duration-500 ease-in-out hover:text-gold
+      &.current-menu-item
+        a
+          @apply text-gold
+
+// Language Switcher Styles
+#header-main
+  .wpml-ls
+    @apply w-auto
+    ul
+      li.wpml-ls-current-language
+        @apply relative
+        a.wpml-ls-item-toggle
+          @apply bg-transparent border-0 p-0 m-0 py-2 px-2
+          &::after
+            @apply invisible hidden
+          span.wpml-ls-native
+            @apply font-barlow font-semibold text-base text-gold tracking-widest uppercase transition-colors duration-300 ease-in-out hover:text-white
+    ul.wpml-ls-sub-menu
+      @apply left-[initial] right-1/2 translate-x-1/2 border-none
+      li.wpml-ls-item
+        a.wpml-ls-link
+          @apply block border-none transition-colors duration-300 ease-in-out py-2 px-2 m-0
+          &:hover
+            @apply bg-dark
+            span.wpml-ls-native
+              @apply text-white
+          span.wpml-ls-native
+            @apply font-barlow font-semibold text-base text-dark tracking-widest uppercase transition-colors duration-300 ease-in-out
+
+// Book Now Button Styles
+#header-main
+  .book-now-header-button
+    @apply font-barlow font-semibold text-base text-cream leading-normal tracking-widest uppercase bg-gold py-5 px-11 cursor-pointer transition-all duration-300 ease-in-out hover:text-gold hover:border-gold hover:bg-white hidden invisible xl:inline-block xl:visible
