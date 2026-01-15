@@ -1,156 +1,56 @@
-// resources/js/features/grandHotelEurope-sticky-header.js
-// -----------------------------------------------------------
-// grandHotelEurope: Sticky header body class toggler (direction + threshold)
-// - Vanilla JS, rAF-throttled, passive listeners
-// - Self-contained: no external options, auto-inits on import
-// - Plays nice with Lenis if present; robust on refresh mid-page & bfcache
-// - WordPress theme prefix: "grandHotelEurope"
-// -----------------------------------------------------------
-
-
-(function grandHotelEuropeStickyHeaderIIFE() {
-  if (window.__grandHotelEuropeStickyHeaderInit) return;
-  window.__grandHotelEuropeStickyHeaderInit = true;
-
-  const cfg = {
-    headerSelector: ".header-main",
-    threshold: null,     // header height fallback
-    dirDelta: 4,
-    topEpsilon: 1,
-    footerSelector: ".footer-main",
-    footerTriggerMargin: 700, // px before footer enters view to start hiding
-  };
-
+(function simpleStickyHeader() {
+  // 1. Configurações básicas
+  const header = document.querySelector('.header-main');
   const body = document.body;
-  if (!body) return;
+  
+  if (!header) return;
 
-  const header = document.querySelector(cfg.headerSelector);
-  const footer = document.querySelector(cfg.footerSelector);
-
-  // --- Threshold (avoid mixing ?? with ||) ---------------------------------
-  let dynamicThreshold = Number.isFinite(cfg.threshold)
-    ? Number(cfg.threshold)
-    : ((header && header.getBoundingClientRect().height) || 64);
-
-  // State
-  let lastY = 0;
-  let lastDir = 0; // -1 up, +1 down
+  let lastScrollY = window.scrollY;
   let ticking = false;
 
-  // Footer fallback state (when no IO support)
-  let footerTopAbs = null;
-  let useFooterFallback = false;
+  // Medimos a altura do header para saber quando ele deve "mudar"
+  const headerHeight = header.offsetHeight;
 
-  // Helpers
-  const clampY = (y) => Math.max(0, y | 0);
+  function updateHeader() {
+    const currentScrollY = window.scrollY;
 
-  function grandHotelEuropeApplyState(y) {
-    const atTop = y <= cfg.topEpsilon;
-    const beyond = y > dynamicThreshold;
-    body.classList.toggle("at-top", atTop);
-    body.classList.toggle("is-scrolled", beyond || (!atTop && y > 0));
-  }
+    // A) Estamos no topo? (Menos de 10px para ser mais responsivo)
+    if (currentScrollY < 10) {
+      body.classList.add('at-top');
+      body.classList.remove('is-scrolled', 'scroll-dir-up', 'scroll-dir-down');
+    } else {
+      body.classList.remove('at-top');
+      body.classList.add('is-scrolled');
 
-  function grandHotelEuropeApplyDirection(y) {
-    const dy = y - lastY;
-    if (Math.abs(dy) <= cfg.dirDelta) return;
-    const dir = dy > 0 ? 1 : -1;
-    if (dir !== lastDir) {
-      lastDir = dir;
-      body.classList.toggle("scroll-dir-down", dir === 1);
-      body.classList.toggle("scroll-dir-up", dir === -1);
-    }
-    lastY = y;
-  }
-
-  function grandHotelEuropeMeasure() {
-    if (!Number.isFinite(cfg.threshold)) {
-      const h = header && header.getBoundingClientRect().height;
-      if (h && h > 0) dynamicThreshold = h;
-    }
-    // Recompute footer absolute top if using fallback
-    if (useFooterFallback && footer) {
-      const rect = footer.getBoundingClientRect();
-      footerTopAbs = (window.pageYOffset || 0) + rect.top;
-    }
-  }
-
-  // --- Footer observer (prefer IO, fall back if unsupported) ---------------
-  if (footer && "IntersectionObserver" in window) {
-    // When any part of the footer is visible (with an early trigger margin),
-    // toggle grandHotelEurope-at-footer
-    const io = new IntersectionObserver(
-      (entries) => {
-        const near = entries.some((e) => e.isIntersecting);
-        body.classList.toggle("at-footer", near);
-      },
-      {
-        root: null,
-        threshold: 0,
-        // Start "near footer" a bit earlier so the header hides before overlapping
-        rootMargin: `0px 0px -${cfg.footerTriggerMargin}px 0px`,
+      // B) Direção do Scroll (Para baixo ou para cima)
+      if (currentScrollY > lastScrollY) {
+        // A descer
+        body.classList.add('scroll-dir-down');
+        body.classList.remove('scroll-dir-up');
+      } else {
+        // A subir
+        body.classList.add('scroll-dir-up');
+        body.classList.remove('scroll-dir-down');
       }
-    );
-    io.observe(footer);
-  } else if (footer) {
-    // Fallback: compute based on scroll position
-    useFooterFallback = true;
-    const rect = footer.getBoundingClientRect();
-    footerTopAbs = (window.pageYOffset || 0) + rect.top;
-  }
-
-  function grandHotelEuropeUpdate(yRaw) {
-    const y =
-      Number.isFinite(yRaw) ? clampY(yRaw) :
-      clampY(window.scrollY || window.pageYOffset || 0);
-
-    grandHotelEuropeApplyState(y);
-    grandHotelEuropeApplyDirection(y);
-
-    // Footer fallback: set grandHotelEurope-at-footer when viewport bottom reaches footer
-    if (useFooterFallback && footerTopAbs != null) {
-      const viewBottom =
-        y + (window.innerHeight || document.documentElement.clientHeight || 0);
-      const near = viewBottom >= (footerTopAbs - cfg.footerTriggerMargin);
-      body.classList.toggle("at-footer", !!near);
     }
 
+    lastScrollY = currentScrollY;
     ticking = false;
   }
 
-  function grandHotelEuropeOnScroll(yFromAdapter) {
+  // 2. Otimização leve: só corre quando o browser vai desenhar a página
+  window.addEventListener('scroll', () => {
     if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
       ticking = true;
-      window.requestAnimationFrame(() => grandHotelEuropeUpdate(yFromAdapter));
-    }
-  }
-
-  // Initial
-  grandHotelEuropeMeasure();
-  grandHotelEuropeUpdate();
-
-  // Native scroll
-  window.addEventListener("scroll", () => grandHotelEuropeOnScroll(), { passive: true });
-
-  // Resize/layout changes
-  window.addEventListener("resize", () => { grandHotelEuropeMeasure(); grandHotelEuropeOnScroll(); }, { passive: true });
-
-  // bfcache restore
-  window.addEventListener("pageshow", (e) => {
-    if (e.persisted) {
-      grandHotelEuropeMeasure();
-      grandHotelEuropeOnScroll();
     }
   }, { passive: true });
 
-  // Lenis integration (optional)
-  if (window.lenis && typeof window.lenis.on === "function") {
-    window.lenis.on("scroll", ({ scroll }) => grandHotelEuropeOnScroll(scroll));
-  }
+  // 3. Reset se a janela mudar de tamanho
+  window.addEventListener('resize', () => {
+    updateHeader();
+  }, { passive: true });
 
-  // Manual refresh if needed
-  window.grandHotelEuropeStickyHeaderRefresh = function () {
-    grandHotelEuropeMeasure();
-    grandHotelEuropeOnScroll();
-  };
+  // Executa uma vez ao carregar para definir o estado inicial
+  updateHeader();
 })();

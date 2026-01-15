@@ -1,18 +1,29 @@
-<div id="mega-menu" class="mega-menu-wrapper fixed top-0 left-0 w-full h-[100svh] inset-0 pointer-events-none opacity-0 bg-yellow-100 border-4 border-pink-500 z-50">
+<div id="mega-menu" class="mega-menu-wrapper">
 
-	<div class="js-mega-overlay absolute inset-0 bg-black/60"></div>
 
-	<nav class="js-mega-panel relative bg-white h-full">
-		<button class="mega-menu-button-close flex items-center space-x-3 cursor-pointer" type="button">
-			<svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path class="mega-menu-button--icon stroke-gold" d="M1 1L21 13M21 1L1 13" stroke="#FFF" stroke-width="1.5"/>
-			<span class="font-barlow font-semibold text-base text-gold uppercase"><?php esc_html_e( 'close', 'grand-hotel-europe' ); ?></span>
-		</button>
-		<ul>
-			<li class="js-mega-item"><a href="">Item 1</a></li>
-			<li class="js-mega-item"><a href="">Item 2</a></li>
-			<li class="js-mega-item"><a href="">Item 3</a></li>
-		</ul>
-	</nav>
-	<?php get_template_part( 'template-parts/header/navigation-mega-menu' ); ?>
+	<div class="mega-panel mega-panel--left">
+		<div class="w-full px-6 md:px-10 xl:px-0 xl:max-w-[472px]">
+			<button class="mega-menu-button-close flex items-center gap-x-3 cursor-pointer mb-10" type="button">
+				<svg width="13" height="17" viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.215328 16.7998C0.119328 16.7998 0.0553282 16.7758 0.0233282 16.7278C0.00732815 16.6638 0.0233282 16.5918 0.0713282 16.5118L5.11133 8.4718C5.14333 8.4238 5.14333 8.3758 5.11133 8.3278L0.0713282 0.287804C0.0393282 0.223804 0.0233282 0.175804 0.0233282 0.143805C0.0233282 0.0478039 0.0873282 -0.000196457 0.215328 -0.000196457H1.55933C1.67133 -0.000196457 1.76733 0.0558038 1.84733 0.167804L6.11933 7.0078C6.13533 7.0238 6.15933 7.0318 6.19133 7.0318C6.22333 7.0318 6.24733 7.0238 6.26333 7.0078L10.5113 0.167804C10.5913 0.0558038 10.6873 -0.000196457 10.7993 -0.000196457H12.1193C12.2153 -0.000196457 12.2713 0.0318036 12.2873 0.0958037C12.3193 0.143804 12.3113 0.207804 12.2633 0.287804L7.24733 8.3518C7.23133 8.3998 7.23133 8.4478 7.24733 8.4958L12.2633 16.5118C12.2953 16.5758 12.3113 16.6238 12.3113 16.6558C12.3113 16.7518 12.2473 16.7998 12.1193 16.7998H10.7993C10.6873 16.7998 10.5913 16.7438 10.5113 16.6318L6.26333 9.8158C6.24733 9.7838 6.22333 9.7678 6.19133 9.7678C6.15933 9.7678 6.13533 9.7838 6.11933 9.8158L1.84733 16.6318C1.76733 16.7438 1.67133 16.7998 1.55933 16.7998H0.215328Z" fill="#F8F5F0"/>
+				</svg>
+				<span class="font-barlow font-semibold text-base text-cream leading-none uppercase mb-1"><?php esc_html_e( 'Schliessen', 'grand-hotel-europe' ); ?></span>
+			</button>
+			<nav class="">
+				<?php get_template_part( 'template-parts/header/navigation-mega-menu' ); ?>
+			</nav>
+			<div class="mega-menu-language-switcher flex items-center gap-x-2">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+					<path d="M19.9722 10.2987C20.1203 4.68658 15.6031 0 10.0046 0C4.40618 0 0 4.57227 0 10.0369C0 15.5015 4.48024 20 10.0046 20C15.529 20 19.7464 15.7633 19.9722 10.483C20.0093 10.3724 20.0093 10.3355 19.9722 10.2987ZM17.8802 14.4617H14.3701C14.633 13.3481 14.7811 12.0833 14.8181 10.7817H19.0355C18.8873 12.1202 18.5134 13.385 17.8765 14.4617H17.8802ZM7.35351 16.6187C7.16838 16.2463 7.01657 15.837 6.86846 15.3909H13.1038C12.9557 15.837 12.8039 16.2463 12.6187 16.6187C11.1636 19.8156 8.84939 19.8156 7.35351 16.6187ZM6.60557 14.4617C6.34268 13.3481 6.15755 12.1202 6.12052 10.7817H13.848C13.811 12.0833 13.6221 13.3481 13.363 14.4617H6.60557ZM0.970101 10.7817C1.04415 10.7817 0.821994 10.7817 5.18745 10.7817C5.22447 12.0833 5.37258 13.3112 5.63547 14.4617H2.12534C1.49218 13.385 1.11821 12.1202 0.966398 10.7817H0.970101ZM2.16607 5.42773H5.71323C5.37628 6.76622 5.22818 8.28909 5.19115 9.85251C0.859021 9.85251 1.04786 9.85251 0.936777 9.85251C0.973804 8.29277 1.42183 6.76622 2.16977 5.42773H2.16607ZM10.0046 0.89233C10.9747 0.89233 11.9078 1.82153 12.6557 3.38496C12.8039 3.7205 12.9557 4.09292 13.0667 4.49853H6.94622C7.0573 4.08923 7.20911 3.75369 7.35722 3.38496C8.10516 1.82522 9.03823 0.89233 10.0083 0.89233H10.0046ZM13.363 5.42773C13.6999 6.76622 13.885 8.25221 13.885 9.85251H6.12052C6.12052 8.25221 6.30566 6.76622 6.6426 5.42773H13.363ZM14.8218 9.88938C14.8218 8.32965 14.6367 6.8031 14.2997 5.4646H17.8469C18.5948 6.76623 19.0429 8.28909 19.0799 9.88938H14.8255H14.8218ZM17.21 4.49853H14.0368C13.6999 3.34439 13.1408 2.12021 12.3558 1.191C14.3331 1.74779 16.0141 2.93879 17.21 4.49853ZM7.6164 1.22788C6.83144 2.12021 6.30936 3.38496 5.93539 4.5354H2.7622C3.99519 2.9351 5.6725 1.74779 7.6164 1.22788ZM2.7622 15.3909H5.93539C6.27233 16.5413 6.79441 17.7692 7.6164 18.6984C5.63917 18.1416 3.92113 16.9875 2.7622 15.3909ZM12.4299 18.6984C13.2148 17.7692 13.774 16.5413 14.1109 15.3909H17.2841C16.0881 16.9911 14.3738 18.1416 12.4299 18.6984Z" fill="#A7986E" class="transition-all duration-500 ease-in-out fill-cream"/>
+				</svg>
+				<?php if ( function_exists('dynamic_sidebar') ) { dynamic_sidebar( 'megamenu_ls' ); } ?>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="mega-panel mega-panel--right">
+		<?php get_template_part( 'template-parts/header/mega-menu-sidebar' ); ?>
+	</div>
+
 </div>

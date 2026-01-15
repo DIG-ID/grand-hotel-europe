@@ -7,7 +7,7 @@ function ghe_theme_setup() {
 	register_nav_menus(
 		array(
 			'main-menu'      => __( 'Main Menu', 'grand-hotel-europe' ),
-			'main-mega-menu' => __( 'Main Mega Menu', 'grand-hotel-europe' ),
+			'mega-menu'      => __( 'Mega Menu', 'grand-hotel-europe' ),
 			'secondary-menu' => __( 'Secondary Menu', 'grand-hotel-europe' ),
 			'copyright-menu' => __( 'Copyright Menu', 'grand-hotel-europe' ),
 		)
@@ -46,8 +46,8 @@ function ghe_theme_footer_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => 'Header Language Switcher',
-			'id'            => 'header_ls',
+			'name'          => 'Mega Menu Language Switcher',
+			'id'            => 'megamenu_ls',
 			'before_widget' => '<div id="%1$s" class="%2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '',

@@ -1,5 +1,5 @@
 <?php
-if ( is_nav_menu( 'main-menu') ) :
+if ( has_nav_menu( 'main-menu') ) :
 	wp_nav_menu(
 		array(
 		'theme_location' => 'main-menu',

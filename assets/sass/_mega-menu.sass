@@ -1,0 +1,49 @@
+.mega-menu-wrapper
+  @apply fixed top-0 left-0 w-full h-[100svh] inset-0 z-50 flex items-stretch overflow-hidden
+  .mega-panel
+    @apply relative flex flex-col justify-center h-full overflow-hidden
+    &--left
+      @apply z-30 bg-gold w-2/3 items-center
+    &--right
+      @apply z-20 bg-dark-2 w-1/3
+      .panel-right-wrapper
+        @apply md:ml-11 xl:ml-32
+        .copyright-menu
+          .menu-item
+            a
+              @apply inline-block font-barlow font-normal text-[1.0625rem] leading-7 text-cream translate-x-0 transition-all duration-500 ease-in-out hover:text-gold hover:translate-x-1
+    .site-branding
+      svg
+        @apply max-w-[172px]
+        path
+          @apply fill-gold
+
+  ul.mega-menu
+    @apply relative border-t border-t-cream mb-10
+    > li.menu-item
+      @apply border-b border-b-cream py-5
+      a
+        @apply inline-block font-gilda font-normal text-3xl text-cream leading-none translate-x-0 transition-all duration-700 ease-in-out hover:text-dark hover:translate-x-2
+    > li.menu-item-has-children
+      .sub-menu
+        @apply absolute top-0 right-0 left-0 translate-x-full opacity-100
+        > li.menu-item
+          @apply border-b border-b-cream py-3
+          a
+            @apply inline-block font-barlow font-normal text-base text-cream leading-none translate-x-0 transition-all duration-700 ease-in-out hover:text-dark hover:translate-x-2
+
+  .mega-menu-language-switcher
+    .wpml-ls
+      @apply border-none p-0 m-0
+      ul
+        li.wpml-ls-item
+          @apply border-r border-r-cream
+          &:last-of-type
+            @apply border-none
+          &:first-of-type
+            a.wpml-ls-link
+              @apply pl-0
+          a.wpml-ls-link
+            @apply px-2 py-0 h-5 flex justify-center items-center
+            .wpml-ls-native
+              @apply block font-barlow font-semibold text-base text-cream uppercase transition-colors duration-500 ease-in-out hover:text-dark 
