@@ -51,6 +51,7 @@
             </div>
           </article>
         <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
       <?php else : ?>
         <div class="col-span-2 md:col-span-6 xl:col-span-12">
           <p><?php esc_html_e( 'Keine Zimmer gefunden.', 'grand-hotel-europe' ) ?></p>

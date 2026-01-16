@@ -10,13 +10,16 @@
 $options_prefix = get_query_var('options_prefix');
 
 function theme_resolve_field(string $base_key, ?string $options_prefix = null) {
-  $value = get_field($base_key);
+  $local_value = null;
 
-  if (empty($value) && $options_prefix) {
-    $value = get_field($options_prefix . '_' . $base_key, 'option');
+  if (is_singular() || is_page()) {
+    $local_value = get_field($base_key, get_queried_object_id());
+  }
+  if ((empty($local_value) || $local_value === null) && $options_prefix) {
+    return get_field($options_prefix . '_' . $base_key, 'option');
   }
 
-  return $value;
+  return $local_value;
 }
 
 $intro_id      = theme_resolve_field('intro_image', $options_prefix);

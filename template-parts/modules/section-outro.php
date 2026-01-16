@@ -10,13 +10,16 @@
 $outro_options_prefix = get_query_var('outro_options_prefix');
 
 function theme_resolve_outro_field(string $base_key, ?string $outro_options_prefix = null) {
-  $value = get_field($base_key);
+  $local_value = null;
 
-  if (empty($value) && $outro_options_prefix) {
-    $value = get_field($outro_options_prefix . '_' . $base_key, 'option');
+  if (is_singular() || is_page()) {
+    $local_value = get_field($base_key, get_queried_object_id());
+  }
+  if ((empty($local_value) || $local_value === null) && $outro_options_prefix) {
+    return get_field($outro_options_prefix . '_' . $base_key, 'option');
   }
 
-  return $value;
+  return $local_value;
 }
 
 $outro_section_type = theme_resolve_outro_field('outro_section_type', $outro_options_prefix);

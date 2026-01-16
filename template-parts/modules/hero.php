@@ -10,13 +10,16 @@
 $hero_options_prefix = get_query_var('hero_options_prefix');
 
 function theme_resolve_hero_field(string $base_key, ?string $hero_options_prefix = null) {
-  $value = get_field($base_key);
+  $local_value = null;
 
-  if (empty($value) && $hero_options_prefix) {
-    $value = get_field($hero_options_prefix . '_' . $base_key, 'option');
+  if (is_singular() || is_page()) {
+    $local_value = get_field($base_key, get_queried_object_id());
+  }
+  if ((empty($local_value) || $local_value === null) && $hero_options_prefix) {
+    return get_field($hero_options_prefix . '_' . $base_key, 'option');
   }
 
-  return $value;
+  return $local_value;
 }
 
 $rb_id  = theme_resolve_hero_field('hero_background_image', $hero_options_prefix);
