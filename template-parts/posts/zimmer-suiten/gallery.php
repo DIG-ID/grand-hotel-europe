@@ -1,0 +1,73 @@
+<?php
+$gallery_ids = get_field('gallery_images');
+if ($gallery_ids && is_array($gallery_ids)) :
+?>
+  <div class="gallery-images-swiper-col relative col-span-2 md:col-span-6 xl:col-span-10 xl:col-start-2">
+
+    <!-- Main slider -->
+    <div class="swiper gallery-images-swiper">
+      <div class="swiper-wrapper">
+        <?php foreach ($gallery_ids as $img_id) :
+          $img_url = wp_get_attachment_image_url($img_id, 'full');
+          $img_alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
+          if (!$img_alt) $img_alt = get_the_title($img_id);
+          if (!$img_url) continue;
+        ?>
+          <div class="swiper-slide">
+            <img
+              src="<?php echo esc_url($img_url); ?>"
+              alt="<?php echo esc_attr($img_alt); ?>"
+              class="w-full h-auto block object-cover"
+              loading="lazy"
+            />
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+    
+  </div>
+  <div class="zimmer-suiten-nav-arrows col-span-2 md:col-span-6 xl:col-span-12 absolute w-full top-1/2 left-0 -translate-y-1/2">
+    <!-- Nav arrows (positioned like your mock) -->
+    <button type="button" class="swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10
+              w-8 h-8 flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+        <rect x="32.25" y="32.25" width="31.5" height="31.5" transform="rotate(-180 32.25 32.25)" stroke="#A7986E" stroke-width="1.5"/>
+        <path d="M21 26L12 16.5L21 7" stroke="#A7986E" stroke-width="1.5"/>
+      </svg>
+    </button>
+
+    <button type="button"
+      class="swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10
+              w-8 h-8 flex items-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+        <rect x="0.75" y="0.75" width="31.5" height="31.5" stroke="#A7986E" stroke-width="1.5"/>
+        <path d="M12 7L21 16.5L12 26" stroke="#A7986E" stroke-width="1.5"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="gallery-images-swiper-col relative col-span-2 md:col-span-6 xl:col-span-12">
+    <!-- Thumbs -->
+    <div class="swiper gallery-thumbs-swiper mt-6">
+      <div class="swiper-wrapper">
+        <?php foreach ($gallery_ids as $img_id) :
+          $thumb_url = wp_get_attachment_image_url($img_id, 'thumbnail');
+          $thumb_alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
+          if (!$thumb_alt) $thumb_alt = get_the_title($img_id);
+          if (!$thumb_url) continue;
+        ?>
+          <div class="swiper-slide !w-24 !h-16 cursor-pointer opacity-60">
+            <img
+              src="<?php echo esc_url($thumb_url); ?>"
+              alt="<?php echo esc_attr($thumb_alt); ?>"
+              class="w-full h-full object-cover block"
+              loading="lazy"
+            />
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+  </div>
+<?php endif; ?>
