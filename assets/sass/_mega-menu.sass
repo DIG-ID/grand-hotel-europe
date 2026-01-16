@@ -1,5 +1,5 @@
 .mega-menu-wrapper
-  @apply fixed top-0 left-0 w-full h-[100svh] inset-0 z-50 flex items-stretch overflow-hidden
+  @apply fixed top-0 left-0 w-full h-[100svh] inset-0 z-50 flex items-stretch overflow-hidden border-4 border-pink-500
   .mega-panel
     @apply relative flex flex-col justify-center h-full overflow-hidden
     &--left
@@ -17,21 +17,58 @@
         @apply max-w-[172px]
         path
           @apply fill-gold
-
+  .mega-menu-button-close
+    &:hover
+      svg
+        path
+          @apply fill-dark
+      span
+        @apply text-dark
   ul.mega-menu
-    @apply relative border-t border-t-cream mb-10
+    @apply w-full mb-10
     > li.menu-item
       @apply border-b border-b-cream py-5
+      &:first-of-type
+        @apply border-t border-t-cream
       a
         @apply inline-block font-gilda font-normal text-3xl text-cream leading-none translate-x-0 transition-all duration-700 ease-in-out hover:text-dark hover:translate-x-2
     > li.menu-item-has-children
+      @apply relative
+      a
+        @apply flex justify-between items-center
+        &::after
+          @apply inline-block w-[11px] h-[20px] transition-all duration-700 ease-in-out bg-cream mr-2
+          content: ''
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='20' viewBox='0 0 11 20' fill='none'%3E%3Cpath d='M0.353516 19.3535L9.85352 9.85352L0.353515 0.353516' stroke='%23F8F5F0'/%3E%3C/svg%3E")
+        &:hover
+          &::after
+            @apply bg-dark
       .sub-menu
-        @apply absolute top-0 right-0 left-0 translate-x-full opacity-100
+        @apply absolute top-0 right-0 left-0 w-full inset-0
         > li.menu-item
           @apply border-b border-b-cream py-3
           a
             @apply inline-block font-barlow font-normal text-base text-cream leading-none translate-x-0 transition-all duration-700 ease-in-out hover:text-dark hover:translate-x-2
 
+
+  .mega-drilldown-panel
+    ul.sub-menu
+      @apply w-full border-t border-t-cream mb-10
+      > li.menu-item
+        @apply border-b border-b-cream py-5
+        &:last-of-type
+          @apply border-b-0
+        a
+          @apply inline-block font-gilda font-normal text-3xl text-cream leading-none translate-x-0 transition-all duration-700 ease-in-out hover:text-dark hover:translate-x-2
+      li.submenu-back
+        a
+          &::before
+            @apply inline-block w-[11px] h-[20px] transition-all duration-700 ease-in-out bg-cream mr-4
+            content: ''
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='20' viewBox='0 0 11 20' fill='none'%3E%3Cpath d='M9.88672 0.347656L0.696264 9.84766L9.88672 19.3477' stroke='%23F8F5F0'/%3E%3C/svg%3E")
+          &:hover
+            &::before
+              @apply bg-dark
   .mega-menu-language-switcher
     .wpml-ls
       @apply border-none p-0 m-0

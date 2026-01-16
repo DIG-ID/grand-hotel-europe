@@ -43,9 +43,15 @@ body.is-scrolled:not(.at-top)
           @apply stroke-cream
       span
         @apply text-cream
+      &:hover
+        svg
+          path
+            @apply stroke-dark
+        span
+          @apply text-dark
     .main-menu
       @apply opacity-0
-    .language-switcher
+    .header-main-language-switcher
       svg
         path
           @apply fill-cream
@@ -62,6 +68,12 @@ body.is-scrolled:not(.at-top)
 #header-main
   .mega-menu-button-open
     @apply flex items-center space-x-3
+    &:hover
+      svg
+        path
+          @apply stroke-dark
+      span
+        @apply text-dark
 
 // Header Main Menu Styles
 #header-main
