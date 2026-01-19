@@ -53,3 +53,34 @@ document.addEventListener("DOMContentLoaded", () => {
   },
   });
 });
+function initRegionSliders() {
+  const activitiesEl = document.querySelector(".activities-swiper");
+  if (activitiesEl) {
+    new Swiper(activitiesEl, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 600,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: activitiesEl.querySelector(".activities-next"),
+        prevEl: activitiesEl.querySelector(".activities-prev"),
+      },
+    });
+  }
+
+  const discoverEl = document.querySelector(".discover-swiper");
+  if (discoverEl) {
+    new Swiper(discoverEl, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 600,
+      allowTouchMove: true,
+      navigation: {
+        nextEl: discoverEl.querySelector(".discover-next"),
+        prevEl: discoverEl.querySelector(".discover-prev"),
+      },
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", initRegionSliders);
