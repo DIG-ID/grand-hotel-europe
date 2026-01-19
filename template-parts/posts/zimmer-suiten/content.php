@@ -1,6 +1,6 @@
 <section id="zimmer-suiten-content" class="zimmer-suiten-content relative overflow-hidden">
   <div class="theme-container">
-    <div class="theme-grid pt-24">
+    <div class="theme-grid pt-10 md:pt-12 xl:pt-24">
       <div class="col-span-2 md:col-span-6 xl:col-span-12 theme-grid relative">
         <?php get_template_part( 'template-parts/posts/zimmer-suiten/gallery' ); ?>
       </div>
@@ -32,29 +32,31 @@
         </div>
       </div>
       <div class="col-span-2 md:col-span-6 xl:col-span-4 xl:col-start-9">
-          <div class="zimmer-suiten-sidebar bg-cream xl:px-16 pt-12 pb-16">
+          <div class="zimmer-suiten-sidebar bg-cream px-5 md:px-5 xl:px-16 py-5 md:py-9 xl:pt-12 xl:pb-16">
             <h4 class="title-smaller text-dark-2 pb-5"><?php the_field( 'facilities_title' ); ?></h4>
-            <div class="list-top-wrapper xl:mb-14">
-            <?php
-            if( have_rows('facilities_list_top') ):
-                while( have_rows('facilities_list_top') ) : the_row();
-                ?>
-                <p class="text-dark-2 pb-1"><?php the_sub_field( 'item' ); ?></p>
-                <?php
-                endwhile;
-            endif;
-            ?>
-            </div>
-            <div class="list-bottom-wrapper">
-            <?php
-            if( have_rows('facilities_list_bottom') ):
-                while( have_rows('facilities_list_bottom') ) : the_row();
-                ?>
-                <p class="text-dark-2 pb-1"><?php the_sub_field( 'item' ); ?></p>
-                <?php
-                endwhile;
-            endif;
-            ?>
+            <div class="facilities-list flex flex-col md:flex-row xl:flex-col xl:justify-between">
+              <div class="list-top-wrapper xl:mb-14 w-full md:w-1/2 xl:w-full">
+              <?php
+              if( have_rows('facilities_list_top') ):
+                  while( have_rows('facilities_list_top') ) : the_row();
+                  ?>
+                  <p class="text-dark-2 pb-1"><?php the_sub_field( 'item' ); ?></p>
+                  <?php
+                  endwhile;
+              endif;
+              ?>
+              </div>
+              <div class="list-bottom-wrapper w-full md:w-1/2 xl:w-full">
+              <?php
+              if( have_rows('facilities_list_bottom') ):
+                  while( have_rows('facilities_list_bottom') ) : the_row();
+                  ?>
+                  <p class="text-dark-2 pb-1"><?php the_sub_field( 'item' ); ?></p>
+                  <?php
+                  endwhile;
+              endif;
+              ?>
+              </div>
             </div>
           </div>
       </div>

@@ -31,8 +31,10 @@ $intro_text    = theme_resolve_field('intro_text', $options_prefix);
 <section id="section-intro" class="section-intro xl:pt-0 pb-20 md:pb-24 xl:pb-36">
   <?php if ( is_front_page() ) : ?>
   <div class="w-[1px] md:w-[1px] h-[56px] xl:h-[56px] bg-gold mx-auto" aria-hidden="true"></div>
-  <?php endif; ?>
   <div class="w-[128px] md:w-[690px] h-[1px] xl:h-[1px] bg-gold mb-4 md:mb-5 xl:mb-[30.5px] mx-auto" aria-hidden="true"></div>
+  <?php else : ?>  
+  <div class=" w-[0px] md:w-[690px] :h-[0px] xl:h-[1px] bg-gold xl:mb-4 mt-10 md:mt-12 xl:mt-14 mx-auto" aria-hidden="true"></div>
+  <?php endif; ?>
   <div class="intro-image px-6 md:px-14">
     <figure class="framed__asymmetric--bottom-both w-full">
       <?php

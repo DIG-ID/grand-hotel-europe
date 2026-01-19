@@ -174,36 +174,29 @@
 /*ZIMMER & SUITEN SECTION BORDERS*/
 .zimmer-suiten-border
   --zimmer-border-color: #A7986E
-  --zimmer-border-gap: -30.5px
   --zimmer-border-side: 195px
 
   position: relative
 
-/* draw the full-width top border */
 .zimmer-suiten-border::before
+  @apply -left-4 md:-left-5 xl:-left-[30.5px] -right-4 md:-right-5 xl:-right-[30.5px] -top-4 md:-top-5 xl:-top-[30.5px]
   content: ""
   position: absolute
-  left: -30.5px
-  right: -30.5px
-  top: var(--zimmer-border-gap)
-
   height: 1px
   background: var(--zimmer-border-color)
   pointer-events: none
 
-/* draw the short side border */
 .zimmer-suiten-border::after
+  @apply -top-4 md:-top-5 xl:-top-[30.5px]
   content: ""
   position: absolute
-  top: var(--zimmer-border-gap)
   width: 1px
   height: var(--zimmer-border-side)
   background: var(--zimmer-border-color)
   pointer-events: none
 
-/* side selection */
 .zimmer-suiten-border--left::after
-  left: -30.5px
+  @apply -left-4 md:-left-5 xl:-left-[30.5px]
 
 .zimmer-suiten-border--right::after
-  right: -30.5px
+  @apply -right-4 md:-right-5 xl:-right-[30.5px]

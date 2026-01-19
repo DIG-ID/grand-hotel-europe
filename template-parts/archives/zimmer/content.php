@@ -8,7 +8,7 @@
             $is_even = ($i % 2 === 0);
             $image_order   = $is_even ? 'xl:order-2' : 'xl:order-1';
             $content_order = $is_even ? 'xl:order-1' : 'xl:order-2';
-            $section_padding = $is_even ? 'pl-0 pr-0' : 'pl-0 pr-6';
+            $section_padding = $is_even ? 'pl-0 pr-0' : 'pl-0 pr-0 xl:pr-6';
             $border_side = $is_even ? 'zimmer-suiten-border--right' : 'zimmer-suiten-border--left';
           ?>
           <article class="col-span-2 md:col-span-6 xl:col-span-12">
