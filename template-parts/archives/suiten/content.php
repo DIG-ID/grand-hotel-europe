@@ -1,3 +1,16 @@
+<?php
+/**
+ * Content Section in the Suiten Archive Template.
+ *
+ * Loop trough Custom Post Type Suiten.
+ *
+ * @package grand-hotel-europe
+ * @subpackage Section
+ * @since 1.0.0
+ */
+
+?>
+
 <section id="suiten-overview" class="suiten-overview">
   <div class="theme-container">
     <div class="theme-grid">

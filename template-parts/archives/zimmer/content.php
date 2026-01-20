@@ -1,3 +1,16 @@
+<?php
+/**
+ * Content Section in the Zimmer Archive Template.
+ *
+ * Loop trough Custom Post Type Zimmer.
+ *
+ * @package grand-hotel-europe
+ * @subpackage Section
+ * @since 1.0.0
+ */
+
+?>
+
 <section id="zimmer-overview" class="zimmer-overview">
   <div class="theme-container">
     <div class="theme-grid">

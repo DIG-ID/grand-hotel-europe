@@ -2,7 +2,7 @@
 /**
  * The Archive Template for the Single Post Type Suiten.
  *
- * @package ambassador-zermatt
+ * @package grand-hotel-europe
  * @subpackage Template
  * @since 1.0.0
  */

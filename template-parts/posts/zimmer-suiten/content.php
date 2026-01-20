@@ -1,3 +1,14 @@
+<?php
+/**
+ * Content Section in the Zimmer and Suiten Single Posts Template.
+ *
+ * @package grand-hotel-europe
+ * @subpackage Section
+ * @since 1.0.0
+ */
+
+?>
+
 <section id="zimmer-suiten-content" class="zimmer-suiten-content relative overflow-hidden">
   <div class="theme-container">
     <div class="theme-grid pt-10 md:pt-12 xl:pt-24">

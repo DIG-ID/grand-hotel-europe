@@ -1,4 +1,15 @@
 <?php
+/**
+ * Gallery Section in the Zimmer and Suiten Single Posts Template.
+ *
+ * @package grand-hotel-europe
+ * @subpackage Section
+ * @since 1.0.0
+ */
+
+?>
+
+<?php
 $gallery_ids = get_field('gallery_images');
 if ($gallery_ids && is_array($gallery_ids)) :
 ?>

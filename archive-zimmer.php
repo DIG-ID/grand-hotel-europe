@@ -2,7 +2,7 @@
 /**
  * The Archive Template for the Custom Post Type Zimmer.
  *
- * @package ambassador-zermatt
+ * @package grand-hotel-europe
  * @subpackage Template
  * @since 1.0.0
  */
