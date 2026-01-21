@@ -11,7 +11,7 @@
 get_header();
 	do_action( 'before_main_content' );
 			get_template_part( 'template-parts/modules/section-hero' );
-			get_template_part( 'template-parts/posts/bankette-seminar/content' );
+			get_template_part( 'template-parts/posts/bankette-seminare/content' );
 			get_template_part( 'template-parts/modules/section-outro' );
 	do_action( 'after_main_content' );
 get_footer();

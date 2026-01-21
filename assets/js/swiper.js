@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
     });
   }
 
-  if (document.querySelector(".single-bankette") || document.querySelector(".single-seminar")) {
+  if (document.querySelector(".single-bankette") || document.querySelector(".single-seminare")) {
 
     const thumbs = new Swiper('.gallery-thumbs-swiper-bs', {
       slidesPerView: 'auto',
@@ -41,8 +41,8 @@ window.addEventListener("load", () => {
       speed: 900,
       effect: 'slide',
       navigation: {
-        nextEl: '.bankette-seminar-nav-arrows .swiper-button-next',
-        prevEl: '.bankette-seminar-nav-arrows .swiper-button-prev',
+        nextEl: '.bankette-seminare-nav-arrows .swiper-button-next',
+        prevEl: '.bankette-seminare-nav-arrows .swiper-button-prev',
       },
       thumbs: {
         swiper: thumbs,
