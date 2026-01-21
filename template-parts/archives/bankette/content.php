@@ -11,6 +11,37 @@
 
 ?>
 
+<section id="post-intro" class="post-intro pb-24 md:pb-28 xl:pb-40">
+  <div class="theme-container">
+    <div class="theme-grid">
+      <?php
+      if( have_rows('bankette_content_top', 'option') ):
+        while( have_rows('bankette_content_top', 'option') ) : the_row();
+        ?>
+        <div class="col-span-2 md:col-span-6 xl:col-span-12 theme-grid bg-cream px-5 md:px-0 py-7 md:pt-8 md:pb-10 xl:mt-8 mb-5 xl:mb-12">
+          <div class="col-span-2 md:col-span-2 xl:col-span-4 col-start-1 md:col-start-2 xl:col-start-2">
+            <h2 class="title-small text-dark-2"><?php the_sub_field('title'); ?></h2>
+          </div>
+          <div class="col-span-2 md:col-span-2 xl:col-span-5 col-start-1 md:col-start-4 xl:col-start-7">
+            <p class="text-dark-2"><?php the_sub_field('text'); ?></p>
+            <?php 
+            $postIntroBtn = get_sub_field('button');
+            if( $postIntroBtn ): 
+                $link_url = $postIntroBtn['url'];
+                $link_title = $postIntroBtn['title'];
+                $link_target = $postIntroBtn['target'] ? $postIntroBtn['target'] : '_self';
+                ?>
+                <a class="btn btn-primary max-w-56 mt-7" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+            <?php endif; ?>
+          </div>
+        </div>
+        <?php
+        endwhile;
+      endif; ?>
+    </div>
+  </div>
+</section>
+
 <section id="bankette-overview" class="bankette-overview">
   <div class="theme-container">
     <div class="theme-grid">
@@ -38,7 +69,7 @@
                   <h2 class="text-dark-1">
                     <a href="<?php the_permalink(); ?>" class="title-secondary text-dark-2"><?php the_title(); ?></a>
                   </h2>
-                  <div class="pt-6 grid grid-cols-1 xl:grid-cols-2 gap-x-5 gap-y-2">
+                  <div class="pt-6 grid grid-cols-1 xl:grid-cols-1 gap-x-5 gap-y-2">
                     <?php if ( have_rows('facilities_list_top') ) : ?>
                       <?php while ( have_rows('facilities_list_top') ) : the_row(); ?>
                         <div class="flex items-center justify-start gap-3">
@@ -69,6 +100,21 @@
           <p><?php esc_html_e( 'Keine bankette gefunden.', 'grand-hotel-europe' ) ?></p>
         </div>
       <?php endif; ?>
+    </div>
+  </div>
+</section>
+
+<section id="post-content" class="post-content bg-cream py-5 md:py-14 xl:py-28">
+  <div class="theme-container">
+    <div class="theme-grid">
+        <div class="col-span-2 md:col-span-6 xl:col-span-12 theme-grid">
+          <div class="col-span-2 md:col-span-3 xl:col-span-5">
+            <h2 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php the_field('bankette_content_bottom_title', 'option'); ?></h2>
+          </div>
+          <div class="col-span-2 md:col-span-3 xl:col-span-5 col-start-1 md:col-start-4 xl:col-start-7">
+            <p class="text-dark-2"><?php the_field('bankette_content_bottom_text', 'option'); ?></p>
+          </div>
+        </div>
     </div>
   </div>
 </section>
