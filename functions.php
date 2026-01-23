@@ -123,13 +123,13 @@ add_action( 'wp_enqueue_scripts', 'ghe_theme_enqueue_styles' );
  * Initialize Google Map API key for ACF in admin.
  */
 
-function grand_hotel_europe_google_map_init() {
+function ghe_google_map_init() {
     if ( is_admin() ) :
         acf_update_setting( 'google_api_key', 'AIzaSyBAZN5TfX1aWmjodZ4e_6sOcaJV4D59jfo' );
     endif;
 }
 
-add_action( 'acf/init', 'grand_hotel_europe_google_map_init' );
+add_action( 'acf/init', 'ghe_google_map_init' );
 
 /**
  * Remove <p> Tag From Contact Form 7.

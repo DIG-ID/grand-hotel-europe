@@ -39,13 +39,13 @@ $location = is_array($intro_group) ? ($intro_group['location'] ?? null) : null;
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
 
         <?php if ( $intro_title ) : ?>
-          <h2 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php echo esc_html( $intro_title ); ?></h2>
+          <h2 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php echo $intro_title; ?></h2>
         <?php endif; ?>
       </div>
 
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
         <?php if ( $intro_text ) : ?>
-          <p class="text-dark-2"><?php echo wp_kses_post( $intro_text ); ?></p>
+          <p class="text-dark-2"><?php echo $intro_text; ?></p>
         <?php endif; ?>
       </div>
     </div>

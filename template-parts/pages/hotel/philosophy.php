@@ -22,13 +22,13 @@
                     <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 bg-cream min-h-44 md:min-h-48 gap-x-5">
                         <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-1 xl:col-start-2 xl:col-span-3  pt-5 md:pt-8 xl:pt-10">
                         <?php if ($title) : ?>
-                            <h3 class="title-small text-darker md:!text-[26px] xl:!text-[36px]"><?php echo esc_html($title); ?></h2>
+                            <h3 class="title-small text-darker md:!text-[26px] xl:!text-[36px]"><?php echo $title; ?></h2>
                         <?php endif; ?>
                         </div>
 
                         <div class="col-start-1 col-span-2 md:col-start-3 md:col-span-3 xl:col-start-7 xl:col-span-5 pt-5 md:pt-8 xl:pt-10">
                         <?php if ($text) : ?>
-                            <p class="body text-darker"><?php echo esc_html($text); ?></p>
+                            <p class="body text-darker"><?php echo $text; ?></p>
                         <?php endif; ?>
                         </div>
                     </div>
