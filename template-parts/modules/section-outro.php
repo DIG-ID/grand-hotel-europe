@@ -38,13 +38,13 @@ $bg_outro_url = $bg_outro_id ? wp_get_attachment_image_url($bg_outro_id, 'full')
   <div class="theme-container pt-9 pb-24 md:py-28 xl:pb-24 xl:pt-20 relative z-10">
     <div class="theme-grid">
       <div class="col-span-2 md:col-span-6 xl:col-span-12">
-        <h2 class="overtitle text-white mb-4"><?php echo esc_html( $outro_over ); ?></h2>
+        <h2 class="overtitle text-white mb-4"><?php echo $outro_over; ?></h2>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
-        <h3 class="title-secondary text-white mb-5 md:mb-0"><?php echo esc_html( $outro_title ); ?></h3>
+        <h3 class="title-secondary text-white mb-5 md:mb-0"><?php echo $outro_title; ?></h3>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
-        <p class="text-white mb-7 xl:mb-14"><?php echo esc_html( $outro_text ); ?></p>
+        <p class="text-white mb-7 xl:mb-14"><?php echo $outro_text; ?></p>
         <?php 
         
         if( $outro_button ): 
@@ -52,7 +52,7 @@ $bg_outro_url = $bg_outro_id ? wp_get_attachment_image_url($bg_outro_id, 'full')
             $link_title = $outro_button['title'];
             $link_target = $outro_button['target'] ? $outro_button['target'] : '_self';
             ?>
-            <a class="btn btn-transparent max-w-56" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+            <a class="btn btn-transparent max-w-56" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo $link_title; ?></a>
         <?php endif; ?>
       </div>
     </div>
