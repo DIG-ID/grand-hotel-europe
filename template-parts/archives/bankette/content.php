@@ -59,8 +59,8 @@ $general_query = new WP_Query([
         <?php while ( $general_query->have_posts() ) : $general_query->the_post(); $i++; ?>
           <?php
             $is_even = ($i % 2 === 0);
-            $image_order   = $is_even ? 'xl:order-2' : 'xl:order-1';
-            $content_order = $is_even ? 'xl:order-1' : 'xl:order-2';
+            $image_order   = $is_even ? 'md:order-2' : 'md:order-1';
+            $content_order = $is_even ? 'md:order-1' : 'md:order-2';
             $section_padding = $is_even ? 'pl-0 pr-0' : 'pl-0 pr-0 xl:pr-6';
             $border_side = $is_even ? 'bankette-seminare-border--right' : 'bankette-seminare-border--left';
           ?>
@@ -100,7 +100,7 @@ $general_query = new WP_Query([
                       <?php endwhile; ?>
                     <?php endif; ?>
                   </div>
-                  <p class="text-dark-2 pt-5 pb-7 xl:pb-7 xl:pt-10"><?php the_field('intro_text_overview'); ?></p>
+                  <p class="text-dark-2 pt-5 pb-7 xl:pb-7 xl:pt-12"><?php the_field('intro_text_overview'); ?></p>
                   <a href="<?php the_permalink(); ?>" class="btn btn-primary max-w-56"><?php esc_html_e( 'Mehr erfahren', 'grand-hotel-europe' ) ?></a>
                 </div>
               </div>
