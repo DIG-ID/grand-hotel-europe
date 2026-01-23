@@ -61,13 +61,13 @@ $bg_outro_url = $bg_outro_id ? wp_get_attachment_image_url($bg_outro_id, 'full')
 
 <?php if ( 'simple' === $outro_section_type ) : ?>
   <?php
-    $is_restaurant_bar = is_page_template('page-restaurant-and-bar.php');
+    $is_restaurant_bar = is_page_template('page-templates/page-restaurant-and-bar.php');
     $gradient_class = $is_restaurant_bar
       ? 'bg-[linear-gradient(to_bottom,#FFFFFF_0%,#FFFFFF_50%,#222222_50%,#222222_100%)]'
       : 'bg-[linear-gradient(to_bottom,#F8F5F0_0%,#F8F5F0_50%,#222222_50%,#222222_100%)]';
     ?>
     <section id="section-outro" class="section-outro relative bg-cover bg-center bg-no-repeat <?php echo esc_attr($gradient_class); ?> -mb-1">
-  <?php endif; ?>
+<?php endif; ?>
   
   
   <div class="theme-container relative z-10 bg-cream border border-gold !w-11/12 xl:!w-full">
