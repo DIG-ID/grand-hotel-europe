@@ -80,9 +80,9 @@ $general_query = new WP_Query([
                   </h2>
                   <div class="pt-6 grid grid-cols-1 xl:grid-cols-1 gap-x-5 gap-y-2">
                     <?php if ( have_rows('facilities_list_top') ) : ?>
-                      <?php $i = 0; ?>
+                      <?php $h = 0; ?>
                       <?php while ( have_rows('facilities_list_top') ) : the_row(); ?>
-                        <?php if ( $i >= 4 ) break; ?>
+                        <?php if ( $h >= 4 ) break; ?>
                         <div class="flex items-center justify-start gap-3">
                           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                             <g clip-path="url(#clip0_2105_9024)">
@@ -96,7 +96,7 @@ $general_query = new WP_Query([
                           </svg>
                           <p class="text-dark-2"><?php the_sub_field('item'); ?></p>
                         </div>
-                        <?php $i++; ?>
+                        <?php $h++; ?>
                       <?php endwhile; ?>
                     <?php endif; ?>
                   </div>
