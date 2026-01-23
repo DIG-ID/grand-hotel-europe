@@ -60,7 +60,7 @@ $bg_outro_url = $bg_outro_id ? wp_get_attachment_image_url($bg_outro_id, 'full')
 <?php endif; ?>
 
 <?php if ( 'simple' === $outro_section_type ) : ?>
-<section id="section-outro" class="section-outro relative bg-cover bg-center bg-no-repeat">
+<section id="section-outro" class="section-outro relative bg-cover bg-center bg-no-repeat bg-[linear-gradient(to_bottom,#FFFFFF_0%,#FFFFFF_50%,#222222_50%,#222222_100%)] -mb-1">
 <?php endif; ?>
   
   

@@ -46,8 +46,10 @@ $intro_text    = theme_resolve_field('intro_text', $options_prefix);
   </div>
   <div class="theme-container pt-11 md:pt-16">
     <div class="theme-grid">
-      <div class="col-span-2 md:col-span-3 xl:col-span-6">
+      <div class="col-span-2 md:col-span-6 xl:col-span-12">
         <h2 class="overtitle text-dark-2 mb-4"><?php echo $intro_over; ?></h2>
+      </div>
+      <div class="col-span-2 md:col-span-3 xl:col-span-6">
         <h3 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php echo $intro_title; ?></h3>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-6">

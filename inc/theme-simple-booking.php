@@ -22,7 +22,7 @@ add_action('wp_enqueue_scripts', function () {
 		CodLang: '" . esc_js($lang) . "',
 
 		Labels: {
-			CheckAvailability: { 'DE': 'PRÜFEN' }
+			CheckAvailability: { 'DE': 'VERFÜGBARKEIT PRÜFEN' }
 		},
 
 		Styles: {
