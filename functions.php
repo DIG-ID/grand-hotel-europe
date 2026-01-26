@@ -69,6 +69,7 @@ if ( ! function_exists( 'ghe_get_font_face_styles' ) ) :
 		return "
 			@import url('https://use.typekit.net/lmo5nfm.css');
 			@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Amethysta&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
 		";
 	}
 endif;
