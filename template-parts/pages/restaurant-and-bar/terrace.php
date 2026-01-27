@@ -19,6 +19,9 @@
                     endif;
                     ?>
                 </figure>
+                <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-5 xl:pt-14 order-2 md:order-none md:pb-36 xl:pb-32">
+                    <p class="body text-darker"><?php the_field( 'terrace_text' ); ?></p>
+                </div>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-7 xl:col-span-6 xl:pt-7 order-1 md:order-none">
                 <h2 class="title-secondary text-darker md:pb-7 xl:max-w-80"><?php the_field( 'terrace_title' ); ?></h2>
@@ -30,9 +33,6 @@
                     endif;
                     ?>
                 </figure>
-            </div>
-            <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-5 xl:pt-14 order-2 md:order-none md:pb-36 xl:pb-32">
-                <p class="body text-darker"><?php the_field( 'terrace_text' ); ?></p>
             </div>
             <div class="col-start-1 col-span-2 md:hidden order-3 pt-7 pb-20">
                 <figure>
