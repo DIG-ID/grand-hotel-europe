@@ -7,7 +7,19 @@
  * @since 1.0.0
  */
 ?>
-
+<section id="discover-intro-section" class="discover-intro-section bg-white pb-8 md:pb-5 xl:pb-12 pt-20">
+  <div class="theme-container">
+    <div class="theme-grid">
+      <div class="col-start-1 col-span-2 md:col-span-3 xl:col-start-1 xl:col-span-6">
+         <h2 class="overtitle text-dark"><?php echo get_field('discover_overtitle');?></h2>
+         <h3 class="title-secondary text-dark xl:max-w-none"><?php echo get_field('discover_title');?></h3>
+      </div>
+      <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-7 xl:col-span-6 pt-5 md:pt-10 xl:pt-9">
+        <h3 class="body text-dark"><?php echo get_field('discover_text');?></p>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="discover-section" class="discover-section bg-cream xl:bg-white">
   <div class="theme-container">
     <div class="theme-grid">
