@@ -14,7 +14,7 @@ if ( have_posts() ) :
 		the_post();
 		do_action( 'before_main_content' );
 			get_template_part( 'template-parts/modules/section-hero' );
-             if ( ! is_page( 'agb' ) ) {get_template_part( 'template-parts/pages/copyright/content' );}
+             if ( ! is_page( 'impressum' ) ) {get_template_part( 'template-parts/pages/copyright/content' );}
             get_template_part( 'template-parts/modules/section-outro' );
 		do_action( 'after_main_content' );
 	endwhile;
