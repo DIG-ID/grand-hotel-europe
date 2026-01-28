@@ -13,10 +13,10 @@
 	<div class="theme-container">
 		<div class="theme-grid py-16 gap-y-16">
 			<div class="col-span-2 md:flex md:flex-col md:justify-between md:h-full self-center md:self-start">
-				<div class="site-branding mx-auto md:mx-[initial]">
+				<div class="site-branding">
 					<?php do_action( 'theme_logo' ); ?>
 				</div>
-				<div class="socials hidden invisible md:block md:visible">
+				<div class="socials hidden invisible md:block md:visible xl:mb-20">
 					<?php do_action( 'socials' ); ?>
 				</div>
 			</div>
@@ -65,7 +65,7 @@
 			</div>
 		</div>
 		<div class="copy-footer bg-dark flex flex-col md:flex-row md:items-center md:justify-between px-5 py-4">
-			<div class="text-center md:text-left text-cream text-xs order-2 md:order-1">
+			<div class="text-center md:text-left text-cream text-xs md:text-sm xl:text-base order-2 md:order-1">
 				&copy; <?php echo date( 'Y' ); ?> <?php esc_html_e( 'Alle Rechte vorbehalten.', 'grand-hotel-europe' ); ?>
 			</div>
 			<div class="menu-copy order-1 md:order-2">

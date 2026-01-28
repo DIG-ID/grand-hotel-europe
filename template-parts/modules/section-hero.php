@@ -36,7 +36,7 @@ if ( is_post_type_archive('suiten') ) {
 } elseif ( is_post_type_archive('zimmer') ) {
   $title = esc_html__( 'Zimmer', 'grand-hotel-europe' );
 } elseif ( is_post_type_archive('jobs') ) {
-  $title = esc_html__( 'Jobs', 'grand-hotel-europe' );
+  $title = esc_html__( 'Offene Stellen', 'grand-hotel-europe' );
 }
 ?>
 

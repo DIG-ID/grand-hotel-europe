@@ -1,7 +1,8 @@
 .footer-main
   .site-branding
+    @apply flex justify-center items-center md:justify-start
     svg
-      @apply w-full min-h-[108px] md:min-h-[62px]
+      @apply fill-gold w-full max-w-[218px] md:max-w-[127px]
   .footer-menus
     ul
       li
@@ -12,4 +13,4 @@
     @apply flex justify-between md:justify-end gap-x-3 mb-6 md:mb-0
     li
       a
-        @apply font-barlow text-xs transition-all duration-500 ease-in-out hover:text-gold
+        @apply font-barlow text-xs md:text-sm xl:text-base transition-all duration-500 ease-in-out hover:text-gold
