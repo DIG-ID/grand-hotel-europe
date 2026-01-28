@@ -1,11 +1,11 @@
 .wpcf7
-  ::placeholder 
+  ::placeholder
     @apply font-barlow text-dark text-sm font-normal tracking-[0.03125rem] leading-[1.5rem]
   
   .form-title
       @apply font-barlowCondensed text-[15px] md:text-[16px] xl:text-[18px] font-normal tracking-[5.4px] leading-normal mb-[1.87rem] text-left w-full ml-[103px] uppercase
 
-  table 
+  table
     @apply w-full
 
   .wpcf7-form-control-wrap
@@ -22,8 +22,17 @@
 
   input[type=text],
   input[type=email],
-  input[type=tel]
-    @apply w-full h-[3.5rem] bg-white
+  input[type=tel],
+  input[type=file]
+    @apply w-full py-4 bg-white
+
+  input[type=file]
+    @apply text-gray-300 font-barlow text-sm font-normal tracking-[0.03125rem] leading-[1.5rem] p-0 rounded-[5px]
+    &:hover
+      &::file-selector-button
+        @apply bg-dark text-cream
+    &::file-selector-button
+      @apply bg-cream/50 text-dark border-none px-9 py-4 mr-6 cursor-pointer transition-all duration-500 ease-in-out
 
   textarea
     @apply w-full bg-white max-h-44 pt-4 pb-4
