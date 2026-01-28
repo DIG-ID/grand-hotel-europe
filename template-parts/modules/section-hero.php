@@ -40,7 +40,7 @@ if ( is_post_type_archive('suiten') ) {
 }
 ?>
 
-<section id="hero" class="hero-section relative overflow-hidden pt-72 pb-72 md:pt-96 md:pb-96 xl:pt-[22.13rem] xl:pb-48 text-center">
+<section id="hero" class="hero-section relative overflow-hidden pt-72 pb-72 md:pt-96 md:pb-96 xl:pt-[22.13rem] xl:pb-48 text-center bg-darker">
   <?php if ( $rb_id ) : ?>
     <figure class="w-full">
       <?php echo wp_get_attachment_image( $rb_id, 'full', false, array( 'class' => 'absolute inset-0 w-full h-full object-cover -z-10' ) ); ?>
