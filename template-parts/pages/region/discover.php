@@ -7,9 +7,10 @@
  * @since 1.0.0
  */
 ?>
-<section id="discover-intro-section" class="discover-intro-section bg-white pb-8 md:pb-5 xl:pb-12 framed__asymmetric--top-both">
+<section id="discover-intro-section" class="discover-intro-section bg-white pb-8 md:pb-5 xl:pb-12">
+  <div class=" w-[0px] md:w-[690px] h-[0px] xl:h-[1px] bg-gold mx-auto" aria-hidden="true"></div>
   <div class="theme-container">
-    <div class="theme-grid pt-20 md:pt-0">
+    <div class="theme-grid pt-20 md:pt-0 xl:pt-36 ">
       <div class="col-start-1 col-span-2 md:col-span-3 xl:col-start-1 xl:col-span-6">
          <h2 class="overtitle text-dark pb-2 md:pb-5"><?php echo get_field('discover_overtitle');?></h2>
          <h3 class="title-secondary text-dark xl:max-w-none"><?php echo get_field('discover_title');?></h3>
@@ -46,10 +47,10 @@
                         <!-- Image column -->
                         <div class="col-span-2 md:col-span-3 xl:col-start-2 xl:col-span-5 mb-8 xl:mb-14">
                           <?php if ( $img_id ) : ?>
-                            <div class="w-full overflow-hidden min-h-[400px] md:min-h-[436px] xl:min-h-0 xl:max-h-[350px]">
+                            <div class="w-full overflow-hidden">
                               <?php
                                 if ( $img_id ) :
-                                echo wp_get_attachment_image( $img_id, 'full', false, array( 'class' => 'w-full h-full object-cover' ) );
+                                echo wp_get_attachment_image( $img_id, 'full', false, array( 'class' => 'w-full h-[400px] md:h-[436px] xl:h-[350px] object-cover' ) );
                                 endif;
                                 ?>
                             </div>
@@ -71,33 +72,34 @@
                           <?php endif; ?>
 
                           <!-- Controls (inside slide; duplicates per slide are OK with your JS binding approach) -->
-                          <div class="discover-controls relative z-20 flex gap-8 pt-10 mb-8 pl-56">
-                            <button type="button" class="discover-prev flex items-center justify-center w-[33px] h-[33px]" aria-label="Previous slide">
-                              <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />
-                                <path d="M28 16L20 24L28 32" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" />
-                              </svg>
-                            </button>
-
-                            <button type="button" class="discover-next flex items-center justify-end w-[33px] h-[33px]" aria-label="Next slide">
-                              <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />
-                                <path d="M20 16L28 24L20 32" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" />
-                              </svg>
-                            </button>
-                          </div>
                         </div>
-
+                        
                       </div>
                     </div>
                   </div>
                 </div>
+                
+                <?php endwhile; ?>
+                <?php endif; ?>
+                
+              </div><!-- /.swiper-wrapper -->
+            </div><!-- /.discover-swiper -->
 
-              <?php endwhile; ?>
-            <?php endif; ?>
+            <div class="discover-controls relative z-20 flex gap-8 pt-10 mb-8 pl-[789px] ">
+              <button type="button" class="discover-prev flex items-center justify-center w-[33px] h-[33px]" aria-label="Previous slide">
+                <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />
+                  <path d="M28 16L20 24L28 32" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" />
+                </svg>
+              </button>
 
-          </div><!-- /.swiper-wrapper -->
-        </div><!-- /.discover-swiper -->
+              <button type="button" class="discover-next flex items-center justify-end w-[33px] h-[33px]" aria-label="Next slide">
+                <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />
+                  <path d="M20 16L28 24L20 32" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" />
+                </svg>
+              </button>
+            </div>
 
       </div>
     </div>

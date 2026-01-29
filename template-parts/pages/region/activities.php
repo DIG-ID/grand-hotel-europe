@@ -34,10 +34,10 @@
                         <!-- Image column -->
                         <div class="col-span-2 md:col-span-3 xl:col-start-2 xl:col-span-5 mb-8 xl:mb-14">
                           <?php if ( $img_2_id ) : ?>
-                            <div class="w-full overflow-hidden min-h-[400px] md:min-h-[436px] xl:min-h-0 xl:max-h-[350px]">
+                            <div class="w-full overflow-hidden ">
                               <?php
                                 if ( $img_2_id ) :
-                                echo wp_get_attachment_image( $img_2_id, 'full', false, array( 'class' => 'w-full h-full object-cover' ) );
+                                echo wp_get_attachment_image( $img_2_id, 'full', false, array( 'class' => 'w-full h-[400px] md:h-[436px] xl:h-[350px] object-cover' ) );
                                 endif;
                                 ?>
                             </div>
@@ -68,35 +68,36 @@
                             </a>
                           <?php endif; ?>
 
-                          <!-- Controls (inside slide; duplicates per slide are OK with your JS binding approach) -->
-                          <div class="activities-controls relative z-20 flex gap-8 pt-10 mb-8 pl-56">
-                            <button type="button" class="activities-prev flex items-center justify-center w-[33px] h-[33px]" aria-label="Previous slide">
-                              <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />
-                                <path d="M28 16L20 24L28 32" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" />
-                              </svg>
-                            </button>
-
-                            <button type="button" class="activities-next flex items-center justify-center w-[33px] h-[33px]" aria-label="Next slide">
-                              <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />
-                                <path d="M20 16L28 24L20 32" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" />
-                              </svg>
-                            </button>
-                          </div>
+                            <div class="discover-controls-anchor relative"></div>
                         </div>
-
+                        
                       </div>
                     </div>
                   </div>
                 </div>
+                
+                <?php endwhile; ?>
+                <?php endif; ?>
+                
+              </div><!-- /.swiper-wrapper -->
+            </div><!-- /.activities-swiper -->
 
-              <?php endwhile; ?>
-            <?php endif; ?>
+            <div class="activities-controls relative z-20 flex gap-8 pt-10 mb-8 pl-[789px]">
+              <button type="button" class="activities-prev flex items-center justify-center w-[33px] h-[33px]" aria-label="Previous slide">
+                <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />
+                  <path d="M28 16L20 24L28 32" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" />
+                </svg>
+              </button>
 
-          </div><!-- /.swiper-wrapper -->
-        </div><!-- /.activities-swiper -->
-
+              <button type="button" class="activities-next flex items-center justify-center w-[33px] h-[33px]" aria-label="Next slide">
+                <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />
+                  <path d="M20 16L28 24L20 32" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" />
+                </svg>
+              </button>
+            </div>
+            
       </div>
     </div>
   </div>
