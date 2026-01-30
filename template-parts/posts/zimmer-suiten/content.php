@@ -18,16 +18,12 @@
     </div>
     <div class="theme-grid pt-20 md:pt-24 xl:pt-16 pb-20 xl:pb-36">
       <div class="col-span-2 md:col-span-4 xl:col-span-7">
-        <div class="intro-block mb-20 md:mb-14 xl:mb-24">
+        <div class="intro-block mb-20 md:mb-14 xl:mb-20">
           <h2 class="title-secondary text-dark-2"><?php the_field( 'intro_title' ); ?></h2>
           <p class="text-dark-2 pt-5 pb-7 xl:py-7"><?php the_field( 'intro_text' ); ?></p>
           <a class="btn btn-primary max-w-56" href="<?php the_field( 'booking_button_url', 'option' ); ?>" target="_blank"><?php esc_html_e( 'Jetzt buchen', 'grand-hotel-europe' ); ?></a>
         </div>
-        <div class="information-block mb-20 md:mb-14 xl:mb-24">
-          <h4 class="title-smaller text-dark-2 pb-5"><?php the_field( 'information_title' ); ?></h4>
-          <p class="text-dark-2 pb-9"><?php the_field( 'information_check_in' ); ?></p>
-          <p class="text-dark-2"><?php the_field( 'information_check_out' ); ?></p>
-        </div>
+        
         <div class="additional-block">
           <h3 class="title-small text-dark-2 mb-8"><?php the_field( 'additional_title' ); ?></h3>
           <?php
@@ -52,7 +48,7 @@
                 if( have_rows('facilities_list_top') ):
                   while( have_rows('facilities_list_top') ) : the_row();
                   ?>
-                  <li class="text-dark-2 pb-1"><?php the_sub_field( 'item' ); ?></li>
+                  <li class="text-dark-2 pb-1 text-[16px]"><?php the_sub_field( 'item' ); ?></li>
                   <?php
                   endwhile;
                 endif;
@@ -65,12 +61,17 @@
                 if( have_rows('facilities_list_bottom') ):
                   while( have_rows('facilities_list_bottom') ) : the_row();
                   ?>
-                  <li class="text-dark-2 pb-1"><?php the_sub_field( 'item' ); ?></li>
+                  <li class="text-dark-2 pb-1 text-[16px]"><?php the_sub_field( 'item' ); ?></li>
                   <?php
                   endwhile;
                 endif;
                 ?>
                 </ul>
+              </div>
+              <div class="list-information-wrapper w-full mt-14 md:mt-11 xl:mt-24">
+                <h4 class="title-smaller text-dark-2 pb-5"><?php the_field( 'information_title' ); ?></h4>
+                <p class="text-dark-2 pb-1 text-[16px]"><?php the_field( 'information_check_in' ); ?></p>
+                <p class="text-dark-2 text-[16px]"><?php the_field( 'information_check_out' ); ?></p>
               </div>
             </div>
           </div>

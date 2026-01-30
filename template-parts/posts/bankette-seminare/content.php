@@ -52,7 +52,7 @@
                 if( have_rows('facilities_list_top') ):
                   while( have_rows('facilities_list_top') ) : the_row();
                   ?>
-                  <li class="text-dark-2 pb-7 xl:pb-5"><?php the_sub_field( 'item' ); ?></li>
+                  <li class="text-dark-2 pb-7 xl:pb-5 text-[16px]"><?php the_sub_field( 'item' ); ?></li>
                   <?php
                   endwhile;
                 endif;
@@ -65,7 +65,7 @@
                 if( have_rows('facilities_list_bottom') ):
                   while( have_rows('facilities_list_bottom') ) : the_row();
                   ?>
-                  <li class="text-dark-2 pb-7 xl:pb-5"><?php the_sub_field( 'item' ); ?></li>
+                  <li class="text-dark-2 pb-7 xl:pb-5 text-[16px]"><?php the_sub_field( 'item' ); ?></li>
                   <?php
                   endwhile;
                 endif;
