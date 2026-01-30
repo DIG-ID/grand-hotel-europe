@@ -30,8 +30,12 @@
           if( have_rows('additional_services') ):
               while( have_rows('additional_services') ) : the_row();
               ?>
-              <h4 class="title-smaller text-dark-2 pb-5"><?php the_sub_field( 'title' ); ?></h4>
-              <p class="text-dark-2 pb-7"><?php the_sub_field( 'text' ); ?></p>
+              <?php if( get_sub_field( 'title' ) ) : ?>
+                <h4 class="title-smaller text-dark-2 pb-5"><?php the_sub_field( 'title' ); ?></h4>
+              <?php endif; ?>
+              <?php if( get_sub_field( 'text' ) ) : ?>
+                <p class="text-dark-2 pb-7 md:pb-12"><?php the_sub_field( 'text' ); ?></p>
+              <?php endif; ?>
               <?php
               endwhile;
           endif;
