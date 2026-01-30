@@ -47,7 +47,7 @@
             <h4 class="title-smaller text-dark-2 pb-5"><?php the_field( 'facilities_title' ); ?></h4>
             <div class="facilities-list flex flex-col md:flex-row xl:flex-col xl:justify-between">
               <div class="list-top-wrapper w-full md:w-1/2 xl:w-full">
-                <ul>
+                <ul class="list-disc pl-4 marker:text-[0.6em] marker:text-dark-2">
                 <?php
                 if( have_rows('facilities_list_top') ):
                   while( have_rows('facilities_list_top') ) : the_row();
@@ -60,7 +60,7 @@
                 </ul>
               </div>
               <div class="list-bottom-wrapper w-full md:w-1/2 xl:w-full">
-                <ul>
+                <ul class="list-disc pl-4 marker:text-[0.6em] marker:text-dark-2">
                 <?php
                 if( have_rows('facilities_list_bottom') ):
                   while( have_rows('facilities_list_bottom') ) : the_row();
