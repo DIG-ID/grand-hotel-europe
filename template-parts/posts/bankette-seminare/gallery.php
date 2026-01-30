@@ -61,7 +61,7 @@ if ($gallery_ids && is_array($gallery_ids)) :
   <!-- Thumbs -->
   <div class="gallery-images-swiper-col relative col-span-2 md:col-span-6 xl:col-span-12">
     <div class="swiper gallery-thumbs-swiper-bs mt-4">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper justify-center">
         <?php foreach ($gallery_ids as $img_id) :
           $thumb_url = wp_get_attachment_image_url($img_id, 'thumbnail');
           $thumb_alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
