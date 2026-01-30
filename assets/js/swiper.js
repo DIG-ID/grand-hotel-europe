@@ -90,6 +90,8 @@ window.addEventListener("load", () => {
         spaceBetween: 0,
         speed: 600,
         allowTouchMove: true,
+        loop: true,
+        loopAdditionalSlides: 1,
       });
 
       const bindButtons = () => {
