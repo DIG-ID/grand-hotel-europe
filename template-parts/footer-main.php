@@ -2,7 +2,7 @@
 /**
  * The Section for the Footer Default Template.
  *
- * @package website-name
+ * @package grand-hotel-europe
  * @subpackage Section
  * @since 1.0.0
  */
@@ -48,7 +48,7 @@
 				?>
 			</div>
 			<div class="footer-contacts col-span-2 xl:col-start-10">
-				<h3 class="overtitle mb-4 md:mb-8"><?php esc_html_e( 'Kontakt', 'grand-hotel-europe' ); ?></h3>
+				<p class="overtitle mb-4 md:mb-8"><?php esc_html_e( 'Kontakt', 'grand-hotel-europe' ); ?></p>
 				<div class="flex flex-col">
 					<p class="text-base md:order-3 mb-4"><?php the_field( 'address', 'options' ); ?></p>
 					<div class="phone flex flex-col md:order-1 md:mb-4 xl:mb-8">

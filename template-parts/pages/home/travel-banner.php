@@ -19,7 +19,7 @@ $bg_url = $bg_id ? wp_get_attachment_image_url($bg_id, 'full') : '';
         <h2 class="title-secondary text-white mb-20"><?php the_field( 'travel_banner_title' ); ?></h2>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
-        <h2 class="title-small text-white mb-7 xl:mb-14"><?php the_field( 'travel_banner_dates' ); ?></h2>
+        <p class="title-small text-white mb-7 xl:mb-14"><?php the_field( 'travel_banner_dates' ); ?></p>
         <p class="text-white mb-7 xl:mb-14"><?php the_field( 'travel_banner_text' ); ?></p>
         <?php 
         $tb_button = get_field('travel_banner_button');
