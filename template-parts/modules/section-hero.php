@@ -22,7 +22,13 @@ function theme_resolve_hero_field(string $base_key, ?string $hero_options_prefix
   return $local_value;
 }
 
-$rb_id  = theme_resolve_hero_field('hero_background_image', $hero_options_prefix);
+$rb_id_desktop  = theme_resolve_hero_field('hero_background_image', $hero_options_prefix);
+$rb_id_mobile  = theme_resolve_hero_field('hero_background_image_responsive', $hero_options_prefix);
+
+// Fallback: if responsive isn’t set, use desktop
+if (empty($rb_id_mobile)) {
+  $rb_id_mobile = $rb_id_desktop;
+}
 
 if ( $hero_options_prefix ) {
   $title  = theme_resolve_hero_field('hero_title', $hero_options_prefix);
@@ -40,15 +46,24 @@ if ( is_post_type_archive('suiten') ) {
 }
 ?>
 
-<section id="hero" class="hero-section relative overflow-hidden min-h-[100dvh] md:min-h-0 pt-64 md:pt-80 md:pb-80 xl:pt-[22.13rem] xl:pb-48 text-center <?php echo $rb_id ? '' : 'bg-darker'; ?>">
-  <?php if ( $rb_id ) : ?>
+<section id="hero" class="hero-section relative overflow-hidden min-h-[100dvh] md:min-h-0 pt-64 md:pt-80 md:pb-80 xl:pt-[22.13rem] xl:pb-48 text-center <?php echo ($rb_id_desktop || $rb_id_mobile) ? '' : 'bg-darker'; ?>">
+  <?php if ( $rb_id_desktop || $rb_id_mobile ) : ?>
     <figure class="absolute inset-0 -z-20">
-      <?php echo wp_get_attachment_image($rb_id,'full',false,array('class' => 'w-full h-full object-cover -z-10'));?>
+      <?php
+      // If both IDs are the same, output just one image to avoid duplicate downloads.
+      if ($rb_id_mobile && $rb_id_desktop && (int)$rb_id_mobile === (int)$rb_id_desktop) { echo wp_get_attachment_image($rb_id_desktop,'full', false, array('class' => 'w-full h-full object-cover') );
+      } 
+      else {
+        if ($rb_id_mobile) { echo wp_get_attachment_image($rb_id_mobile, 'full', false, array('class' => 'w-full h-full object-cover xl:hidden') );
+        }
+        if ($rb_id_desktop) { echo wp_get_attachment_image($rb_id_desktop, 'full', false, array('class' => 'w-full h-full object-cover hidden xl:block') );
+        }
+      }
+      ?>
     </figure>
-    <?php endif; ?>
-    <div class="absolute inset-0 bg-[#222222] opacity-[0.59] -z-10"></div>
+  <?php endif; ?>
+  <div class="absolute inset-0 bg-[#222222] opacity-[0.59] -z-10"></div>
     
-
   <div class="theme-container relative z-10">
     <h1 class="title-main pb-5 xl:pb-6 text-white"><?php echo $title; ?></h1>
     <div class="breadcrumbs text-white">
