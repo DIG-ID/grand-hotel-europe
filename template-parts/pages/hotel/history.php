@@ -44,7 +44,7 @@
 
                 <?php if ( $text ) : ?>
                   <div class="pt-5">
-                    <p class="body text-darker max-w-[527px]">
+                    <p class="text-darker max-w-[527px]">
                       <?php echo $text; ?>
                     </p>
                   </div>

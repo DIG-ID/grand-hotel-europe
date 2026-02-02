@@ -14,7 +14,7 @@
             <div class="col-start-1 col-span-2 md:col-span-3 xl:col-span-5 order-2 md:order-none">
                 <h2 class="overtitle text-dark pt-8 md:pt-0"><?php the_field('offers_overtitle'); ?></h2>
                 <h3 class="title-secondary text-darker pt-5"><?php the_field('offers_title'); ?></h3>
-                <p class="body text-dark pt-5 max-w-[344px] md:max-w-none"><?php the_field( 'offers_text' ); ?></p>
+                <p class="text-dark pt-5 max-w-[344px] md:max-w-none"><?php the_field( 'offers_text' ); ?></p>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-8 xl:col-span-5 order-1 md:order-none">
                 <figure class="framed__asymmetric--top-right w-full">

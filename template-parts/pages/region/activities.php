@@ -16,7 +16,7 @@
          <h3 class="title-secondary text-dark xl:max-w-none"><?php echo get_field('activities_title');?></h3>
       </div>
       <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-7 xl:col-span-6 pt-5 md:pt-10 xl:pt-9">
-        <h3 class="body text-dark"><?php echo get_field('activities_text');?></p>
+        <h3 class="text-dark"><?php echo get_field('activities_text');?></p>
       </div>
     </div>
   </div>
@@ -66,7 +66,7 @@
                           <?php endif; ?>
 
                           <?php if ( $text ) : ?>
-                            <p class="body text-darker max-w-[335px] xl:max-w-none pt-5 xl:pt-8">
+                            <p class="text-darker max-w-[335px] xl:max-w-none pt-5 xl:pt-8">
                               <?php echo $text; ?>
                             </p>
                           <?php endif; ?>

@@ -20,7 +20,7 @@
                     ?>
                 </figure>
                 <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-5 xl:pt-14 order-2 md:order-none md:pb-36 xl:pb-32">
-                    <p class="body text-darker"><?php the_field( 'terrace_text' ); ?></p>
+                    <p class="text-darker"><?php the_field( 'terrace_text' ); ?></p>
                 </div>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-7 xl:col-span-6 xl:pt-7 order-1 md:order-none">
@@ -53,7 +53,7 @@
                         <h2 class="title-secondary text-darker px-5 md:px-0 text-center"><?php the_field('terrace_schedule_title'); ?></h2>
                         </div>
                         <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-5 xl:col-start-5 xl:col-span-5 pt-2 md:pt-5 mb-7 md:mb-8 xl:mb-12 xl:pt-12">
-                        <p class="body text-darker px-5 md:px-0 leading-[45px]"><?php the_field('terrace_schedule_text'); ?></p>
+                        <p class="text-darker px-5 md:px-0 leading-[45px]"><?php the_field('terrace_schedule_text'); ?></p>
                         </div>
                     </div>
                 </div>

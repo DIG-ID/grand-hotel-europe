@@ -28,7 +28,7 @@
 
                         <div class="col-start-1 col-span-2 md:col-start-3 md:col-span-3 xl:col-start-7 xl:col-span-5 md:pt-8 xl:pt-10 md:pb-8 xl:pb-10  max-w-[330px] min-h-28">
                         <?php if ($text) : ?>
-                            <p class="body text-darker pl-6 md:pl-0"><?php echo $text; ?></p>
+                            <p class="text-darker pl-6 md:pl-0"><?php echo $text; ?></p>
                         <?php endif; ?>
                         </div>
                     </div>

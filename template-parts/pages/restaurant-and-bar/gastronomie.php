@@ -12,7 +12,7 @@
         <div class="theme-grid">
             <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-5">
                 <h2 class="title-secondary text-darker"><?php the_field( 'gastronomie_title' ); ?></h2>
-                <p class="body text-darker pt-5"><?php the_field( 'gastronomie_text' ); ?></p>
+                <p class="text-darker pt-5"><?php the_field( 'gastronomie_text' ); ?></p>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-8 xl:col-span-6 pt-11 md:pt-0">
                 <figure>

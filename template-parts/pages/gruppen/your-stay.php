@@ -16,7 +16,7 @@
                 <h3 class="title-secondary text-darker pt-5"><?php the_field( 'your-stay_title' ); ?></h3>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-4 pt-5">
-                <p class="body text-dark font-bold"><?php the_field( 'your-stay_list_one_title' ); ?></p>
+                <p class="text-dark font-bold"><?php the_field( 'your-stay_list_one_title' ); ?></p>
                 <?php if ( have_rows( 'your-stay_list_one' ) ) : ?>
                 <ul class="pt-2">
                     <?php while ( have_rows( 'your-stay_list_one' ) ) : the_row(); ?>
@@ -29,7 +29,7 @@
                 <?php endif; ?>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-6 xl:col-span-3 pt-5">
-                  <p class="body text-dark font-bold"><?php the_field( 'your-stay_list_two_title' ); ?></p>
+                  <p class="text-dark font-bold"><?php the_field( 'your-stay_list_two_title' ); ?></p>
                 <?php if ( have_rows( 'your-stay_list_two' ) ) : ?>
                 <ul class="pt-2">
                     <?php while ( have_rows( 'your-stay_list_two' ) ) : the_row(); ?>

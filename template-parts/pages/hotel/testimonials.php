@@ -32,11 +32,11 @@
                       <?php endif; ?>
 
                       <?php if ($text) : ?>
-                        <p class="body text-darker !text-[15px] min-h-[100px] pt-12  pl-7 md:pl-9 xl:pl-0 max-w-[320px] md:max-w-[400px] xl:max-w-none "><?php echo $text; ?></p>
+                        <p class="text-darker !text-[15px] min-h-[100px] pt-12  pl-7 md:pl-9 xl:pl-0 max-w-[320px] md:max-w-[400px] xl:max-w-none "><?php echo $text; ?></p>
                       <?php endif; ?>
 
                       <?php if ($website) : ?>
-                        <p class="body text-darker pt-4 pb-3  pl-7 md:pl-9 xl:pl-0"><?php echo $website; ?></p>
+                        <p class="text-darker pt-4 pb-3  pl-7 md:pl-9 xl:pl-0"><?php echo $website; ?></p>
                       <?php endif; ?>
                     </div>
                   </div>

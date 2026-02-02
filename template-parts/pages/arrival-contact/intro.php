@@ -76,7 +76,7 @@ $email_content = get_field('intro_email_content');
               <!-- Text -->
                <div class="flex-row">
                 <p class="title-smaller font-gilda !text-[16px] md:!text-[20px] text-darker pb-3"><?php echo $phone; ?></p>
-                <p class="body font-barlow text-darker"><?php echo $phone_content; ?></p>
+                <p class="font-barlow text-darker"><?php echo $phone_content; ?></p>
                </div>
             </div>
           <?php endif; ?>
@@ -92,7 +92,7 @@ $email_content = get_field('intro_email_content');
               </div>
               <div class="flex-row">
                 <p class="title-smaller font-gilda !text-[16px] md:!text-[20px] text-darker pb-3"><?php echo $email; ?></p>
-                <p class="body font-barlow text-dark"><?php echo $email_content; ?></p>
+                <p class="font-barlow text-dark"><?php echo $email_content; ?></p>
               </div>
         </div>
       <?php endif; ?>
@@ -108,7 +108,7 @@ $email_content = get_field('intro_email_content');
             </div>
             <div class="flex-row">
               <p class="title-smaller font-gilda !text-[16px] md:!text-[20px] text-darker pb-3"><?php echo $address; ?></p>
-              <p class="body font-barlow text-darker"><?php echo $address_content; ?></p>
+              <p class="font-barlow text-darker"><?php echo $address_content; ?></p>
             </div>
         </div>
       <?php endif; ?>

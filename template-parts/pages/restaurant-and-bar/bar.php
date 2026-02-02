@@ -28,7 +28,7 @@
                 <h2 class="title-secondary text-darker"><?php the_field( 'bar_title' ); ?></h2>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-7 xl:col-span-5 pt-5 xl:pt-0 md:pb-32 xl:pb-0">
-                <p class="body text-darker"><?php the_field( 'bar_text' ); ?></p>
+                <p class="text-darker"><?php the_field( 'bar_text' ); ?></p>
             </div>
                 <div class="button-wrapper col-start-1 col-span-2 md:col-start-5 md:col-span-2 xl:col-start-7 xl:col-span-6 pt-7 md:pt-10 xl:gap-x-20 pb-24 md:pb-0 xl:pb-32">
                     <?php 
@@ -60,7 +60,7 @@
                             <h2 class="title-secondary text-darker px-5 md:px-0 text-center"><?php the_field('bar_schedule_title'); ?></h2>
                         </div>
                         <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-5 xl:col-start-5 xl:col-span-5 pt-2 md:pt-5 mb-7 md:mb-8 xl:mb-12 xl:pt-12">
-                            <p class="body text-darker px-5 md:px-0 leading-[45px]"><?php the_field('bar_schedule_text'); ?></p>
+                            <p class="text-darker px-5 md:px-0 leading-[45px]"><?php the_field('bar_schedule_text'); ?></p>
                         </div>
                     </div>
                 </div>
