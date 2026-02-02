@@ -40,7 +40,7 @@ if ( is_post_type_archive('suiten') ) {
 }
 ?>
 
-<section id="hero" class="hero-section relative overflow-hidden pt-72 pb-72 md:pt-96 md:pb-96 xl:pt-[22.13rem] xl:pb-48 text-center <?php echo $rb_id ? '' : 'bg-darker'; ?>">
+<section id="hero" class="hero-section relative overflow-hidden min-h-[100dvh] md:min-h-0 pt-64 md:pt-80 md:pb-80 xl:pt-[22.13rem] xl:pb-48 text-center <?php echo $rb_id ? '' : 'bg-darker'; ?>">
   <?php if ( $rb_id ) : ?>
     <figure class="absolute inset-0 -z-20">
       <?php echo wp_get_attachment_image($rb_id,'full',false,array('class' => 'w-full h-full object-cover -z-10'));?>

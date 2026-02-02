@@ -52,7 +52,7 @@
                 if( have_rows('facilities_list_top') ):
                   while( have_rows('facilities_list_top') ) : the_row();
                   ?>
-                  <li class="text-dark-2 pb-1 text-[16px]"><?php the_sub_field( 'item' ); ?></li>
+                  <li class="text-dark-2 pb-1 text-base"><?php the_sub_field( 'item' ); ?></li>
                   <?php
                   endwhile;
                 endif;
@@ -65,7 +65,7 @@
                 if( have_rows('facilities_list_bottom') ):
                   while( have_rows('facilities_list_bottom') ) : the_row();
                   ?>
-                  <li class="text-dark-2 pb-1 text-[16px]"><?php the_sub_field( 'item' ); ?></li>
+                  <li class="text-dark-2 pb-1 text-base"><?php the_sub_field( 'item' ); ?></li>
                   <?php
                   endwhile;
                 endif;
@@ -74,8 +74,8 @@
               </div>
               <div class="list-information-wrapper w-full mt-14 md:mt-11 xl:mt-24">
                 <h4 class="title-smaller text-dark-2 pb-5"><?php the_field( 'information_title' ); ?></h4>
-                <p class="text-dark-2 pb-1 text-[16px]"><?php the_field( 'information_check_in' ); ?></p>
-                <p class="text-dark-2 text-[16px]"><?php the_field( 'information_check_out' ); ?></p>
+                <p class="text-dark-2 pb-1 text-base"><?php the_field( 'information_check_in' ); ?></p>
+                <p class="text-dark-2 text-base"><?php the_field( 'information_check_out' ); ?></p>
               </div>
             </div>
           </div>
