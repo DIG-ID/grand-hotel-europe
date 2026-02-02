@@ -11,16 +11,12 @@
 
   h3
     @extend .title-small
-    @apply pb-5 xl:pb-0
     
   .copyright-list
       @extend body
       @apply mb-6 list-inside
       li
         @apply list-disc ml-5 mb-1
-
-  .wp-block-heading
-    @apply pb-4
 
   // TOP 2 COLUMNS LAYOUT
   #wp-container-core-columns-is-layout-9d6595d7
@@ -57,8 +53,17 @@
   .copyright-card
     @apply bg-cream mb-8 pb-7 pt-7 md:pb-20 md:pt-10 xl:pb-14 xl:pt-14 
   .copyright-card-title
-    @apply pl-5 md:pl-32 md:pr-52 xl:pl-24 xl:max-w-[490px] 
+    @apply pl-5 md:pr-[100px] md:pl-[100px] xl:pr-0
   .copyright-card-content
-    @apply w-full pr-5  pl-5 md:pr-[100px] md:pl-[100px] xl:pl-24 xl:pr-20
+    @apply w-full pr-5  pl-5 md:pr-[100px] md:pl-[100px] xl:pl-0 xl:pr-24
+    a
+      @apply underline
+
+  .agbs-card
+    @apply bg-cream mb-8 pb-7 pt-7 md:pb-1 md:pt-8 xl:pb-14 xl:pt-14 
+  .agbs-card-title
+    @apply pl-5 md:pr-[100px] md:pl-[100px] xl:pr-0
+  .agbs-card-content
+    @apply w-full pr-5  pl-5 md:pr-[100px] md:pl-[100px] xl:pl-0 xl:pr-24
     a
       @apply underline
