@@ -8,10 +8,23 @@
  */
 ?>
 
-<section id="activities-section" class="activities-section bg-white">
+<section id="activities-intro-section" class="activities-intro-section bg-white pb-8 md:pb-5 xl:pb-12">
+  <div class="theme-container">
+    <div class="theme-grid pt-20 md:pt-24 ">
+      <div class="col-start-1 col-span-2 md:col-span-3 xl:col-start-1 xl:col-span-6">
+         <h2 class="overtitle text-dark pb-2 md:pb-5"><?php echo get_field('activities_overtitle');?></h2>
+         <h3 class="title-secondary text-dark xl:max-w-none"><?php echo get_field('activities_title');?></h3>
+      </div>
+      <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-7 xl:col-span-6 pt-5 md:pt-10 xl:pt-9">
+        <h3 class="body text-dark"><?php echo get_field('activities_text');?></p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="activities-section" class="activities-section bg-cream xl:bg-white mb-20 md:mb-24 xl:mb-32">
   <div class="theme-container">
     <div class="theme-grid">
-      <div class="col-start-1 col-span-2 md:col-span-6 xl:col-span-12 bg-cream pt-12 md:pt-5 xl:pt-12 mb-20 -md:mb-24">
+      <div class="col-start-1 col-span-2 md:col-span-6 xl:col-span-12 bg-cream pt-8 xl:pt-12">
 
         <!-- Swiper container -->
         <div class="activities-swiper swiper w-full">
@@ -32,7 +45,7 @@
                       <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 gap-x-5 xl:gap-x-7 gap-y-6 md:gap-y-8">
 
                         <!-- Image column -->
-                        <div class="col-span-2 md:col-span-3 xl:col-start-2 xl:col-span-5 mb-8 xl:mb-14">
+                        <div class="col-span-2 md:col-span-3 xl:col-start-2 xl:col-span-5 mb-8 xl:mb-14 order-2 md:order-none">
                           <?php if ( $img_2_id ) : ?>
                             <div class="w-full overflow-hidden ">
                               <?php
@@ -82,7 +95,7 @@
               </div><!-- /.swiper-wrapper -->
             </div><!-- /.activities-swiper -->
 
-            <div class="activities-controls relative z-20 flex gap-8 pt-10 mb-8 pl-[789px]">
+            <div class="activities-controls relative z-20 flex gap-8 xl:pt-10 mb-8 pl-[140px] md:pl-[385px] xl:pl-[789px]">
               <button type="button" class="activities-prev flex items-center justify-center w-[33px] h-[33px]" aria-label="Previous slide">
                 <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />

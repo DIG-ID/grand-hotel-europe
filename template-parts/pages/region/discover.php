@@ -8,9 +8,9 @@
  */
 ?>
 <section id="discover-intro-section" class="discover-intro-section bg-white pb-8 md:pb-5 xl:pb-12">
-  <div class=" w-[0px] md:w-[690px] h-[0px] xl:h-[1px] bg-gold mx-auto" aria-hidden="true"></div>
+  <div class=" w-[128px] md:w-[420px] xl:w-[690px] h-[1px] xl:h-[1px] bg-gold mx-auto" aria-hidden="true"></div>
   <div class="theme-container">
-    <div class="theme-grid pt-20 md:pt-0 xl:pt-36 ">
+    <div class="theme-grid pt-20 md:pt-24 xl:pt-36 ">
       <div class="col-start-1 col-span-2 md:col-span-3 xl:col-start-1 xl:col-span-6">
          <h2 class="overtitle text-dark pb-2 md:pb-5"><?php echo get_field('discover_overtitle');?></h2>
          <h3 class="title-secondary text-dark xl:max-w-none"><?php echo get_field('discover_title');?></h3>
@@ -24,7 +24,7 @@
 <section id="discover-section" class="discover-section bg-cream xl:bg-white">
   <div class="theme-container">
     <div class="theme-grid">
-      <div class="col-start-1 col-span-2 md:col-span-6 xl:col-span-12 bg-cream pt-12 md:pt-5 xl:pt-12 mb-20 -md:mb-24">
+      <div class="col-start-1 col-span-2 md:col-span-6 xl:col-span-12 bg-cream pt-8 xl:pt-12 ">
 
         <!-- Swiper container -->
         <div class="discover-swiper swiper w-full">
@@ -45,7 +45,7 @@
                       <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 gap-x-5 xl:gap-x-7 gap-y-6 md:gap-y-8">
 
                         <!-- Image column -->
-                        <div class="col-span-2 md:col-span-3 xl:col-start-2 xl:col-span-5 mb-8 xl:mb-14">
+                        <div class="col-span-2 md:col-span-3 xl:col-start-2 xl:col-span-5 mb-8 xl:mb-14 order-2 md:order-none">
                           <?php if ( $img_id ) : ?>
                             <div class="w-full overflow-hidden">
                               <?php
@@ -58,7 +58,7 @@
                         </div>
 
                         <!-- Text column -->
-                        <div class="col-span-2 md:col-span-3 xl:col-span-5">
+                        <div class="col-span-2 md:col-span-3 xl:col-span-5 ">
                           <?php if ( $title ) : ?>
                             <h3 class="title-small text-darker md:!text-[26px] xl:!text-[36px]">
                               <?php echo $title; ?>
@@ -66,12 +66,11 @@
                           <?php endif; ?>
 
                           <?php if ( $text ) : ?>
-                            <p class="body text-darker max-w-[335px] xl:max-w-none pt-5 xl:pt-8">
+                            <p class="body text-darker max-w-[335px] xl:max-w-none pt-5 xl:pt-8 ">
                               <?php echo $text; ?>
                             </p>
                           <?php endif; ?>
 
-                          <!-- Controls (inside slide; duplicates per slide are OK with your JS binding approach) -->
                         </div>
                         
                       </div>
@@ -85,7 +84,7 @@
               </div><!-- /.swiper-wrapper -->
             </div><!-- /.discover-swiper -->
 
-            <div class="discover-controls relative z-20 flex gap-8 pt-10 mb-8 pl-[789px] ">
+            <div class="discover-controls relative z-20 flex gap-8 xl:pt-10 mb-8 pl-[140px] md:pl-[385px] xl:pl-[789px] ">
               <button type="button" class="discover-prev flex items-center justify-center w-[33px] h-[33px]" aria-label="Previous slide">
                 <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />

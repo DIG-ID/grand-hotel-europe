@@ -28,15 +28,15 @@
                   <div class="bg-cream min-h-44 md:min-h-48 gap-x-5 h-full">
                     <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-4 xl:col-start-1 xl:col-span-5 pt-5 md:pt-8 xl:pt-5 xl:pl-9 xl:pr-10 min-h-[270px]">
                       <?php if ($name) : ?>
-                        <h3 class="title-small text-darker"><?php echo $name; ?></h3>
+                        <h3 class="title-small text-darker pl-7 md:pl-9 xl:pl-0"><?php echo $name; ?></h3>
                       <?php endif; ?>
 
                       <?php if ($text) : ?>
-                        <p class="body text-darker !text-[15px] min-h-[100px] pt-12"><?php echo $text; ?></p>
+                        <p class="body text-darker !text-[15px] min-h-[100px] pt-12  pl-7 md:pl-9 xl:pl-0 max-w-[320px] md:max-w-[400px] xl:max-w-none "><?php echo $text; ?></p>
                       <?php endif; ?>
 
                       <?php if ($website) : ?>
-                        <p class="body text-darker pt-4 pb-3"><?php echo $website; ?></p>
+                        <p class="body text-darker pt-4 pb-3  pl-7 md:pl-9 xl:pl-0"><?php echo $website; ?></p>
                       <?php endif; ?>
                     </div>
                   </div>
