@@ -58,7 +58,7 @@ $general_query = new WP_Query([
   ],
 ]);
 ?>
-<section id="seminare-overview" class="seminare-overview">
+<section id="seminare-overview" class="seminare-overview pb-12 md:pb-0">
   <div class="theme-container">
     <div class="theme-grid">
       <?php if ( $general_query->have_posts() ) : ?>
