@@ -21,7 +21,7 @@
                 <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 bg-cream min-h-44 md:min-h-48 gap-x-5 ">
                     <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-4 xl:col-start-2 xl:col-span-3  pt-5 md:pt-8 xl:pt-10 pl-6 md:pl-0">
                     <?php if ($title) : ?>
-                        <h3 class="title-small text-darker md:!text-[26px] xl:!text-[36px]"><?php echo $title; ?></h3>
+                        <h3 class="title-small text-darker md:!text-[26px] xl:!text-[36px]  xl:!max-w-[200px]"><?php echo $title; ?></h3>
                     <?php endif; ?>
                     </div>
 
