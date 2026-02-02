@@ -50,13 +50,13 @@ $email_content = get_field('intro_email_content');
         <?php endif; ?>
       </div>
       
-      <div class="col-span-2 md:col-span-3 xl:col-span-6 pb-36">
+      <div class="col-span-2 md:col-span-3 xl:col-span-6 pb-20 md:pb-32 xl:pb-36">
         <?php if ( $intro_text ) : ?>
           <p class="text-darker"><?php echo $intro_text; ?></p>
         <?php endif; ?>
       </div>
 
-      <div class="xl:col-start-1 xl:col-span-4">
+      <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-4">
           <?php if ( $phone ) : ?>
             <div class="flex items-start gap-[29px]">
               <div class="flex items-center justify-center !w-20 !h-20 bg-cream">
@@ -82,7 +82,7 @@ $email_content = get_field('intro_email_content');
           <?php endif; ?>
       </div>
 
-    <div class="xl:col-start-5 xl:col-span-5">
+    <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-5 xl:col-span-5 pt-5 md:pt-0">
       <?php if ( $email ) : ?>
         <div class="flex items-start gap-[29px]">
               <div class="flex items-center justify-center !w-20 !h-20 bg-cream">
@@ -98,7 +98,7 @@ $email_content = get_field('intro_email_content');
       <?php endif; ?>
     </div>
 
-    <div class="xl:col-start-10 xl:col-span-3">
+    <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-4 xl:col-start-10 xl:col-span-3 pt-5 md:pt-20 xl:pt-0">
       <?php if ( $address ) : ?>
         <div class="flex items-start gap-[29px]">
             <div class="flex items-center justify-center !w-20 !h-20 bg-cream">
