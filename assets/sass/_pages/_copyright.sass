@@ -36,6 +36,7 @@
 
       > .wp-block-column
         @apply max-w-full flex-auto
+
   .impressum
       @apply flex flex-col gap-10 md:flex-row md:gap-0 w-full md:w-auto
       @media (min-width: 768px)
@@ -47,13 +48,17 @@
   .impessum-title
     @apply md:h-28 md:pb-8 md:max-w-56 xl:max-w-96
 
+  .data-policy-intro
+    @apply flex flex-col  md:flex-row  w-full md:w-auto pb-14
+    @media (min-width: 768px)
+      flex: 1 1 0%
+      min-width: 0
+
   .copyright-card
-    @apply bg-cream mb-8 pb-14 pt-14 
+    @apply bg-cream mb-8 pb-7 pt-7 md:pb-20 md:pt-10 xl:pb-14 xl:pt-14 
   .copyright-card-title
-    @apply pl-5 md:pl-32 xl:pl-24
+    @apply pl-5 md:pl-32 md:pr-52 xl:pl-24 xl:max-w-[490px] 
   .copyright-card-content
-    @apply xl:max-w-[471px] xl:pr-24
+    @apply w-full pr-5  pl-5 md:pr-[100px] md:pl-[100px] xl:pl-24 xl:pr-20
     a
       @apply underline
-  .privacy-intro-text
-    @apply pb-20 md:pb-24
