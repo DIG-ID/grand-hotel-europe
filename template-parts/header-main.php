@@ -10,7 +10,7 @@
 ?>
 <header id="header-main" class="header-main" itemscope itemtype="http://schema.org/WebSite">
 
-	<div class="main-navigation-wrapper relative z-40 py-4 md:py-8 xl:pt-5 xl:pb-4">
+	<div class="main-navigation-wrapper relative z-40 py-6 md:py-8 xl:pt-5 xl:pb-4">
 		<div class="theme-container theme-grid gap-y-5  ">
 			
 			<div class="main-navigation--top col-span-12 relative z-30">
