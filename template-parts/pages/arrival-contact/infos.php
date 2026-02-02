@@ -19,15 +19,15 @@
                 $button = get_sub_field('button');
                 ?>
                 <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 bg-cream min-h-44 md:min-h-48 gap-x-5 ">
-                    <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-4 xl:col-start-2 xl:col-span-3  pt-5 md:pt-8 xl:pt-10 pl-6 md:pl-0">
+                    <div class="repeater-title col-start-1 col-span-2 md:col-start-2 md:col-span-4 xl:col-start-2 xl:col-span-3  pt-5 md:pt-8 xl:pt-10 pl-6 md:pl-0">
                     <?php if ($title) : ?>
                         <h3 class="title-small text-darker md:!text-[26px] xl:!text-[36px]  xl:!max-w-[200px]"><?php echo $title; ?></h3>
                     <?php endif; ?>
                     </div>
 
-                    <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-4 xl:col-start-7 xl:col-span-5 pt-5 md:pt-8 xl:pt-10 mb-16 pl-6 md:pl-0 !max-w-[330px] md:!max-w-none">
+                    <div class="repeater-content col-start-1 col-span-2 md:col-start-2 md:col-span-4 xl:col-start-7 xl:col-span-5 pt-5 md:pt-8 xl:pt-10 mb-16 pl-6 md:pl-0 !max-w-[330px] md:!max-w-none">
                     <?php if ($text) : ?>
-                        <p class="body text-darker"><?php echo $text; ?></p>
+                        <div class="body text-darker"><?php echo $text; ?></div>
                     <?php endif; ?>
                         <?php if ( $button ) :
                         $link_url    = $button['url'];
