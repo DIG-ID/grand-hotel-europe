@@ -32,12 +32,14 @@
       </div>
       <div class="col-span-2 md:col-span-6 xl:col-span-12 mt-10">
         <figure class="framed__symmetric--bottom-left w-full">
-          <?php
-          $zs_id = get_field( 'zimmer_suiten_image' );
-          if ( $zs_id ) :
-            echo wp_get_attachment_image( $zs_id, 'full', false, array( 'class' => 'w-full h-full object-cover' ) );
-          endif;
-          ?>
+          <div class="w-full h-full min-h-[302px] md:min-h-none overflow-hidden">
+            <?php
+            $zs_id = get_field( 'zimmer_suiten_image' );
+            if ( $zs_id ) :
+              echo wp_get_attachment_image( $zs_id, 'full', false, array( 'class' => 'w-full h-full object-cover object-[80%_50%] md:object-center min-h-[302px] md:min-h-none scale-x-75 md:scale-100 origin-center overflow-visible md:overflow-auto' ) );
+            endif;
+            ?>
+          </div>
         </figure>
       </div>
     </div>
