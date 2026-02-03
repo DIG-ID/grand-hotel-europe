@@ -54,9 +54,9 @@ if ( is_post_type_archive('suiten') ) {
       if ($rb_id_mobile && $rb_id_desktop && (int)$rb_id_mobile === (int)$rb_id_desktop) { echo wp_get_attachment_image($rb_id_desktop,'full', false, array('class' => 'w-full h-full object-cover') );
       } 
       else {
-        if ($rb_id_mobile) { echo wp_get_attachment_image($rb_id_mobile, 'full', false, array('class' => 'w-full h-full object-cover xl:hidden') );
+        if ($rb_id_mobile) { echo wp_get_attachment_image($rb_id_mobile, 'full', false, array('class' => 'w-full h-full object-cover !block xl:!hidden') );
         }
-        if ($rb_id_desktop) { echo wp_get_attachment_image($rb_id_desktop, 'full', false, array('class' => 'w-full h-full object-cover hidden xl:block') );
+        if ($rb_id_desktop) { echo wp_get_attachment_image($rb_id_desktop, 'full', false, array('class' => 'w-full h-full object-cover !hidden xl:!block') );
         }
       }
       ?>

@@ -22,10 +22,16 @@ function theme_resolve_field(string $base_key, ?string $options_prefix = null) {
 	return $local_value;
 }
 
-$intro_id      = theme_resolve_field('intro_image', $options_prefix);
+$intro_id_desktop      = theme_resolve_field('intro_image', $options_prefix);
+$intro_id_mobile  = theme_resolve_field('intro_image_mobile', $options_prefix);
 $intro_over    = theme_resolve_field('intro_overtitle', $options_prefix);
 $intro_title   = theme_resolve_field('intro_title', $options_prefix);
 $intro_text    = theme_resolve_field('intro_text', $options_prefix);
+
+// Fallback: if responsive isn’t set, use desktop
+if (empty($intro_id_mobile)) {
+	$intro_id_mobile = $intro_id_desktop;
+}
 ?>
 
 <section id="section-intro" class="section-intro xl:pt-0 pb-20 md:pb-24 xl:pb-36">
@@ -39,9 +45,14 @@ $intro_text    = theme_resolve_field('intro_text', $options_prefix);
 		<div class="intro-image px-6 md:px-14">
 			<figure class="framed__asymmetric--bottom-both w-full h-full md:h-auto">
 				<?php
-				if ( $intro_id ) :
-					echo wp_get_attachment_image( $intro_id, 'full', false, array( 'class' => 'w-full !h-full md:!h-auto object-cover max-h-[300px] md:max-h-none min-h-[300px] md:min-h-none' ) );
-				endif;
+				if ($intro_id_mobile && $intro_id_desktop && (int)$intro_id_mobile === (int)$intro_id_desktop) {echo wp_get_attachment_image($intro_id_desktop, 'full', false, array('class' => 'w-full !h-full md:!h-auto object-cover max-h-[300px] md:max-h-none min-h-[300px] md:min-h-none'));
+				} 
+				else {
+					if ($intro_id_mobile) {echo wp_get_attachment_image($intro_id_mobile,'full',false,array('class' => 'w-full !h-full md:!h-auto object-cover max-h-[300px] md:max-h-none min-h-[300px] md:min-h-none !block md:!hidden') );
+					}
+					if ($intro_id_desktop) {echo wp_get_attachment_image($intro_id_desktop, 'full', false, array('class' => 'w-full !h-full md:!h-auto object-cover max-h-[300px] md:max-h-none min-h-[300px] md:min-h-none !hidden md:!block') );
+					}
+				}
 				?>
 			</figure>
 		</div>
