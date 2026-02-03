@@ -15,7 +15,7 @@
                 <p class="text-darker pt-5"><?php the_field( 'gastronomie_text' ); ?></p>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-8 xl:col-span-6 pt-11 md:pt-0">
-                <figure>
+                <figure class="framed__symmetric--top-right w-full">
                     <?php
                     $gastro_id = get_field( 'gastronomie_image' );
                     if ( $gastro_id ) :
