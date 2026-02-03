@@ -10,12 +10,12 @@
 <section id="terrace-section" class="terrace-section bg-cream pb-16 md:pb-20 xl:pb-28">
     <div class="theme-container">
         <div class="theme-grid">
-            <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-5 pb-20 md:pb-8 xl:pb-0 pt-7 md:pt-0 hidden md:block">
+            <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-5 md:pb-8 xl:pb-0 pt-7 md:pt-0 order-2 md:order-none">
                 <figure>
                     <?php
                     $terrace_left_id = get_field( 'terrace_image_left' );
                     if ( $terrace_left_id ) :
-                    echo wp_get_attachment_image( $terrace_left_id, 'full', false, array( 'class' => 'relative w-full h-full object-cover z-10' ) );
+                    echo wp_get_attachment_image( $terrace_left_id, 'full', false, array( 'class' => 'relative w-full h-full object-cover z-10 hidden md:block' ) );
                     endif;
                     ?>
                 </figure>
@@ -50,10 +50,10 @@
                 <div class="bg-white">
                     <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-10 gap-x-5 xl:gap-x-7">
                         <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-4 xl:col-start-1 xl:col-span-4 pt-6 md:pt-8 xl:pt-12">
-                        <h2 class="title-secondary text-darker px-5 md:px-0 text-center"><?php the_field('terrace_schedule_title'); ?></h2>
+                        <h2 class="title-secondary text-darker px-5 md:px-0 "><?php the_field('terrace_schedule_title'); ?></h2>
                         </div>
                         <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-5 xl:col-start-5 xl:col-span-5 pt-2 md:pt-5 mb-7 md:mb-8 xl:mb-12 xl:pt-12">
-                        <p class="text-darker px-5 md:px-0 leading-[45px]"><?php the_field('terrace_schedule_text'); ?></p>
+                        <p class="text-darker px-5 md:px-0 xl:leading-[45px]"><?php the_field('terrace_schedule_text'); ?></p>
                         </div>
                     </div>
                 </div>

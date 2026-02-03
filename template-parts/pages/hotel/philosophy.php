@@ -11,7 +11,7 @@
     <div class="theme-container">
         <div class="theme-grid">
             <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-4 xl:col-start-3 xl:col-span-8 pb-20 md:pb-24 xl:pb-48">
-                <h3 class="title-small text-darker text-center"><?php the_field( 'philosophy_quote' ); ?></h3>
+                <h3 class="title-small !text-[1.5625rem] md:!text-[1.875rem] xl:!text-[2.25rem] text-darker text-center"><?php the_field( 'philosophy_quote' ); ?></h3>
             </div>
             <div class="repeater-wrapper col-start-1 col-span-2 md:col-span-6 xl:col-span-12 grid gap-y-5 xl:gap-y-8">
                 <?php if ( have_rows('philosophy_repeater') ) : ?>
