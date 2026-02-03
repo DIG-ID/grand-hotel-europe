@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="theme-grid">
-            <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-6 xl:col-start-2 xl:col-span-11 framed__symmetric--bottom-right framed__symmetric--top-left relative">
+            <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-6 xl:col-start-1 xl:col-span-12 framed__symmetric--bottom-right framed__symmetric--top-left relative">
                 <div class="bg-white">
                     <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-10 gap-x-5 xl:gap-x-7">
                         <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-4 xl:col-start-1 xl:col-span-4 pt-6 md:pt-8 xl:pt-12">
