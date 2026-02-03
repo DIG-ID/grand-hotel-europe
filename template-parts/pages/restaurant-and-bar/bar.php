@@ -85,7 +85,7 @@
                 <h2 class="title-secondary text-darker px-5 md:px-0 "><?php the_field('bar_schedule_title'); ?></h2>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-5 xl:col-start-5 xl:col-span-6 pt-2 md:pt-5 mb-7 md:mb-8 xl:mb-12 xl:pt-12">
-                <p class="text-darker px-5 md:px-0 xl:leading-[45px]"><?php the_field('bar_schedule_text'); ?></p>
+                <p class="text-darker px-5 md:px-0 xl:leading-[45px] xl:pt-3"><?php the_field('bar_schedule_text'); ?></p>
             </div>
           </div>
         </div>
