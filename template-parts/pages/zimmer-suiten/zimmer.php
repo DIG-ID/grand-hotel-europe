@@ -20,7 +20,7 @@
             <?php
             $zimmer_id = get_field( 'zimmer_image' );
             if ( $zimmer_id ) :
-              echo wp_get_attachment_image( $zimmer_id, 'full', false, array( 'class' => 'w-full h-full object-cover' ) );
+              echo wp_get_attachment_image( $zimmer_id, 'full', false, array( 'class' => 'w-full h-full max-h-[320px] md:max-h-none object-cover object-bottom md:object-center' ) );
             endif;
             ?>
           </figure>
