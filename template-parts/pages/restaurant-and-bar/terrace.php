@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="col-start-1 col-span-2 md:col-start-4 md:col-span-3 xl:col-start-7 xl:col-span-6 xl:pt-7 order-1 md:order-none">
-                <h2 class="title-secondary text-darker md:pb-7 max-w-64 md:max-w-none xl:max-w-96"><?php the_field( 'terrace_title' ); ?></h2>
+                <h2 class="title-secondary text-darker md:pb-7 max-w-64 md:max-w-none xl:max-w-96 "><?php the_field( 'terrace_title' ); ?></h2>
                 <figure>
                     <?php
                     $terrace_right_id = get_field( 'terrace_image_right' );

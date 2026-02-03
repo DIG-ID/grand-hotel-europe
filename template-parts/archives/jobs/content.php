@@ -36,7 +36,7 @@ $general_query = new WP_Query([
 			<?php wp_reset_postdata(); ?>
 		<?php else : ?>
 			<div class="col-span-2 md:col-span-6 xl:col-span-12 ">
-				<p><?php esc_html_e( 'Keine Jobs gefunden.', 'grand-hotel-europe' ) ?></p>
+				<p><?php esc_html_e( 'Derzeit haben wir keine offenen Positionen zu besetzen. Wir freuen uns, wenn Sie zu einem späteren Zeitpunkt wieder vorbeischauen.', 'grand-hotel-europe' ) ?></p>
 			</div>
 		<?php endif; ?>
 	</div>
