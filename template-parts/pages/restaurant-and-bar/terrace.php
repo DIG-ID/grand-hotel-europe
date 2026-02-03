@@ -46,11 +46,11 @@
             </div>
         </div>
         <div class="theme-grid">
-            <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-6 xl:col-start-1 xl:col-span-12 framed__symmetric--bottom-right framed__symmetric--top-left relative">
+            <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-6 xl:col-start-2 xl:col-span-10 framed__symmetric--bottom-right framed__symmetric--top-left relative">
                 <div class="bg-white">
-                    <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 gap-x-5 xl:gap-x-7">
+                    <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-10 gap-x-5 xl:gap-x-7">
                         <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-4 xl:col-start-1 xl:col-span-4 pt-6 md:pt-8 xl:pt-12">
-                        <h2 class="title-secondary text-darker px-5 md:px-0 xl:pl-5 "><?php the_field('terrace_schedule_title'); ?></h2>
+                        <h2 class="title-secondary text-darker px-5 md:px-0 "><?php the_field('terrace_schedule_title'); ?></h2>
                         </div>
                         <div class="col-start-1 col-span-2 md:col-start-2 md:col-span-5 xl:col-start-5 xl:col-span-5 pt-2 md:pt-5 mb-7 md:mb-8 xl:mb-12 xl:pt-12">
                         <p class="text-darker px-5 md:px-0 xl:leading-[45px]"><?php the_field('terrace_schedule_text'); ?></p>
