@@ -45,7 +45,7 @@
                       <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 gap-x-5 xl:gap-x-7 gap-y-6 md:gap-y-8">
 
                         <!-- Image column -->
-                        <div class="col-span-2 md:col-span-3 xl:col-start-2 xl:col-span-5 mb-0 md:mb-8 xl:mb-12 order-2 md:order-none">
+                        <div class="col-span-2 md:col-span-3 xl:col-start-2 xl:col-span-5 order-2 md:order-none">
                           <?php if ( $img_2_id ) : ?>
                             <div class="w-full overflow-hidden">
                               <?php
@@ -58,7 +58,7 @@
                         </div>
 
                         <!-- Text column -->
-                        <div class="col-span-2 md:col-span-3 xl:col-span-5">
+                        <div class="col-span-2 md:col-span-3 xl:col-span-5 relative">
                           <?php if ( $title ) : ?>
                             <h3 class="title-small text-darker md:!text-[26px] xl:!text-[36px]">
                               <?php echo $title; ?>
@@ -66,7 +66,7 @@
                           <?php endif; ?>
 
                           <?php if ( $text ) : ?>
-                            <p class="text-darker min-h-[182px] md:min-h-none max-w-[335px] xl:max-w-none pt-5 xl:pt-8">
+                            <p class="text-darker max-w-[335px] xl:max-w-none pt-5 xl:pt-8">
                               <?php echo $text; ?>
                             </p>
                           <?php endif; ?>
@@ -76,7 +76,7 @@
                             $link_title  = $button['title'];
                             $link_target = $button['target'] ? $button['target'] : '_self';
                           ?>
-                            <a class="btn btn-primary max-w-56 mt-8" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+                            <a class="btn btn-primary max-w-56 mt-8 md:mt-0 md:absolute bottom-0" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
                               <?php echo $link_title; ?>
                             </a>
                           <?php endif; ?>
@@ -95,7 +95,7 @@
               </div><!-- /.swiper-wrapper -->
             </div><!-- /.activities-swiper -->
 
-            <div class="activities-controls relative z-20 flex gap-8 mt-7 md:mt-0 mb-8 xl:mb-10 justify-center">
+            <div class="activities-controls relative z-20 flex gap-8 mt-7 md:mt-12 mb-8 xl:mb-10 justify-center">
               <button type="button" class="activities-prev flex items-center justify-center w-[33px] h-[33px]" aria-label="Previous slide">
                 <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />

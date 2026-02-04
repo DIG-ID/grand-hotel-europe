@@ -45,7 +45,7 @@
                       <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 gap-x-5 xl:gap-x-7 gap-y-6 md:gap-y-8">
 
                         <!-- Image column -->
-                        <div class="col-span-2 md:col-span-3 xl:col-start-2 xl:col-span-5 mb-0 md:mb-8 xl:mb-12 order-2 md:order-none">
+                        <div class="col-span-2 md:col-span-3 xl:col-start-2 xl:col-span-5 order-2 md:order-none">
                           <?php if ( $img_id ) : ?>
                             <div class="w-full overflow-hidden">
                               <?php
@@ -66,7 +66,7 @@
                           <?php endif; ?>
 
                           <?php if ( $text ) : ?>
-                            <p class="text-darker min-h-[182px] md:min-h-none max-w-[335px] xl:max-w-none pt-5 xl:pt-8">
+                            <p class="text-darker max-w-[335px] xl:max-w-none pt-5 xl:pt-8">
                               <?php echo $text; ?>
                             </p>
                           <?php endif; ?>
@@ -84,7 +84,7 @@
               </div><!-- /.swiper-wrapper -->
             </div><!-- /.discover-swiper -->
 
-            <div class="discover-controls relative z-20 flex gap-8 mt-7 md:mt-0 mb-8 xl:mb-12 justify-center">
+            <div class="discover-controls relative z-20 flex gap-8 mt-7 md:mt-12 mb-8 xl:mb-12 justify-center">
               <button type="button" class="discover-prev flex items-center justify-center w-[33px] h-[33px]" aria-label="Previous slide">
                 <svg viewBox="0 0 48 48" class="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="0.5" y="0.5" width="47" height="47" stroke="currentColor" />
