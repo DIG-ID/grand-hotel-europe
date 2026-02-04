@@ -14,7 +14,7 @@ if ( have_posts() ) :
 		the_post();
 		do_action( 'before_main_content' );
 			get_template_part( 'template-parts/modules/section-hero' );
-            get_template_part( 'template-parts/modules/section-intro' );
+            get_template_part( 'template-parts/pages/hotel/intro' );
             get_template_part( 'template-parts/pages/hotel/philosophy' );
             get_template_part( 'template-parts/pages/hotel/history' );
             get_template_part( 'template-parts/pages/hotel/testimonials' );

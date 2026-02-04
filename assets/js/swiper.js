@@ -1,5 +1,5 @@
 import Swiper from 'swiper/bundle';
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -169,4 +169,24 @@ window.addEventListener("load", () => {
       datasetKey: "boundDiscover",
     });
   }
+
+    const sliders = document.querySelectorAll(".intro-swiper");
+
+    // Debug: if this logs 0, your markup isn't on the page
+    console.log("intro-swiper found:", sliders.length);
+
+    sliders.forEach((el) => {
+      new Swiper(el, {
+        modules: [Autoplay],
+        slidesPerView: 1,
+        loop: true,
+        speed: 900,
+        allowTouchMove: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+      });
+    });
 });
