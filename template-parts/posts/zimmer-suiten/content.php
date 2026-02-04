@@ -72,9 +72,11 @@
                 ?>
                 </ul>
               </div>
-              <div class="list-information-wrapper w-full mt-14 md:mt-11 xl:mt-24">
+            </div>
+            <div class="facilities-list flex flex-col mt-0 md:mt-12 xl:mt-0 md:flex-row xl:flex-col xl:justify-between">
+              <div class="list-information-wrapper w-full mt-14 md:mt-0 xl:mt-24">
                 <h4 class="title-smaller text-dark-2 pb-5"><?php the_field( 'information_title' ); ?></h4>
-                <p class="text-dark-2 pb-1 text-base"><?php the_field( 'information_check_in' ); ?></p>
+                <p class="text-dark-2 pb-8 text-base"><?php the_field( 'information_check_in' ); ?></p>
                 <p class="text-dark-2 text-base"><?php the_field( 'information_check_out' ); ?></p>
               </div>
             </div>
