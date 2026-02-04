@@ -44,7 +44,7 @@ $intro_text    = get_field('intro_text');
       <div class="col-span-2 md:col-span-6 xl:col-span-12">
         <h2 class="overtitle text-dark-2 mb-4"><?php echo $intro_over; ?></h2>
       </div>
-      <div class="col-span-2 md:col-span-3 xl:col-span-6">
+      <div class="col-span-2 md:col-span-3 xl:col-span-4">
         <h3 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php echo $intro_title; ?></h3>
       </div>
       <div class="col-span-2 md:col-span-3 xl:col-span-6">
