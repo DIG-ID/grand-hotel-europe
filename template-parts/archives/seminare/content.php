@@ -18,7 +18,7 @@
       if( have_rows('seminare_content_top', 'option') ):
         while( have_rows('seminare_content_top', 'option') ) : the_row();
         ?>
-        <div class="col-span-2 md:col-span-6 xl:col-span-12 theme-grid bg-cream px-5 md:px-0 py-7 md:pt-8 md:pb-10 xl:mt-8 mb-5 xl:mb-12">
+        <div class="col-span-2 md:col-span-6 xl:col-span-12 theme-grid bg-cream px-5 md:px-0 py-7 md:pt-8 md:pb-10 xl:mt-0 mb-5 xl:mb-12">
           <div class="col-span-2 md:col-span-2 xl:col-span-4 col-start-1 md:col-start-2 xl:col-start-2">
             <h2 class="title-small text-dark-2"><?php the_sub_field('title'); ?></h2>
           </div>

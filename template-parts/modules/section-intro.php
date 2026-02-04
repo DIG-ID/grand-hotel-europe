@@ -27,6 +27,7 @@ $intro_id_mobile  = theme_resolve_field('intro_image_mobile', $options_prefix);
 $intro_over    = theme_resolve_field('intro_overtitle', $options_prefix);
 $intro_title   = theme_resolve_field('intro_title', $options_prefix);
 $intro_text    = theme_resolve_field('intro_text', $options_prefix);
+$intro_button  = theme_resolve_field('intro_button', $options_prefix);
 
 // Fallback: if responsive isn’t set, use desktop
 if (empty($intro_id_mobile)) {
@@ -67,6 +68,14 @@ if (empty($intro_id_mobile)) {
 			</div>
 			<div class="col-span-2 md:col-span-3 xl:col-span-6">
 				<p class="text-dark-2"><?php echo $intro_text; ?></p>
+				<?php 
+        if( $intro_button ): 
+					$link_url = $intro_button['url'];
+					$link_title = $intro_button['title'];
+					$link_target = $intro_button['target'] ? $intro_button['target'] : '_self';
+					?>
+					<a class="btn btn-primary max-w-56 mt-8" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+        <?php endif; ?>
 			</div>
 		</div>
 	</div>
