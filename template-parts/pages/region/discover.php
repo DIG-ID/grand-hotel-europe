@@ -66,7 +66,7 @@
                           <?php endif; ?>
 
                           <?php if ( $text ) : ?>
-                            <p class="text-darker max-w-[335px] xl:max-w-none pt-5 xl:pt-8">
+                            <p class="text-darker min-h-[164px] max-w-[335px] md:min-h-none xl:max-w-none pt-5 xl:pt-8">
                               <?php echo $text; ?>
                             </p>
                           <?php endif; ?>

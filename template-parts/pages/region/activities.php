@@ -66,7 +66,7 @@
                           <?php endif; ?>
 
                           <?php if ( $text ) : ?>
-                            <p class="text-darker max-w-[335px] xl:max-w-none pt-5 xl:pt-8">
+                            <p class="text-darker min-h-[164px] max-w-[335px] md:min-h-none xl:max-w-none pt-5 xl:pt-8">
                               <?php echo $text; ?>
                             </p>
                           <?php endif; ?>
@@ -76,7 +76,7 @@
                             $link_title  = $button['title'];
                             $link_target = $button['target'] ? $button['target'] : '_self';
                           ?>
-                            <a class="btn btn-primary max-w-56 mt-8 md:mt-0 md:absolute bottom-0" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
+                            <a class="btn btn-primary max-w-56 mt-4 md:mt-0 md:absolute bottom-0" href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">
                               <?php echo $link_title; ?>
                             </a>
                           <?php endif; ?>

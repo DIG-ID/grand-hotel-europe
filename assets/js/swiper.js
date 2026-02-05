@@ -1,9 +1,26 @@
 import Swiper from 'swiper/bundle';
-import { Pagination, Autoplay} from "swiper/modules";
+import {Pagination, Autoplay} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
 window.addEventListener("load", () => {
+  if (document.querySelector(".page-template-page-home")) {
+    const travelslider = new Swiper('.travel-banner-swiper', {
+      slidesPerView: 1,
+      loop: true,
+      speed: 900,
+      effect: 'slide',
+      navigation: {
+        nextEl: '.travel-banner-nav-arrows .swiper-button-next',
+        prevEl: '.travel-banner-nav-arrows .swiper-button-prev',
+      },
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+      },
+    });
+  }
+
   if (document.querySelector(".single-zimmer") || document.querySelector(".single-suiten")) {
 
     const thumbs = new Swiper('.gallery-thumbs-swiper', {

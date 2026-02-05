@@ -58,7 +58,7 @@ export function initTravelBannerParallax() {
 
 // ---- init order matters ----
 gheInitLenisCinematic();
-initTravelBannerParallax();
+//initTravelBannerParallax();
 
 // refresh AFTER everything is created
 ScrollTrigger.refresh();
