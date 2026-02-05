@@ -11,7 +11,7 @@
 
 <section id="jobs-content" class="jobs-content relative overflow-hidden">
 	<div class="theme-container">
-		<div class="theme-grid pt-20 md:pt-24 xl:pt-16 pb-20 xl:pb-36">
+		<div class="theme-grid pt-12 md:pt-24 xl:pt-16 pb-20 xl:pb-36">
 			<div class="col-span-2 md:col-span-4 xl:col-span-7">
 				<div class="jobs-content--wrapper">
 					<?php the_content(); ?>
