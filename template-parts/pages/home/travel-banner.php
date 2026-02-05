@@ -20,10 +20,10 @@
           $text  = get_sub_field('text');
           $btn   = get_sub_field('button');
         ?>
-          <div class="swiper-slide relative bg-cover bg-no-repeat" style="<?php echo $bg_url ? 'background-image:url(' . esc_url($bg_url) . ');' : ''; ?>">
+          <div class="swiper-slide relative bg-cover bg-no-repeat min-h-[600px] md:min-h-[530px] xl:min-h-[550px]" style="<?php echo $bg_url ? 'background-image:url(' . esc_url($bg_url) . ');' : ''; ?>">
             <div class="absolute inset-0 bg-[rgba(34,34,34,0.75)] pointer-events-none z-0" aria-hidden="true"></div>
-            <div class="theme-container pt-20 pb-32 md:pt-20 md:pb-32 xl:pt-20 xl:pb-32 relative z-10">
-              <div class="theme-grid">
+            <div class="theme-container w-full flex pt-20 pb-32 md:pt-20 md:pb-32 xl:pt-20 xl:pb-32 relative z-10">
+              <div class="theme-grid w-full">
                 <div class="col-span-2 md:col-span-3 xl:col-span-6">
                   <?php if ($title) : ?>
                     <h2 class="title-secondary text-white mb-16 md:mb-0"><?php echo $title; ?></h2>
