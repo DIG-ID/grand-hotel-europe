@@ -58,7 +58,15 @@ add_filter( 'admin_footer_text', 'theme_custom_admin_footer' );
 function theme_login_logo() {
 	echo '<style type="text/css">
 	h1 a {
-		background-image: url(' . get_template_directory_uri() . '/assets/svg/logo.svg) !important;
+		background-image: url(' . get_template_directory_uri() . '/assets/svg/grand-hotel-europe-lucerne-logo.png) !important;
+		    background-repeat: no-repeat;
+            background-position: center;
+            background-size: 90% auto !important;
+            width: 320px !important;
+            height: 140px !important;
+            margin-bottom: 20px !important;
+            background-color: transparent !important;
+
 	}
 	</style>';
 }
