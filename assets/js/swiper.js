@@ -24,38 +24,28 @@ window.addEventListener("load", () => {
 
   if (document.querySelector(".single-zimmer") || document.querySelector(".single-suiten")) {
 
-    const thumbs = new Swiper('.gallery-thumbs-swiper', {
+    var thumbs = new Swiper('.gallery-thumbs-swiper', {
       slidesPerView: 'auto',
       spaceBetween: 14,
       loop: true,
       centeredSlides: true,
-      centeredSlidesBounds: false,
       slideToClickedSlide: true,
-      watchSlidesProgress: true,
     });
 
-    const slider = new Swiper('.gallery-images-swiper', {
+    var slider = new Swiper('.gallery-images-swiper', {
       slidesPerView: 1,
       loop: true,
-      speed: 900,
+      loopedSlides: 36,
       effect: 'slide',
+      centeredSlides: true,
       navigation: {
         nextEl: '.zimmer-suiten-nav-arrows .swiper-button-next',
         prevEl: '.zimmer-suiten-nav-arrows .swiper-button-prev',
       },
-      thumbs: {
-        swiper: thumbs,
-      },
-      on: {
-        afterInit() {
-          thumbs.update();
-          thumbs.slideToLoop(this.realIndex, 0);
-        },
-        slideChange() {
-          thumbs.slideToLoop(this.realIndex, 300);
-        }
-      }
+      
     });
+    slider.controller.control = thumbs;
+    thumbs.controller.control = slider;
   }
 
   if (document.querySelector(".single-bankette") || document.querySelector(".single-seminare")) {
@@ -95,6 +85,7 @@ window.addEventListener("load", () => {
   }
  
   if (document.querySelector(".page-template-page-hotel")) {
+    //slider testimonials
     const el = document.querySelector("#testimonials-section .testimonials-swiper");
     if (!el) return;
 
@@ -111,6 +102,24 @@ window.addEventListener("load", () => {
         nextEl: "#testimonials-section .testimonials-next",
         prevEl: "#testimonials-section .testimonials-prev",
       },
+    });
+
+    //slider intro
+    const sliders = document.querySelectorAll(".intro-swiper");
+
+    sliders.forEach((el) => {
+      new Swiper(el, {
+        modules: [Autoplay],
+        slidesPerView: 1,
+        loop: true,
+        speed: 900,
+        allowTouchMove: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+      });
     });
   }
 
@@ -187,24 +196,4 @@ window.addEventListener("load", () => {
       datasetKey: "boundDiscover",
     });
   }
-
-    const sliders = document.querySelectorAll(".intro-swiper");
-
-    // Debug: if this logs 0, your markup isn't on the page
-    console.log("intro-swiper found:", sliders.length);
-
-    sliders.forEach((el) => {
-      new Swiper(el, {
-        modules: [Autoplay],
-        slidesPerView: 1,
-        loop: true,
-        speed: 900,
-        allowTouchMove: true,
-        autoplay: {
-          delay: 5000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-      });
-    });
 });
