@@ -24,28 +24,71 @@ window.addEventListener("load", () => {
 
   if (document.querySelector(".single-zimmer") || document.querySelector(".single-suiten")) {
 
-    var thumbs = new Swiper('.gallery-thumbs-swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 14,
-      loop: true,
-      centeredSlides: true,
-      slideToClickedSlide: true,
-    });
-
-    var slider = new Swiper('.gallery-images-swiper', {
-      slidesPerView: 1,
-      loop: true,
-      loopedSlides: 36,
-      effect: 'slide',
-      centeredSlides: true,
-      navigation: {
-        nextEl: '.zimmer-suiten-nav-arrows .swiper-button-next',
-        prevEl: '.zimmer-suiten-nav-arrows .swiper-button-prev',
-      },
+    // Get original image count from PHP
+      const originalImageCount = window.galleryData ? window.galleryData.originalImageCount : 0;
       
-    });
-    slider.controller.control = thumbs;
-    thumbs.controller.control = slider;
+      // Initialize thumbs
+      var thumbs = new Swiper('.gallery-thumbs-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 14,
+        loop: true,
+        loopedSlides: originalImageCount, // Use original count for loop
+        centeredSlides: true,
+        slideToClickedSlide: true,
+        watchSlidesProgress: true,
+      });
+
+      // Initialize main slider
+      var slider = new Swiper('.gallery-images-swiper', {
+        slidesPerView: 1,
+        loop: true,
+        loopedSlides: originalImageCount, // Use original count for loop
+        speed: 600,
+        effect: 'slide',
+        centeredSlides: true,
+        navigation: {
+          nextEl: '.zimmer-suiten-nav-arrows .swiper-button-next',
+          prevEl: '.zimmer-suiten-nav-arrows .swiper-button-prev',
+        },
+        thumbs: {
+          swiper: thumbs,
+        },
+        on: {
+          init: function() {
+            // Initialize thumbs sync
+            if (this.thumbs && this.thumbs.swiper) {
+              this.thumbs.swiper.update();
+              // Start at a position where first image is centered
+              this.thumbs.swiper.slideToLoop(this.realIndex, 0);
+            }
+          },
+          slideChange: function() {
+            // Sync thumbs on slide change
+            if (this.thumbs && this.thumbs.swiper) {
+              this.thumbs.swiper.slideToLoop(this.realIndex, 300);
+            }
+          }
+        }
+      });
+
+      // Add click handlers for thumbnails
+      if (originalImageCount > 0) {
+        document.querySelectorAll('.gallery-thumbs-swiper .swiper-slide').forEach((slide) => {
+          slide.addEventListener('click', function() {
+            const originalIndex = parseInt(this.getAttribute('data-original-index'));
+            // Navigate to the correct slide
+            slider.slideToLoop(originalIndex);
+          });
+        });
+      }
+      
+      // Force initial sync
+      setTimeout(() => {
+        if (slider && slider.thumbs && slider.thumbs.swiper) {
+          slider.thumbs.swiper.update();
+          slider.thumbs.swiper.slideToLoop(slider.realIndex, 0);
+        }
+      }, 100);
   }
 
   if (document.querySelector(".single-bankette") || document.querySelector(".single-seminare")) {

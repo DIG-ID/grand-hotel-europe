@@ -13,8 +13,9 @@
 $gallery_ids = get_field('gallery_images');
 if ($gallery_ids && is_array($gallery_ids)) :
 
-  $minSlidesForLoop = 36; // adjust (8–12 is usually good)
-  $count = count($gallery_ids);
+  $original_count = count($gallery_ids); // Store original count
+  $minSlidesForLoop = 48;
+  $count = $original_count;
 
   $slides = $gallery_ids;
 
@@ -24,7 +25,6 @@ if ($gallery_ids && is_array($gallery_ids)) :
     for ($r = 0; $r < $mult; $r++) {
       $slides = array_merge($slides, $gallery_ids);
     }
-    // Cap to minSlidesForLoop (or keep more if you want)
     $slides = array_slice($slides, 0, $minSlidesForLoop);
   }
 ?>
@@ -67,12 +67,24 @@ if ($gallery_ids && is_array($gallery_ids)) :
           $thumb_alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
           if (!$thumb_alt) $thumb_alt = get_the_title($img_id);
           if (!$thumb_url) continue;
+          
+          // Calculate original index for this slide
+          $original_index = $i % $original_count;
         ?>
-          <div class="swiper-slide w-36 h-20 overflow-hidden text-center cursor-pointer opacity-50 transition-opacity duration-300" data-index="<?php echo esc_attr($i); ?>">
+          <div class="swiper-slide w-36 h-20 overflow-hidden text-center cursor-pointer opacity-50 transition-opacity duration-300" 
+               data-index="<?php echo esc_attr($i); ?>"
+               data-original-index="<?php echo esc_attr($original_index); ?>">
             <img src="<?php echo esc_url($thumb_url); ?>" alt="<?php echo esc_attr($thumb_alt); ?>" class="w-auto h-full object-cover block" />
           </div>
         <?php endforeach; ?>
       </div>
     </div>
   </div>
+  
+  <script>
+  // Pass PHP data to JavaScript
+  window.galleryData = {
+    originalImageCount: <?php echo $original_count; ?>
+  };
+  </script>
 <?php endif; ?>
