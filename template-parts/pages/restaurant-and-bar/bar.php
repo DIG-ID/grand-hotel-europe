@@ -44,7 +44,7 @@
         </figure>
       </div>
 
-      <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-6 pt-12 md:pt-0">
+      <div class="col-start-1 col-span-2 md:col-start-1 md:col-span-3 xl:col-start-1 xl:col-span-5 pt-12 md:pt-0">
         <h2 class="title-secondary text-darker"><?php the_field('bar_title'); ?></h2>
       </div>
 
