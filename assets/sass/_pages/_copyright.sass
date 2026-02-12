@@ -1,71 +1,71 @@
 .page-template-page-copyright
-  p
-    @extend body
-    //@apply pl-5 md:pl-32 pr-6 md:pr-32 xl:pr-24
-
-  .wp-block-group
-    @apply  pt-0
-
-  h2
-    @extend .title-secondary
-
-  h3
-    @extend .title-small
-    
-  .copyright-list
+  .content-copyright
+    p
       @extend body
-      @apply mb-6 list-inside
-      li
-        @apply list-disc ml-5 mb-1
 
-  // TOP 2 COLUMNS LAYOUT
-  #wp-container-core-columns-is-layout-9d6595d7
-    @apply flex flex-row justify-center gap-[30px] flex-wrap
+    .wp-block-group
+      @apply  pt-0
 
-    > .wp-block-column
-      @apply w-full max-w-[571px] flex-[0_1_571px]
+    h2
+      @extend .title-secondary
 
-  // Mobile stack (same level as the container, not nested wrong)
-  @media (max-width: 768px)
+    h3
+      @extend .title-small
+      
+    .copyright-list
+        @extend body
+        @apply mb-6 list-inside
+        li
+          @apply list-disc ml-5 mb-1
+
+    // TOP 2 COLUMNS LAYOUT
     #wp-container-core-columns-is-layout-9d6595d7
-      @apply flex-col gap-[20px]
+      @apply flex flex-row justify-center gap-[30px] flex-wrap
 
       > .wp-block-column
-        @apply max-w-full flex-auto
+        @apply w-full max-w-[571px] flex-[0_1_571px]
 
-  .impressum
-      @apply flex flex-col gap-10 md:flex-row md:gap-0 w-full md:w-auto
+    // Mobile stack (same level as the container, not nested wrong)
+    @media (max-width: 768px)
+      #wp-container-core-columns-is-layout-9d6595d7
+        @apply flex-col gap-[20px]
+
+        > .wp-block-column
+          @apply max-w-full flex-auto
+
+    .impressum
+        @apply flex flex-col gap-10 md:flex-row md:gap-0 w-full md:w-auto
+        @media (min-width: 768px)
+          flex: 1 1 0%
+          min-width: 0
+          
+    .impessum-content
+      @apply bg-white pb-8 md:pb-24 md:max-w-56 xl:max-w-96 pt-0
+    .impessum-title
+      @apply md:h-28 xl:h-32 md:pb-8 md:max-w-56 xl:max-w-96
+
+    .data-policy-intro
+      @apply flex flex-col  md:flex-row  w-full md:w-auto pb-14
       @media (min-width: 768px)
         flex: 1 1 0%
         min-width: 0
-        
-  .impessum-content
-    @apply bg-white pb-8 md:pb-24 md:max-w-56 xl:max-w-96 pt-0
-  .impessum-title
-    @apply md:h-28 xl:h-32 md:pb-8 md:max-w-56 xl:max-w-96
 
-  .data-policy-intro
-    @apply flex flex-col  md:flex-row  w-full md:w-auto pb-14
-    @media (min-width: 768px)
-      flex: 1 1 0%
-      min-width: 0
+    .copyright-card
+      @apply bg-cream mb-8 pb-7 pt-7 md:pb-20 md:pt-10 xl:pb-14 xl:pt-14 
+    .copyright-card-title
+      @apply pl-5 md:pr-[100px] md:pl-[100px] xl:pr-0
+    .copyright-card-content
+      @apply w-full pr-5  pl-5 md:pr-[100px] md:pl-[100px] xl:pl-0 xl:pr-24
+      a
+        @apply underline
 
-  .copyright-card
-    @apply bg-cream mb-8 pb-7 pt-7 md:pb-20 md:pt-10 xl:pb-14 xl:pt-14 
-  .copyright-card-title
-    @apply pl-5 md:pr-[100px] md:pl-[100px] xl:pr-0
-  .copyright-card-content
-    @apply w-full pr-5  pl-5 md:pr-[100px] md:pl-[100px] xl:pl-0 xl:pr-24
-    a
-      @apply underline
-
-  .agbs-card
-    @apply bg-cream mb-8 pb-7 pt-7 md:pb-1 md:pt-8 xl:pb-14 xl:pt-14 
-  .agbs-card-title
-    @apply pl-5 md:pr-[100px] md:pl-[100px] xl:pr-0
-  .agbs-card-content
-    @apply w-full pr-5  pl-5 md:pr-[100px] md:pl-[100px] xl:pl-0 xl:pr-24
-    a
-      @apply underline
-  .Annullationsbestimmungen
-    @apply text-[25px] md:text-[30px] xl:text-[36px]
+    .agbs-card
+      @apply bg-cream mb-8 pb-7 pt-7 md:pb-1 md:pt-8 xl:pb-14 xl:pt-14 
+    .agbs-card-title
+      @apply pl-5 md:pr-[100px] md:pl-[100px] xl:pr-0
+    .agbs-card-content
+      @apply w-full pr-5  pl-5 md:pr-[100px] md:pl-[100px] xl:pl-0 xl:pr-24
+      a
+        @apply underline
+    .Annullationsbestimmungen
+      @apply text-[25px] md:text-[30px] xl:text-[36px]
