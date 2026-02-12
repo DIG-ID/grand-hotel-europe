@@ -69,13 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!fixedButton || !footer) return;
 
-  const triggerPosition = 40;
+  const triggerPosition = 140;
   let isVisible = false;
 
   let pastThreshold = false;
   let footerBlocking = false;
-
-  gsap.set(fixedButton, { autoAlpha: 0, y: 50 });
 
   const lenis = gheInitLenisCinematic();
 
