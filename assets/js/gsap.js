@@ -65,17 +65,22 @@ if (typeof window !== "undefined") {
 // Fixed Booking Button
 document.addEventListener("DOMContentLoaded", () => {
   const fixedButton = document.querySelector(".fixed-booking-button");
-  if (!fixedButton) return;
+  const footer = document.querySelector("footer"); // ajusta o seletor se precisares
+
+  if (!fixedButton || !footer) return;
 
   const triggerPosition = 40;
   let isVisible = false;
 
+  let pastThreshold = false;
+  let footerBlocking = false;
+
   gsap.set(fixedButton, { autoAlpha: 0, y: 50 });
 
-  const lenis = gheInitLenisCinematic(); // <-- instância
+  const lenis = gheInitLenisCinematic();
 
-  lenis.on("scroll", ({ scroll }) => {
-    const shouldShow = scroll > triggerPosition;
+  const updateVisibility = () => {
+    const shouldShow = pastThreshold && !footerBlocking;
     if (shouldShow === isVisible) return;
     isVisible = shouldShow;
 
@@ -85,5 +90,34 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 0.6,
       overwrite: "auto",
     });
+  };
+
+  // Regra 1: aparece depois de X px
+  lenis.on("scroll", ({ scroll }) => {
+    pastThreshold = scroll > triggerPosition;
+    updateVisibility();
   });
+
+  // Regra 2: desaparece quando chega ao footer
+  ScrollTrigger.create({
+    trigger: footer,
+
+    // Opção A (mais comum): esconde quando o footer ENTRA no viewport
+    start: "top bottom",
+
+    // Se quiseres que só esconda quando o topo do footer chegar ao TOPO do viewport:
+    // start: "top top",
+
+    onEnter: () => {
+      footerBlocking = true;
+      updateVisibility();
+    },
+    onLeaveBack: () => {
+      footerBlocking = false;
+      updateVisibility();
+    },
+  });
+
+  // garante medidas certas
+  ScrollTrigger.refresh();
 });
