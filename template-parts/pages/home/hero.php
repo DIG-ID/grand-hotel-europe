@@ -27,12 +27,14 @@
         <div id="sb-container" class="hidden xl:block"></div> 
       </div>
       <div class="col-span-2 md:col-span-6 xl:col-span-12 scroll-down flex flex-col items-center justify-end">
-        <figure>
-          <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
-            <rect x="32.25" y="0.750001" width="31.5" height="31.5" transform="rotate(90 32.25 0.750001)" stroke="#A7986E" stroke-width="1.5"/>
-            <path d="M26 12L16.5 21L7 12" stroke="#A7986E" stroke-width="1.5"/>
-          </svg>
-        </figure>
+        <a href="#section-intro" class="block" data-lenis-scroll-to="#section-intro" aria-label="Scroll to next section">
+          <figure>
+            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
+              <rect x="32.25" y="0.750001" width="31.5" height="31.5" transform="rotate(90 32.25 0.750001)" stroke="#A7986E" stroke-width="1.5"/>
+              <path d="M26 12L16.5 21L7 12" stroke="#A7986E" stroke-width="1.5"/>
+            </svg>
+          </figure>
+        </a>
         <div class="w-[1px] md:w-[1px] h-[125px] xl:h-[150px] bg-gold" aria-hidden="true"></div>
       </div>
     </div>
