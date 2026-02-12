@@ -88,7 +88,7 @@ $bg_outro_responsive_url = $bg_outro_responsive_id ? wp_get_attachment_image_url
   ?>
   <section id="section-outro" class="section-outro relative bg-cover bg-center bg-no-repeat <?php echo esc_attr($gradient_class); ?> -mb-1">
 <?php endif; ?>
-  <div class="theme-container relative z-10 bg-cream border border-gold !w-11/12 xl:!w-full">
+  <div class="theme-container relative z-10 bg-cream border border-gold !w-11/12 xl:!w-full section-outro--cta-box">
     <div class="theme-grid py-14 md:pt-20 md:pb-24">
       <div class="col-span-2 md:col-span-4 xl:col-span-9 xl:pl-14">
         <h2 class="overtitle text-dark-2 mb-6 md:mb-4 hyphens-fix"><?php the_field( 'outro_overtitle', 'option' ); ?></h2>

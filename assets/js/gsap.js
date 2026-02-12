@@ -65,11 +65,11 @@ if (typeof window !== "undefined") {
 // Fixed Booking Button
 document.addEventListener("DOMContentLoaded", () => {
   const fixedButton = document.querySelector(".fixed-booking-button");
-  const footer = document.querySelector("footer"); // ajusta o seletor se precisares
+  const footer = document.querySelector(".section-outro--cta-box"); // ajusta o seletor se precisares
 
   if (!fixedButton || !footer) return;
 
-  const triggerPosition = 140;
+  const triggerPosition = 10;
   let isVisible = false;
 
   let pastThreshold = false;
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.to(fixedButton, {
       autoAlpha: shouldShow ? 1 : 0,
-      y: shouldShow ? 0 : 50,
+      y: shouldShow ? 0 : 48,
       duration: 0.6,
       overwrite: "auto",
     });
@@ -119,3 +119,28 @@ document.addEventListener("DOMContentLoaded", () => {
   // garante medidas certas
   ScrollTrigger.refresh();
 });
+
+
+function gheBindLenisAnchorScroll() {
+  const lenis = gheInitLenisCinematic();
+
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest('a[data-lenis-scroll-to]');
+    if (!link) return;
+
+    const selector = link.getAttribute("data-lenis-scroll-to");
+    const target = document.querySelector(selector);
+    if (!target) return;
+
+    e.preventDefault();
+
+    // Lenis smooth scroll
+    lenis.scrollTo(target, {
+      offset: -80,          // adjust if you have a sticky header (e.g. -80)
+      duration: 1.35,     // optional override
+      easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)), // optional
+    });
+  });
+}
+
+gheBindLenisAnchorScroll();
