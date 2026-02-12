@@ -53,7 +53,7 @@
 					<p class="text-base md:order-3 mb-4"><?php the_field( 'address', 'options' ); ?></p>
 					<div class="phone flex flex-col md:order-1 md:mb-4 xl:mb-8">
 						<a class="text-base translate-x-0 transition-all duration-500 ease-in-out hover:text-gold hover:translate-x-1" href="tel:<?php the_field( 'contacts_telephone', 'options' ); ?>"><?php esc_html_e( 'Tel: ', 'grand-hotel-europe' ); ?><?php the_field( 'contacts_telephone', 'options' ); ?></a>
-						<a class="text-base translate-x-0 transition-all duration-500 ease-in-out hover:text-gold hover:translate-x-1" href="tel:<?php the_field( 'contacts_fax', 'options' ); ?>"><?php esc_html_e( 'Fax: ', 'grand-hotel-europe' ); ?><?php the_field( 'contacts_fax', 'options' ); ?></a>
+						<p class="text-base"><?php esc_html_e( 'Fax: ', 'grand-hotel-europe' ); ?><?php the_field( 'contacts_fax', 'options' ); ?></p>
 					</div>
 					<a class="text-base translate-x-0 transition-all duration-500 ease-in-out hover:text-gold hover:translate-x-1 md:order-2 mb-4 xl:mb-8" href="mailto:<?php the_field( 'contacts_email', 'options' ); ?>"><?php the_field( 'contacts_email', 'options' ); ?></a>
 				</div>
