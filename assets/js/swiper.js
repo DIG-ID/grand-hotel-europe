@@ -27,22 +27,20 @@ window.addEventListener("load", () => {
     // Get original image count from PHP
       const originalImageCount = window.galleryData ? window.galleryData.originalImageCount : 0;
       
-      // Initialize thumbs
       var thumbs = new Swiper('.gallery-thumbs-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 14,
         loop: true,
-        loopedSlides: originalImageCount, // Use original count for loop
+        loopedSlides: originalImageCount,
         centeredSlides: true,
         slideToClickedSlide: true,
         watchSlidesProgress: true,
       });
 
-      // Initialize main slider
       var slider = new Swiper('.gallery-images-swiper', {
         slidesPerView: 1,
         loop: true,
-        loopedSlides: originalImageCount, // Use original count for loop
+        loopedSlides: originalImageCount,
         speed: 600,
         effect: 'slide',
         centeredSlides: true,
@@ -93,21 +91,25 @@ window.addEventListener("load", () => {
 
   if (document.querySelector(".single-bankette") || document.querySelector(".single-seminare")) {
 
-    const thumbs = new Swiper('.gallery-thumbs-swiper-bs', {
+    const originalImageCount = window.galleryData ? window.galleryData.originalImageCount : 0;
+
+    var thumbs = new Swiper('.gallery-thumbs-swiper-bs', {
       slidesPerView: 'auto',
       spaceBetween: 14,
       loop: true,
+      loopedSlides: originalImageCount,
       centeredSlides: true,
-      centeredSlidesBounds: false,
       slideToClickedSlide: true,
       watchSlidesProgress: true,
     });
 
-    const slider = new Swiper('.gallery-images-swiper-bs', {
+    var slider = new Swiper('.gallery-images-swiper-bs', {
       slidesPerView: 1,
       loop: true,
-      speed: 900,
+      loopedSlides: originalImageCount,
+      speed: 600,
       effect: 'slide',
+      centeredSlides: true,
       navigation: {
         nextEl: '.bankette-seminare-nav-arrows .swiper-button-next',
         prevEl: '.bankette-seminare-nav-arrows .swiper-button-prev',
@@ -116,15 +118,36 @@ window.addEventListener("load", () => {
         swiper: thumbs,
       },
       on: {
-        afterInit() {
-          thumbs.update();
-          thumbs.slideToLoop(this.realIndex, 0);
+        init: function() {
+          if (this.thumbs && this.thumbs.swiper) {
+            this.thumbs.swiper.update();
+            this.thumbs.swiper.slideToLoop(this.realIndex, 0);
+          }
         },
-        slideChange() {
-          thumbs.slideToLoop(this.realIndex, 300);
+        slideChange: function() {
+          if (this.thumbs && this.thumbs.swiper) {
+            this.thumbs.swiper.slideToLoop(this.realIndex, 300);
+          }
         }
       }
     });
+
+    if (originalImageCount > 0) {
+      document.querySelectorAll('.gallery-thumbs-swiper-bs .swiper-slide').forEach((slide) => {
+        slide.addEventListener('click', function() {
+          const originalIndex = parseInt(this.getAttribute('data-original-index'));
+          slider.slideToLoop(originalIndex);
+        });
+      });
+    }
+    
+    setTimeout(() => {
+      if (slider && slider.thumbs && slider.thumbs.swiper) {
+        slider.thumbs.swiper.update();
+        slider.thumbs.swiper.slideToLoop(slider.realIndex, 0);
+      }
+    }, 100);
+
   }
  
   if (document.querySelector(".page-template-page-hotel")) {
