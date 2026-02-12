@@ -39,6 +39,7 @@ add_action('wp_enqueue_scripts', function () {
 
     SBSyncroBox({
       CodLang: '" . esc_js($lang) . "',
+      Currency: 'CHF',
 
       Labels: {
         CheckAvailability: {
