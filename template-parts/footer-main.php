@@ -13,7 +13,7 @@
 	<div class="theme-container">
 		<div class="theme-grid py-16 gap-y-16">
 			<div class="col-span-2 md:flex md:flex-col md:justify-between md:h-full self-center md:self-start">
-				<div class="site-branding">
+				<div class="site-branding max-w-44 md:max-w-none mx-auto md:mx-0">
 					<?php do_action( 'theme_logo' ); ?>
 				</div>
 				<div class="socials hidden invisible md:block md:visible xl:mb-20">
