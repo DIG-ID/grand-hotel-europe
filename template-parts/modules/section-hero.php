@@ -46,7 +46,7 @@ if ( is_post_type_archive('suiten') ) {
 }
 ?>
 
-<section id="hero" class="hero-section relative overflow-hidden min-h-[100dvh] md:min-h-0 pt-64 md:pt-80 md:pb-80 xl:pt-[22.13rem] xl:pb-48 text-center <?php echo ($rb_id_desktop || $rb_id_mobile) ? '' : 'bg-darker'; ?>">
+<section id="hero" class="hero-section relative overflow-hidden min-h-[100dvh] flex flex-col justify-center md:block md:min-h-0 pt-0 md:pt-80 md:pb-80 xl:pt-[22.13rem] xl:pb-48 text-center <?php echo ($rb_id_desktop || $rb_id_mobile) ? '' : 'bg-darker'; ?>">
   <?php if ( $rb_id_desktop || $rb_id_mobile ) : ?>
     <figure class="absolute inset-0 -z-20">
       <?php
