@@ -85,3 +85,8 @@
 		</div>
 	</div>
 </footer>
+<div class="fixed-booking-button fixed bottom-6 left-0 w-full h-auto z-20 flex justify-center items-center">
+	<a href="<?php the_field('booking_button_url','option'); ?>" target="_blank" class="book-now-fixed-button block visible xl:hidden xl:invisible shadow-md w-full max-w-56 text-center">
+	<?php esc_html_e( 'jetzt buchen', 'grand-hotel-europe' ); ?>
+</a>
+</div>

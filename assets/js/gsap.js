@@ -56,12 +56,34 @@ export function initTravelBannerParallax() {
   });
 }
 
-// ---- init order matters ----
-gheInitLenisCinematic();
-//initTravelBannerParallax();
+if (typeof window !== "undefined") {
+  gheInitLenisCinematic();
+  ScrollTrigger.refresh();
+  window.addEventListener("load", () => ScrollTrigger.refresh());
+}
 
-// refresh AFTER everything is created
-ScrollTrigger.refresh();
+// Fixed Booking Button
+document.addEventListener("DOMContentLoaded", () => {
+  const fixedButton = document.querySelector(".fixed-booking-button");
+  if (!fixedButton) return;
 
-// optional: once images/fonts are loaded, refresh again for perfect measurements
-window.addEventListener("load", () => ScrollTrigger.refresh());
+  const triggerPosition = 40;
+  let isVisible = false;
+
+  gsap.set(fixedButton, { autoAlpha: 0, y: 50 });
+
+  const lenis = gheInitLenisCinematic(); // <-- instância
+
+  lenis.on("scroll", ({ scroll }) => {
+    const shouldShow = scroll > triggerPosition;
+    if (shouldShow === isVisible) return;
+    isVisible = shouldShow;
+
+    gsap.to(fixedButton, {
+      autoAlpha: shouldShow ? 1 : 0,
+      y: shouldShow ? 0 : 50,
+      duration: 0.6,
+      overwrite: "auto",
+    });
+  });
+});
