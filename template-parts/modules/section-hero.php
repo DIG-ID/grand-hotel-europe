@@ -62,7 +62,7 @@ if ( is_post_type_archive('suiten') ) {
       ?>
     </figure>
   <?php endif; ?>
-  <div class="absolute inset-0 bg-[#222222] opacity-[0.39] -z-10"></div>
+  <div class="absolute inset-0 bg-[#222222] opacity-[0.5] -z-10"></div>
     
   <div class="theme-container relative z-10">
     <h1 class="title-main pb-5 xl:pb-6 text-white"><?php echo $title; ?></h1>
