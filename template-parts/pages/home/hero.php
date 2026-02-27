@@ -19,7 +19,7 @@
     endif;
     ?>
   </figure>
-  <div class="home-hero-overlay" aria-hidden="true"></div>
+  <div class="home-hero-overlay hidden" aria-hidden="true"></div>
   <div class="theme-container justify-center h-full flex items-end pb-8 xl:pb-14 relative z-10">
     <div class="theme-grid absolute bottom-0 h-2/3 md:h-auto w-full">
       <div class="col-span-2 md:col-span-6 xl:col-span-12 scroll-down flex flex-col justify-center mb-20 md:mb-24 xl:mb-11">
