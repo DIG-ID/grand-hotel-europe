@@ -236,6 +236,26 @@ $bankette_query = new WP_Query([
           </div>
           <div class="col-span-2 md:col-span-3 xl:col-span-5 col-start-1 md:col-start-4 xl:col-start-7">
             <p class="text-dark-2"><?php the_field('seminare_content_bottom_text', 'option'); ?></p>
+            <div class="flex flex-col lg:flex-row items-start lg:items-center gap-x-5">
+              <?php 
+              $pdfBtn1 = get_field('seminare_content_bottom_button_1', 'option');
+              if( $pdfBtn1 ): 
+                  $link_url = $pdfBtn1['url'];
+                  $link_title = $pdfBtn1['title'];
+                  $link_target = $pdfBtn1['target'] ? $pdfBtn1['target'] : '_self';
+                  ?>
+                  <a class="btn btn-primary max-w-56 mt-7" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+              <?php endif; ?>
+              <?php 
+              $pdfBtn2 = get_field('seminare_content_bottom_button_2', 'option');
+              if( $pdfBtn2 ): 
+                  $link_url = $pdfBtn2['url'];
+                  $link_title = $pdfBtn2['title'];
+                  $link_target = $pdfBtn2['target'] ? $pdfBtn2['target'] : '_self';
+                  ?>
+                  <a class="btn btn-primary max-w-56 mt-7" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+              <?php endif; ?>
+            </div>
           </div>
         </div>
     </div>
