@@ -148,6 +148,22 @@ function ghe_theme_lower_yoast_metabox_priority( $priority ) {
 	return 'core';
 }
 
+
+// Remove reCAPTCHA scripts do CF7 globalmente.
+add_filter( 'wpcf7_load_js', '__return_false' );
+add_filter( 'wpcf7_load_css', '__return_false' );
+
+// Carrega só nas páginas que têm formulário.
+add_action(
+	'wp_enqueue_scripts',
+	function () {
+		if ( is_page_template( 'page-templates/page-arrival-contact.php' ) ) {
+			wpcf7_enqueue_scripts();
+			wpcf7_enqueue_styles();
+		}
+	}
+);
+
 /**
  * CF7: Add current page context (title + url) as hidden fields.
  * Works even when the form is rendered via do_shortcode() in templates.
