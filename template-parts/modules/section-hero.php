@@ -51,10 +51,10 @@ if ( is_post_type_archive('suiten') ) {
     <figure class="absolute inset-0 -z-20">
       <?php
       // If both IDs are the same, output just one image to avoid duplicate downloads.
-      if ($rb_id_mobile && $rb_id_desktop && (int)$rb_id_mobile === (int)$rb_id_desktop) { echo wp_get_attachment_image($rb_id_desktop,'full', false, array('class' => 'w-full h-full object-cover') );
+      if ($rb_id_mobile && $rb_id_desktop && (int)$rb_id_mobile === (int)$rb_id_desktop) { echo wp_get_attachment_image($rb_id_desktop,'full', false, array('class' => 'w-full h-full object-cover', 'loading' => 'eager', 'fetchpriority' => 'high') );
       } 
       else {
-        if ($rb_id_mobile) { echo wp_get_attachment_image($rb_id_mobile, 'full', false, array('class' => 'w-full h-full object-cover !block xl:!hidden') );
+        if ($rb_id_mobile) { echo wp_get_attachment_image($rb_id_mobile, 'full', false, array('class' => 'w-full h-full object-cover !block xl:!hidden', 'loading' => 'eager', 'fetchpriority' => 'high') );
         }
         if ($rb_id_desktop) { echo wp_get_attachment_image($rb_id_desktop, 'full', false, array('class' => 'w-full h-full object-cover !hidden xl:!block') );
         }

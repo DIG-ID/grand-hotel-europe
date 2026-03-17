@@ -15,7 +15,7 @@
     <?php
     $hero_id = get_field( 'hero_background_image' );
     if ( $hero_id ) :
-      echo wp_get_attachment_image( $hero_id, 'full', false, array( 'class' => 'absolute inset-0 w-full h-full object-cover' ) );
+      echo wp_get_attachment_image( $hero_id, 'full', false, array( 'class' => 'absolute inset-0 w-full h-full object-cover', 'loading' => 'eager', 'fetchpriority' => 'high' ) );
     endif;
     ?>
   </figure>
