@@ -13,7 +13,7 @@ module.exports = {
   theme: {
     fontFamily: {
       gilda: ['Gilda Display', 'Didot', 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', 'P052', 'serif'],
-      barlow: ['barlow', 'Helvetica Neue', 'Arial', 'sans-serif'],
+      barlow: ['barlow', 'sans-serif'],
       source: ['source-serif-4', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],
       barlowCondensed: ['barlow-condensed', 'Arial Narrow', 'Helvetica Neue', 'sans-serif'],
     },
