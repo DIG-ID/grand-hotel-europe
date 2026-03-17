@@ -76,8 +76,8 @@ function ghe_typekit_non_blocking_loader( string $html, string $handle ): string
 		return $html;
 	}
 
-	return '<link rel="preload" href="https://use.typekit.net/lmo5nfm.css" as="style" crossorigin onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
-		. '<noscript><link rel="stylesheet" href="https://use.typekit.net/lmo5nfm.css"></noscript>' . "\n";
+	return '<link rel="preload" href="https://use.typekit.net/dfu8bst.css" as="style" crossorigin onload="this.onload=null;this.rel=\'stylesheet\'">' . "\n"
+		. '<noscript><link rel="stylesheet" href="https://use.typekit.net/dfu8bst.css"></noscript>' . "\n";
 }
 add_filter( 'style_loader_tag', 'ghe_typekit_non_blocking_loader', 10, 2 );
 
@@ -140,7 +140,7 @@ function ghe_theme_enqueue_styles() {
 	$theme_version = $the_theme->get( 'Version' );
 
 	// Font stylesheets (non-blocking via style_loader_tag filters).
-	wp_enqueue_style( 'typekit-fonts', 'https://use.typekit.net/lmo5nfm.css', array(), null );
+	wp_enqueue_style( 'typekit-fonts', 'https://use.typekit.net/dfu8bst.css', array(), null );
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap', array(), null );
 
 	// Register Theme main style (depends on fonts so they load first).
