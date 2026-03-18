@@ -56,14 +56,14 @@ $bg_outro_responsive_url = $bg_outro_responsive_id ? wp_get_attachment_image_url
   <div class="absolute inset-0 bg-[rgba(34,34,34,0.75)] pointer-events-none z-0" aria-hidden="true"></div>
 
   <div class="theme-container pt-9 pb-24 md:py-28 xl:pb-24 xl:pt-20 relative z-10">
-    <div class="theme-grid">
-      <div class="col-span-2 md:col-span-6 xl:col-span-12">
+    <div class="theme-grid mob-ls:flex mob-ls:flex-row mob-ls:flex-wrap">
+      <div class="col-span-2 md:col-span-6 xl:col-span-12 mob-ls:w-full">
         <h2 class="overtitle text-white mb-4"><?php echo $outro_over; ?></h2>
       </div>
-      <div class="col-span-2 md:col-span-3 xl:col-span-6">
+      <div class="col-span-2 md:col-span-3 xl:col-span-6 mob-ls:flex-1">
         <h3 class="title-secondary text-white mb-5 md:mb-0"><?php echo $outro_title; ?></h3>
       </div>
-      <div class="col-span-2 md:col-span-3 xl:col-span-6">
+      <div class="col-span-2 md:col-span-3 xl:col-span-6 mob-ls:flex-1">
         <p class="text-white mb-7 xl:mb-14"><?php echo $outro_text; ?></p>
         <?php 
         if( $outro_button ): 
@@ -89,11 +89,11 @@ $bg_outro_responsive_url = $bg_outro_responsive_id ? wp_get_attachment_image_url
   <section id="section-outro" class="section-outro relative bg-cover bg-center bg-no-repeat <?php echo esc_attr($gradient_class); ?> -mb-1">
 <?php endif; ?>
   <div class="theme-container relative z-10 bg-cream border border-gold !w-11/12 xl:!w-full section-outro--cta-box">
-    <div class="theme-grid py-14 md:pt-20 md:pb-24">
-      <div class="col-span-2 md:col-span-4 xl:col-span-9 xl:pl-14">
+    <div class="theme-grid py-14 md:pt-20 md:pb-24 mob-ls:flex mob-ls:flex-row mob-ls:items-center">
+      <div class="col-span-2 md:col-span-4 xl:col-span-9 xl:pl-14 mob-ls:w-3/5">
         <h2 class="overtitle text-dark-2 mb-6 md:mb-4 hyphens-fix"><?php the_field( 'outro_overtitle', 'option' ); ?></h2>
         <h3 class="title-secondary text-dark-2 mb-7 md:mb-6"><?php the_field( 'outro_title', 'option' ); ?></h3>
-        <div class="flex flex-col xl:flex-row mb-20 md:mb-0">
+        <div class="flex flex-col xl:flex-row mb-20 mob-ls:mb-0 md:mb-0">
         <?php
         if( have_rows('outro_features_list', 'option') ):
             while( have_rows('outro_features_list', 'option') ) : the_row(); ?>
@@ -110,7 +110,7 @@ $bg_outro_responsive_url = $bg_outro_responsive_id ? wp_get_attachment_image_url
         endif; ?>
         </div>
       </div>
-      <div class="col-span-2 md:col-span-2 xl:col-span-3 flex flex-col items-center md:items-end justify-center md:justify-end xl:justify-center pr-0 xl:pr-12">
+      <div class="col-span-2 md:col-span-2 xl:col-span-3 flex flex-col items-center md:items-end justify-center md:justify-end xl:justify-center pr-0 xl:pr-12 mob-ls:w-2/5 mob-ls:items-end">
         <?php 
         $booking_url = get_field('booking_button_url','option');
         if( $booking_url ): ?>

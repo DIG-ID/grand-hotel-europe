@@ -46,12 +46,12 @@ if (empty($intro_id_mobile)) {
 		<div class="intro-image px-6 md:px-14">
 			<figure class="framed__asymmetric--bottom-both w-full h-full md:h-auto">
 				<?php
-				if ($intro_id_mobile && $intro_id_desktop && (int)$intro_id_mobile === (int)$intro_id_desktop) {echo wp_get_attachment_image($intro_id_desktop, 'full', false, array('class' => 'w-full !h-full md:!h-auto object-cover max-h-[300px] md:max-h-none min-h-[300px] md:min-h-none'));
-				} 
+				if ($intro_id_mobile && $intro_id_desktop && (int)$intro_id_mobile === (int)$intro_id_desktop) {echo wp_get_attachment_image($intro_id_desktop, 'full', false, array('class' => 'w-full !h-full md:!h-auto object-cover max-h-[300px] mob-ls:max-h-[180px] md:max-h-none min-h-[300px] mob-ls:min-h-[180px] md:min-h-none'));
+				}
 				else {
-					if ($intro_id_mobile) {echo wp_get_attachment_image($intro_id_mobile,'full',false,array('class' => 'w-full !h-full md:!h-auto object-cover max-h-[300px] md:max-h-none min-h-[300px] md:min-h-none !block md:!hidden') );
+					if ($intro_id_mobile) {echo wp_get_attachment_image($intro_id_mobile,'full',false,array('class' => 'w-full !h-full md:!h-auto object-cover max-h-[300px] mob-ls:max-h-[180px] md:max-h-none min-h-[300px] mob-ls:min-h-[180px] md:min-h-none !block md:!hidden') );
 					}
-					if ($intro_id_desktop) {echo wp_get_attachment_image($intro_id_desktop, 'full', false, array('class' => 'w-full !h-full md:!h-auto object-cover max-h-[300px] md:max-h-none min-h-[300px] md:min-h-none !hidden md:!block') );
+					if ($intro_id_desktop) {echo wp_get_attachment_image($intro_id_desktop, 'full', false, array('class' => 'w-full !h-full md:!h-auto object-cover max-h-[300px] mob-ls:max-h-[180px] md:max-h-none min-h-[300px] mob-ls:min-h-[180px] md:min-h-none !hidden md:!block') );
 					}
 				}
 				?>
@@ -59,14 +59,14 @@ if (empty($intro_id_mobile)) {
 		</div>
 	<?php endif; ?>
 	<div class="theme-container pt-11 md:pt-16">
-		<div class="theme-grid">
-			<div class="col-span-2 md:col-span-6 xl:col-span-12">
+		<div class="theme-grid mob-ls:flex mob-ls:flex-row mob-ls:flex-wrap">
+			<div class="col-span-2 md:col-span-6 xl:col-span-12 mob-ls:w-full">
 				<h2 class="overtitle text-dark-2 mb-4"><?php echo $intro_over; ?></h2>
 			</div>
-			<div class="col-span-2 md:col-span-3 xl:col-span-6">
+			<div class="col-span-2 md:col-span-3 xl:col-span-6 mob-ls:flex-1">
 				<h3 class="title-secondary text-dark-2 mb-5 md:mb-0"><?php echo $intro_title; ?></h3>
 			</div>
-			<div class="col-span-2 md:col-span-3 xl:col-span-6">
+			<div class="col-span-2 md:col-span-3 xl:col-span-6 mob-ls:flex-1">
 				<p class="text-dark-2"><?php echo $intro_text; ?></p>
 				<?php 
         if( $intro_button ): 

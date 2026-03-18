@@ -19,6 +19,9 @@ module.exports = {
     },
 
     extend: {
+      screens: {
+        'mob-ls': { 'raw': '(orientation: landscape) and (max-width: 1023px) and (max-height: 500px)' },
+      },
       letterSpacing: {
         //wide: '.038em',
         //wider: '.06em',

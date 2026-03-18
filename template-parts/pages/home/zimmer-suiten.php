@@ -11,15 +11,15 @@
 
 <section id="section-zimmer-suiten" class="section-zimmer-suiten pt-11 md:pt-16 pb-24 md:pb-32 xl:pb-40 bg-[linear-gradient(to_bottom,#F8F5F0_0%,#F8F5F0_75%,#FFFFFF_75%,#FFFFFF_100%)] md:bg-[linear-gradient(to_bottom,#F8F5F0_0%,#F8F5F0_60%,#FFFFFF_60%,#FFFFFF_100%)]">
   <div class="theme-container">
-    <div class="theme-grid">
-      <div class="col-span-2 md:col-span-4 xl:col-span-12">
+    <div class="theme-grid mob-ls:flex mob-ls:flex-row mob-ls:flex-wrap">
+      <div class="col-span-2 md:col-span-4 xl:col-span-12 mob-ls:w-full">
         <h2 class="overtitle text-dark-2 mb-4"><?php the_field( 'zimmer_suiten_overtitle' ); ?></h2>
-        <h3 class="title-secondary text-dark-2 mb-5 xl:mb-10 max-w-72 md:max-w-none"><?php the_field( 'zimmer_suiten_title' ); ?></h3>
+        <h3 class="title-secondary text-dark-2 mb-5 xl:mb-10 max-w-72 mob-ls:max-w-96 md:max-w-none"><?php the_field( 'zimmer_suiten_title' ); ?></h3>
       </div>
-      <div class="col-span-2 md:col-span-3 xl:col-span-5 col-start-1">
+      <div class="col-span-2 md:col-span-3 xl:col-span-5 col-start-1 mob-ls:flex-1">
         <p class="text-dark-2 mb-7 md:mb-0"><?php the_field( 'zimmer_suiten_text' ); ?></p>
       </div>
-      <div class="col-span-2 md:col-span-2 xl:col-span-3 col-start-1 md:col-start-5 xl:col-start-10 flex flex-col justify-end md:items-end">
+      <div class="col-span-2 md:col-span-2 xl:col-span-3 col-start-1 md:col-start-5 xl:col-start-10 flex flex-col justify-end md:items-end mob-ls:w-auto mob-ls:items-end">
         <?php 
         $zs_button = get_field('zimmer_suiten_button');
         if( $zs_button ): 
@@ -30,7 +30,7 @@
             <a class="btn btn-transparent-linebreak max-w-56 md:max-w-none xl:max-w-56" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
         <?php endif; ?>
       </div>
-      <div class="col-span-2 md:col-span-6 xl:col-span-12 mt-10">
+      <div class="col-span-2 md:col-span-6 xl:col-span-12 mt-10 mob-ls:w-full">
         <figure class="framed__symmetric--bottom-left w-full">
           <div class="w-full h-full min-h-[302px] md:min-h-none overflow-hidden [transform:translateZ(0)]">
             <?php

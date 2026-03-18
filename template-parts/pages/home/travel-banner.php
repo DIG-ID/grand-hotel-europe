@@ -20,9 +20,9 @@
           $text  = get_sub_field('text');
           $btn   = get_sub_field('button');
         ?>
-          <div class="swiper-slide relative bg-cover bg-no-repeat min-h-[600px] md:min-h-[550px] xl:min-h-[600px]" style="<?php echo $bg_url ? 'background-image:url(' . esc_url($bg_url) . ');' : ''; ?>">
+          <div class="swiper-slide relative bg-cover bg-no-repeat min-h-[600px] mob-ls:min-h-[450px] md:min-h-[550px] xl:min-h-[600px]" style="<?php echo $bg_url ? 'background-image:url(' . esc_url($bg_url) . ');' : ''; ?>">
             <div class="absolute inset-0 bg-[rgba(34,34,34,0.75)] pointer-events-none z-0" aria-hidden="true"></div>
-            <div class="theme-container w-full flex pt-20 pb-32 md:pt-20 md:pb-32 xl:pt-20 xl:pb-32 relative z-10">
+            <div class="theme-container w-full flex pt-20 mob-ls:pt-8 pb-32 mob-ls:pb-20 md:pt-20 md:pb-32 xl:pt-20 xl:pb-32 relative z-10">
               <div class="theme-grid w-full">
                 <div class="col-span-2 md:col-span-3 xl:col-span-6">
                   <?php if ($title) : ?>
@@ -56,7 +56,7 @@
       <?php endif; ?>
     </div>
 
-    <div class="travel-banner-nav-arrows absolute w-full bottom-10 z-10 flex justify-center items-center gap-x-8 h-8">
+    <div class="travel-banner-nav-arrows absolute w-full bottom-10 mob-ls:bottom-12 z-10 flex justify-center items-center gap-x-8 h-8">
       <button type="button" class="swiper-button-prev relative left-0 bottom-0 z-10 w-8 h-8 flex items-center justify-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33" fill="none">
           <rect x="32.25" y="32.25" width="31.5" height="31.5" transform="rotate(-180 32.25 32.25)" stroke="#F8F5F0" stroke-width="1.5"/>

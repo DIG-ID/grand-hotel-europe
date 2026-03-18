@@ -11,17 +11,17 @@
 
 <footer class="footer-main bg-dark-2 text-cream">
 	<div class="theme-container">
-		<div class="theme-grid py-16 gap-y-16">
-			<div class="col-span-2 md:flex md:flex-col md:justify-between md:h-full self-center md:self-start">
-				<div class="site-branding max-w-44 md:max-w-none mx-auto md:mx-0">
+		<div class="theme-grid py-16 mob-ls:py-8 gap-y-16 mob-ls:flex mob-ls:flex-row">
+			<div class="col-span-2 md:flex md:flex-col md:justify-between md:h-full self-center md:self-start mob-ls:w-1/3 mob-ls:flex mob-ls:flex-col mob-ls:justify-between mob-ls:h-full mob-ls:self-stretch">
+				<div class="site-branding max-w-44 md:max-w-none mx-auto md:mx-0 mob-ls:mx-0 mob-ls:mb-36">
 					<?php do_action( 'theme_logo' ); ?>
 				</div>
-				<div class="socials hidden invisible md:block md:visible xl:mb-20">
+				<div class="socials hidden invisible md:block md:visible xl:mb-20 mob-ls:block mob-ls:visible">
 					<?php do_action( 'socials' ); ?>
 				</div>
 			</div>
 
-			<div class="footer-menus col-span-2 xl:col-span-4 xl:col-start-5 grid grid-cols-2 xl:grid-cols-4 gap-x-5 xl:gap-x-[30.5px]">
+			<div class="footer-menus col-span-2 xl:col-span-4 xl:col-start-5 grid grid-cols-2 xl:grid-cols-4 gap-x-5 xl:gap-x-[30.5px] mob-ls:w-1/3">
 				<?php
 				if ( has_nav_menu( 'footer-menu-1' ) ) :
 					wp_nav_menu(
@@ -47,7 +47,7 @@
 				endif;
 				?>
 			</div>
-			<div class="footer-contacts col-span-2 xl:col-start-10">
+			<div class="footer-contacts col-span-2 xl:col-start-10 mob-ls:w-1/3">
 				<p class="overtitle mb-4 md:mb-8"><?php esc_html_e( 'Kontakt', 'grand-hotel-europe' ); ?></p>
 				<div class="flex flex-col">
 					<p class="text-base md:order-3 mb-4"><?php the_field( 'address', 'options' ); ?></p>
@@ -60,15 +60,15 @@
 
 				
 			</div>
-			<div class="socials col-span-2 flex justify-center items-center md:hidden md:invisible">
+			<div class="socials col-span-2 flex justify-center items-center md:hidden md:invisible mob-ls:hidden">
 				<?php do_action( 'socials' ); ?>
 			</div>
 		</div>
-		<div class="copy-footer bg-dark flex flex-col md:flex-row md:items-center md:justify-between px-5 py-4">
-			<div class="text-center md:text-left text-cream text-xs md:text-sm xl:text-base order-2 md:order-1">
+		<div class="copy-footer bg-dark flex flex-col md:flex-row md:items-center md:justify-between px-5 py-4 mob-ls:flex-row mob-ls:items-center mob-ls:justify-between">
+			<div class="text-center md:text-left text-cream text-xs md:text-sm xl:text-base order-2 md:order-1 mob-ls:text-left mob-ls:order-1">
 				&copy; <?php echo date( 'Y' ); ?> <?php esc_html_e( 'Alle Rechte vorbehalten.', 'grand-hotel-europe' ); ?>
 			</div>
-			<div class="menu-copy order-1 md:order-2">
+			<div class="menu-copy order-1 md:order-2 mob-ls:order-2">
 				<?php
 				if ( has_nav_menu( 'copyright-menu' ) ) :
 					wp_nav_menu(
