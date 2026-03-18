@@ -26,15 +26,15 @@
         <?php
         $lang = defined( 'ICL_LANGUAGE_CODE' ) ? ICL_LANGUAGE_CODE : '';
         if ( $lang === 'de' ) {
-          $hero_title_max_w = 'max-w-[245px]';
+          $hero_title_max_w = 'max-w-[320px]';
         } elseif ( $lang === 'en' ) {
-          $hero_title_max_w = 'max-w-[270px]';
+          $hero_title_max_w = 'max-w-[360px]';
         } else {
           $hero_title_max_w = 'max-w-xs';
         }
         ?>
-        <h1 class="title-main text-white text-center mb-9 <?php echo esc_attr( $hero_title_max_w ); ?> md:max-w-md xl:max-w-none px-6 md:px-0 mx-auto"><?php the_field( 'hero_title' ); ?></h1>
-        <div id="sb-container" class="hidden xl:block"></div> 
+        <h1 class="title-main text-white text-center mb-9 <?php echo esc_attr( $hero_title_max_w ); ?> md:max-w-[38rem] xl:max-w-none px-6 md:px-0 mx-auto"><?php the_field( 'hero_title' ); ?></h1>
+        <div id="sb-container" class="hidden xl:block"></div>
       </div>
       <div class="col-span-2 md:col-span-6 xl:col-span-12 scroll-down flex flex-col items-center justify-end">
         <a href="#section-intro" class="block" data-lenis-scroll-to="#section-intro" aria-label="Scroll to next section">
