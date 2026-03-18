@@ -36,7 +36,7 @@
             <?php
             $zs_id = get_field( 'zimmer_suiten_image' );
             if ( $zs_id ) :
-              echo wp_get_attachment_image( $zs_id, 'full', false, array( 'class' => 'w-full h-full object-cover object-[80%_50%] md:object-center min-h-[302px] md:min-h-none scale-x-75 md:scale-100 origin-center overflow-visible md:overflow-auto' ) );
+              echo wp_get_attachment_image( $zs_id, 'full', false, array( 'class' => 'block w-3/4 md:w-full mx-auto h-full object-cover object-[80%_50%] md:object-center min-h-[302px] md:min-h-none' ) );
             endif;
             ?>
           </div>
