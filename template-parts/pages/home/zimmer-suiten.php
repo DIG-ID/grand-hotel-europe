@@ -32,7 +32,7 @@
       </div>
       <div class="col-span-2 md:col-span-6 xl:col-span-12 mt-10">
         <figure class="framed__symmetric--bottom-left w-full">
-          <div class="w-full h-full min-h-[302px] md:min-h-none overflow-hidden">
+          <div class="w-full h-full min-h-[302px] md:min-h-none overflow-hidden [transform:translateZ(0)]">
             <?php
             $zs_id = get_field( 'zimmer_suiten_image' );
             if ( $zs_id ) :
