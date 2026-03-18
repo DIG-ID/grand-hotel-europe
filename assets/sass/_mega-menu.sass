@@ -90,6 +90,36 @@
               @apply block font-barlow font-semibold text-xs md:text-base text-cream uppercase transition-colors duration-500 ease-in-out hover:text-dark
 
 
+@media (orientation: landscape) and (max-width: 1023px) and (max-height: 500px)
+  .mega-menu-wrapper
+    .mega-panel
+      overflow-y: auto
+      @apply pb-8
+    .mega-menu-button-close
+      @apply mb-4
+      span
+        @apply text-sm
+    ul.mega-menu
+      @apply mb-3
+      > li.menu-item
+        @apply py-2
+        a
+          @apply text-lg
+    .mega-drilldown-panel
+      ul.sub-menu
+        @apply mb-3
+        > li.menu-item
+          @apply py-2
+          a
+            @apply text-lg
+    .mega-menu-language-switcher
+      .wpml-ls
+        ul
+          li.wpml-ls-item
+            a.wpml-ls-link
+              .wpml-ls-native
+                @apply text-xs
+
 @media (max-height: 900px)
   .mega-menu-wrapper
     .mega-panel
