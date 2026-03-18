@@ -36,7 +36,17 @@ $general_query = new WP_Query([
 			<?php wp_reset_postdata(); ?>
 		<?php else : ?>
 			<div class="col-span-2 md:col-span-6 xl:col-span-12 ">
-				<p><?php esc_html_e( 'Derzeit haben wir keine offenen Positionen zu besetzen. Wir freuen uns, wenn Sie zu einem späteren Zeitpunkt wieder vorbeischauen.', 'grand-hotel-europe' ) ?></p>
+				<div class="flex justify-center items-center bg-cream py-9 md:py-8 xl:py-16 mb-5 xl:mb-8 gap-8 px-6 border border-gold">
+					<div class="w-6 h-6 xl:w-8 xl:h-8 flex items-center justify-center">
+						<svg class="w-6 h-6 xl:w-8 xl:h-8" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M13.5 7.5H16.5V10.5H13.5V7.5ZM13.5 13.5H16.5V22.5H13.5V13.5ZM15 0C6.72 0 0 6.72 0 15C0 23.28 6.72 30 15 30C23.28 30 30 23.28 30 15C30 6.72 23.28 0 15 0ZM15 27C8.385 27 3 21.615 3 15C3 8.385 8.385 3 15 3C21.615 3 27 8.385 27 15C27 21.615 21.615 27 15 27Z" fill="#A7986E"/>
+						</svg>
+					</div>
+
+
+					<p><?php esc_html_e( 'Derzeit haben wir keine offenen Positionen zu besetzen. Wir freuen uns, wenn Sie zu einem späteren Zeitpunkt wieder vorbeischauen.', 'grand-hotel-europe' ) ?></p>
+				</div>
+				
 			</div>
 		<?php endif; ?>
 	</div>
