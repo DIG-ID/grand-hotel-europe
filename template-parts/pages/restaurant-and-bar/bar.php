@@ -54,7 +54,7 @@
 
       <div class="button-wrapper col-start-1 col-span-2 md:col-start-5 md:col-span-2 xl:col-start-7 xl:col-span-6 pt-7 md:pt-10 xl:gap-x-20 pb-24 md:pb-0 xl:pb-32">
         <?php 
-        $bar_button = get_field('bellvue_button');
+        $bar_button = get_field('bar_button');
         if ($bar_button): ?>
           <a class="btn btn-transparent max-w-56 mb-7 xl:mb-0 xl:mr-20"
              href="<?php echo esc_url($bar_button['url']); ?>"
@@ -64,7 +64,7 @@
         <?php endif; ?>
 
         <?php 
-        $bar_button_2 = get_field('bellvue_button_2');
+        $bar_button_2 = get_field('bar_button_2');
         if ($bar_button_2): ?>
           <a class="btn btn-transparent max-w-56"
              href="<?php echo esc_url($bar_button_2['url']); ?>"
