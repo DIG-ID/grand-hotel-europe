@@ -115,17 +115,29 @@ function ghe_theme_lower_yoast_metabox_priority( $priority ) {
 }
 
 
-// Remove reCAPTCHA scripts do CF7 globalmente.
+/**
+ * Templates que renderizam um formulário CF7.
+ */
+function ghe_page_has_cf7_form() {
+	return is_page_template( 'page-templates/page-arrival-contact.php' )
+		|| is_page_template( 'page-templates/page-gruppen.php' )
+		|| is_singular( 'jobs' );
+}
+
+// Remove scripts e styles do CF7 globalmente.
 add_filter( 'wpcf7_load_js', '__return_false' );
 add_filter( 'wpcf7_load_css', '__return_false' );
 
 // Carrega só nas páginas que têm formulário.
+// O reCAPTCHA do CF7 tem hook próprio (não respeita wpcf7_load_js), por isso é removido à parte.
 add_action(
 	'wp_enqueue_scripts',
 	function () {
-		if ( is_page_template( 'page-templates/page-arrival-contact.php' ) ) {
+		if ( ghe_page_has_cf7_form() ) {
 			wpcf7_enqueue_scripts();
 			wpcf7_enqueue_styles();
+		} else {
+			remove_action( 'wp_enqueue_scripts', 'wpcf7_recaptcha_enqueue_scripts', 20 );
 		}
 	}
 );
