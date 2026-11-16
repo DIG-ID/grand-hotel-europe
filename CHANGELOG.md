@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 The changelog starts at 1.1.0; earlier history is in git.
 
+## [1.2.0] — 2026-11-16
+
+### Added
+- Homepage offer section: optional self-hosted video (new ACF field `section_offer_video`, MP4). It starts paused on the section image; the visitor's click plays it with sound, with custom player controls (play/pause, seek, time, mute + volume fader, fullscreen). Without a video the section shows the image as before.
+
 ## [1.1.0] — 2026-11-16
 
 ### Added

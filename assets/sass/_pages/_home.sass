@@ -44,6 +44,106 @@
   &__media img
     height: 100%
 
+  // Video (click to play, with sound): the poster is the section image; the play
+  // button covers the whole video and is removed once it starts (native controls take over).
+  &__play
+    @apply cursor-pointer
+    background: theme('colors.darker / 0.15')
+    transition: background-color var(--transition-base, 0.3s ease)
+    &:hover,
+    &:focus-visible
+      background: theme('colors.darker / 0.3')
+    &:focus-visible
+      outline: 2px solid theme('colors.gold')
+      outline-offset: -4px
+
+  &__play-icon
+    @apply relative block w-20 h-20 rounded-full border border-cream
+    background: theme('colors.darker / 0.35')
+    // Triangle, nudged right so it looks centred in the circle.
+    &::after
+      content: ""
+      @apply absolute top-1/2 left-1/2
+      transform: translate(-35%, -50%)
+      border-style: solid
+      border-width: 12px 0 12px 20px
+      border-color: transparent transparent transparent theme('colors.cream')
+
+  // Custom controls (assets/js/offerVideo.js): bar over the bottom of the video,
+  // dark gradient for contrast, gold for the played part and the volume level.
+  &__controls
+    background: linear-gradient(to top, theme('colors.darker / 0.75'), transparent)
+    transition: opacity var(--transition-base, 0.3s ease)
+    &[hidden]
+      display: none
+
+  // While playing, the bar fades out until the pointer is over the video or a control has focus.
+  @media (hover: hover)
+    &__video.is-started:not(.is-paused):not(:hover):not(:focus-within) &__controls
+      opacity: 0
+
+  &__ctrl
+    @apply flex items-center justify-center shrink-0 w-8 h-8 cursor-pointer
+    transition: color var(--transition-base, 0.3s ease)
+    svg
+      @apply w-5 h-5
+    &:hover,
+    &:focus-visible
+      color: theme('colors.gold')
+    &:focus-visible
+      outline: 1px solid theme('colors.gold')
+      outline-offset: 2px
+
+  // Swap the icons by state.
+  &__video .icon-play,
+  &__video .icon-muted,
+  &__video.is-paused .icon-pause,
+  &__video.is-muted .icon-volume
+    display: none
+  &__video.is-paused .icon-play,
+  &__video.is-muted .icon-muted
+    display: block
+
+  // Range inputs (progress + volume): thin track, played part via --fill (set by the JS).
+  &__range
+    --fill: 0%
+    @apply appearance-none h-1 bg-transparent cursor-pointer
+    &::-webkit-slider-runnable-track
+      height: 4px
+      border-radius: 2px
+      background: linear-gradient(to right, theme('colors.gold') var(--fill), theme('colors.cream / 0.35') var(--fill))
+    &::-moz-range-track
+      height: 4px
+      border-radius: 2px
+      background: linear-gradient(to right, theme('colors.gold') var(--fill), theme('colors.cream / 0.35') var(--fill))
+    &::-webkit-slider-thumb
+      -webkit-appearance: none
+      width: 12px
+      height: 12px
+      margin-top: -4px
+      border-radius: 50%
+      background: theme('colors.cream')
+    &::-moz-range-thumb
+      width: 12px
+      height: 12px
+      border: 0
+      border-radius: 50%
+      background: theme('colors.cream')
+    &:focus-visible
+      outline: 1px solid theme('colors.gold')
+      outline-offset: 4px
+
+  // Volume fader: 64px, narrower on mobile where the bar is tight; hidden on iOS
+  // (volume there is the hardware buttons only — the mute button stays).
+  &__volume-range
+    @apply w-12 md:w-16 ml-1
+  &__video.no-volume &__volume-range
+    display: none
+
+  // Fullscreen: show the whole frame instead of the portrait crop.
+  &__video.is-fullscreen video
+    object-fit: contain
+
   // Corner frame: 187px on mobile in Figma (global default is 96px), 192px on tablet
   // and desktop (194.5 in Figma; desktop frame is "Vector 3" 3207:8571, outside the section group).
   &__media.framed__symmetric--bottom-left::before
