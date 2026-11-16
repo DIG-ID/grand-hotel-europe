@@ -12,3 +12,39 @@
 @supports not (height: 1dvh)
   .home-hero-overlay
     height: 100vh
+
+/*OFFER SECTION (e.g. Weihnachtsangebot) — template-parts/pages/home/offer.php*/
+// Figma: desktop 3285:6160 (1920), tablet 3295:24193 (834), mobile 3301:5598 (393).
+// Vertical paddings (in the PHP): mobile 42 / 46, tablet 62 / 70, desktop 0 / 148
+// (desktop: overtitle 206px below the image top, background 148px below the button).
+// Columns: desktop image 484px wide in Figma -> 5 columns (470px); text from col 7, 6 cols (571px in Figma).
+// Desktop: the image runs from the section top to the end of the text box (button below it),
+// so its height follows the text, not the 484/868 ratio used on tablet and mobile: the media
+// column stretches with the text column and keeps pb 80px (button 60px + 20px margin).
+// With a much shorter text the image keeps its own height and ends below the text.
+// Tablet: the text column starts 39px down (overtitle 19px + 20px) to line up with the title.
+// Mobile image is inset 17px in Figma for the corner frame -> full 2 columns, frame sits in the 24px margin.
+.section-offer
+  background-color: theme('colors.cream')
+  // Desktop: the image overlaps 110px above the cream background.
+  @media (min-width: 1280px)
+    background: linear-gradient(to bottom, transparent 110px, theme('colors.cream') 110px)
+
+  &__text
+    // One empty line between paragraphs and lists, = the body line-height per breakpoint.
+    > * + *
+      @apply mt-[1.125rem] md:mt-[1.563rem] xl:mt-[1.875rem]
+    ul
+      @apply list-none p-0
+    li::before
+      content: "• "
+
+  // .framed__* forces img height:auto; the image has to fill the 484/868 box
+  // whatever the uploaded file's ratio.
+  &__media img
+    height: 100%
+
+  // Corner frame: 187px on mobile in Figma (global default is 96px), 192px on tablet
+  // and desktop (194.5 in Figma; desktop frame is "Vector 3" 3207:8571, outside the section group).
+  &__media.framed__symmetric--bottom-left::before
+    @apply w-[187px] h-[187px] md:w-48 md:h-48

@@ -27,6 +27,16 @@
 
     <!-- You can tweak sniffs or add excludes per project here -->
 
+    <!-- The theme's own escaping functions. ghe_text() runs wp_kses()
+         with the inline HTML allowed in text fields (inc/helpers.php). -->
+    <rule ref="WordPress.Security.EscapeOutput">
+        <properties>
+            <property name="customEscapingFunctions" type="array">
+                <element value="ghe_text"/>
+            </property>
+        </properties>
+    </rule>
+
     <!-- Theme textdomain (ajusta para o teu) -->
     <rule ref="WordPress.WP.I18n">
     <properties>

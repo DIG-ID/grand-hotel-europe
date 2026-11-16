@@ -1,0 +1,39 @@
+NOTES — Grand Hotel Europe
+==========================
+
+A. Regras para o starter
+------------------------
+(nada ainda)
+
+
+B. Decisões por confirmar
+-------------------------
+2026-11-13 — Home, secção Angebot (Weihnachtsangebot), template-parts/pages/home/offer.php
+  - Botão "Jetzt anfragen": o Figma não diz o destino. Ficou a apontar para
+    Anreise & Kontakt (página com formulário); editável no admin. Confirma: Bruno.
+  - Texto: a secção usa o body do tema, como o resto do site — mobile 14px / 18px
+    (Figma Mobile/Text: 12px / 18px), tablet 16px / 25px (Figma Tablet/Text:
+    15px / 25px). Decidido pelo Bruno em 2026-11-13: manter o do site. Os tokens
+    de texto do Figma não batem com o site em mobile e tablet (ver C).
+  - Imagem desktop: 484px no Figma -> 5 colunas (470px), regra da grelha.
+  - Imagem mobile: recuada 17px no Figma para a moldura -> ocupa as 2 colunas e
+    a moldura fica na margem de 24px, como no resto do site.
+  - Versão EN: sem texto no Figma; os campos EN estão vazios e a secção não
+    aparece em /en/ até serem preenchidos.
+  - O asset real é o vídeo GHE-Angebot-Weinkeller-1.mp4 (media library, ID
+    1532). A secção mostra a imagem, como no design; usar o vídeo fica por
+    decidir (autoplay mudo ou com controlos). Confirma: Bruno.
+
+
+C. Erros no Figma
+-----------------
+2026-11-13 — Home, secção Weihnachtsangebot ("image 84", nodes 3245:10690 /
+  3294:24190 / 3296:24202): a imagem é um screenshot de um browser em Windows a
+  reproduzir o vídeo europe-luzern.ch/wp-content/uploads/GHE-Angebot-Weinkeller-1.mp4,
+  recortado pela máscara. Foi exportado o mesmo recorte (720 × 1291, WebP);
+  qualidade de um frame de vídeo, não de uma foto.
+2026-11-13 — Tokens de texto: Mobile/Text 12/18 e Tablet/Text 15/25 no Figma;
+  o site usa 14/18 e 16/25 (body em _typography.sass). Desktop coincide (17/30).
+2026-11-13 — Home, secção Weihnachtsangebot, desktop: a moldura dourada da
+  imagem ("Vector 3", 3207:8571) está fora do grupo da secção (3285:6160), por
+  isso não aparece no node da secção. Implementada como em tablet.

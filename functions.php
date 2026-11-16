@@ -176,6 +176,12 @@ add_action('wp', function () {
 	}
 });
 
+// Theme helpers: ghe_text(), ghe_module_field().
+require get_template_directory() . '/inc/helpers.php';
+
+// ACF Local JSON for the field groups kept in git (acf-json/).
+require get_template_directory() . '/inc/acf-json.php';
+
 // Custom Breadcrumbs for the Zimmer & Suiten
 require get_template_directory() . '/inc/theme-custom-breadcrumbs.php';
 
